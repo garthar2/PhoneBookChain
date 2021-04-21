@@ -36,6 +36,12 @@ namespace PhoneBookChain
             }
             CredentialsList.Add(new Credentials(firstNameTextBox.Text, lastNameTextBox.Text,
                 middleNameTextBox.Text, gender, yearOfBirthDateTimePicker.Value));
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
