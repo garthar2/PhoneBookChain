@@ -66,9 +66,9 @@ namespace PhoneBookChain
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string MiddleName { get; set; }
-        public bool Gender { get; set; }
+        public string Gender { get; set; }
         public DateTime YearOfBirth { get; set; }
-        public Credentials(string firstName, string lastName, string middleName, bool gender, DateTime yearOfBirth)
+        public Credentials(string firstName, string lastName, string middleName, string gender, DateTime yearOfBirth)
         {
             FirstName = firstName;
             LastName = lastName;

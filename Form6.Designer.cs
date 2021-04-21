@@ -30,33 +30,34 @@ namespace PhoneBookChain
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form6));
             System.Windows.Forms.Label firstNameLabel;
             System.Windows.Forms.Label genderLabel;
             System.Windows.Forms.Label lastNameLabel;
             System.Windows.Forms.Label middleNameLabel;
             System.Windows.Forms.Label yearOfBirthLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form6));
             this.credentialsListBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.credentialsListBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.firstNameTextBox = new System.Windows.Forms.TextBox();
-            this.genderCheckBox = new System.Windows.Forms.CheckBox();
             this.lastNameTextBox = new System.Windows.Forms.TextBox();
             this.middleNameTextBox = new System.Windows.Forms.TextBox();
             this.yearOfBirthDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.credentialsListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.credentialsListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             firstNameLabel = new System.Windows.Forms.Label();
             genderLabel = new System.Windows.Forms.Label();
             lastNameLabel = new System.Windows.Forms.Label();
@@ -66,6 +67,51 @@ namespace PhoneBookChain
             this.credentialsListBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.credentialsListBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // firstNameLabel
+            // 
+            firstNameLabel.AutoSize = true;
+            firstNameLabel.Location = new System.Drawing.Point(61, 61);
+            firstNameLabel.Name = "firstNameLabel";
+            firstNameLabel.Size = new System.Drawing.Size(35, 17);
+            firstNameLabel.TabIndex = 1;
+            firstNameLabel.Text = "Имя";
+            // 
+            // genderLabel
+            // 
+            genderLabel.AutoSize = true;
+            genderLabel.Location = new System.Drawing.Point(61, 170);
+            genderLabel.Name = "genderLabel";
+            genderLabel.Size = new System.Drawing.Size(34, 17);
+            genderLabel.TabIndex = 3;
+            genderLabel.Text = "Пол";
+            // 
+            // lastNameLabel
+            // 
+            lastNameLabel.AutoSize = true;
+            lastNameLabel.Location = new System.Drawing.Point(61, 89);
+            lastNameLabel.Name = "lastNameLabel";
+            lastNameLabel.Size = new System.Drawing.Size(70, 17);
+            lastNameLabel.TabIndex = 5;
+            lastNameLabel.Text = "Фамилия";
+            // 
+            // middleNameLabel
+            // 
+            middleNameLabel.AutoSize = true;
+            middleNameLabel.Location = new System.Drawing.Point(61, 117);
+            middleNameLabel.Name = "middleNameLabel";
+            middleNameLabel.Size = new System.Drawing.Size(71, 17);
+            middleNameLabel.TabIndex = 7;
+            middleNameLabel.Text = "Отчество";
+            // 
+            // yearOfBirthLabel
+            // 
+            yearOfBirthLabel.AutoSize = true;
+            yearOfBirthLabel.Location = new System.Drawing.Point(61, 147);
+            yearOfBirthLabel.Name = "yearOfBirthLabel";
+            yearOfBirthLabel.Size = new System.Drawing.Size(94, 17);
+            yearOfBirthLabel.TabIndex = 9;
+            yearOfBirthLabel.Text = "Year Of Birth:";
             // 
             // credentialsListBindingNavigator
             // 
@@ -94,9 +140,34 @@ namespace PhoneBookChain
             this.credentialsListBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.credentialsListBindingNavigator.Name = "credentialsListBindingNavigator";
             this.credentialsListBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.credentialsListBindingNavigator.Size = new System.Drawing.Size(800, 27);
+            this.credentialsListBindingNavigator.Size = new System.Drawing.Size(477, 27);
             this.credentialsListBindingNavigator.TabIndex = 0;
             this.credentialsListBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -130,16 +201,9 @@ namespace PhoneBookChain
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorMoveNextItem
@@ -162,26 +226,8 @@ namespace PhoneBookChain
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // credentialsListBindingNavigatorSaveItem
             // 
@@ -192,101 +238,42 @@ namespace PhoneBookChain
             this.credentialsListBindingNavigatorSaveItem.Size = new System.Drawing.Size(29, 24);
             this.credentialsListBindingNavigatorSaveItem.Text = "Save Data";
             // 
-            // firstNameLabel
-            // 
-            firstNameLabel.AutoSize = true;
-            firstNameLabel.Location = new System.Drawing.Point(61, 61);
-            firstNameLabel.Name = "firstNameLabel";
-            firstNameLabel.Size = new System.Drawing.Size(80, 17);
-            firstNameLabel.TabIndex = 1;
-            firstNameLabel.Text = "First Name:";
-            // 
             // firstNameTextBox
             // 
             this.firstNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.credentialsListBindingSource, "FirstName", true));
             this.firstNameTextBox.Location = new System.Drawing.Point(161, 58);
             this.firstNameTextBox.Name = "firstNameTextBox";
-            this.firstNameTextBox.Size = new System.Drawing.Size(200, 22);
+            this.firstNameTextBox.Size = new System.Drawing.Size(304, 22);
             this.firstNameTextBox.TabIndex = 2;
-            // 
-            // genderLabel
-            // 
-            genderLabel.AutoSize = true;
-            genderLabel.Location = new System.Drawing.Point(61, 91);
-            genderLabel.Name = "genderLabel";
-            genderLabel.Size = new System.Drawing.Size(60, 17);
-            genderLabel.TabIndex = 3;
-            genderLabel.Text = "Gender:";
-            // 
-            // genderCheckBox
-            // 
-            this.genderCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.credentialsListBindingSource, "Gender", true));
-            this.genderCheckBox.Location = new System.Drawing.Point(161, 86);
-            this.genderCheckBox.Name = "genderCheckBox";
-            this.genderCheckBox.Size = new System.Drawing.Size(200, 24);
-            this.genderCheckBox.TabIndex = 4;
-            this.genderCheckBox.Text = "checkBox1";
-            this.genderCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // lastNameLabel
-            // 
-            lastNameLabel.AutoSize = true;
-            lastNameLabel.Location = new System.Drawing.Point(61, 119);
-            lastNameLabel.Name = "lastNameLabel";
-            lastNameLabel.Size = new System.Drawing.Size(80, 17);
-            lastNameLabel.TabIndex = 5;
-            lastNameLabel.Text = "Last Name:";
             // 
             // lastNameTextBox
             // 
             this.lastNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.credentialsListBindingSource, "LastName", true));
-            this.lastNameTextBox.Location = new System.Drawing.Point(161, 116);
+            this.lastNameTextBox.Location = new System.Drawing.Point(161, 86);
             this.lastNameTextBox.Name = "lastNameTextBox";
-            this.lastNameTextBox.Size = new System.Drawing.Size(200, 22);
+            this.lastNameTextBox.Size = new System.Drawing.Size(304, 22);
             this.lastNameTextBox.TabIndex = 6;
-            // 
-            // middleNameLabel
-            // 
-            middleNameLabel.AutoSize = true;
-            middleNameLabel.Location = new System.Drawing.Point(61, 147);
-            middleNameLabel.Name = "middleNameLabel";
-            middleNameLabel.Size = new System.Drawing.Size(94, 17);
-            middleNameLabel.TabIndex = 7;
-            middleNameLabel.Text = "Middle Name:";
             // 
             // middleNameTextBox
             // 
             this.middleNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.credentialsListBindingSource, "MiddleName", true));
-            this.middleNameTextBox.Location = new System.Drawing.Point(161, 144);
+            this.middleNameTextBox.Location = new System.Drawing.Point(161, 114);
             this.middleNameTextBox.Name = "middleNameTextBox";
-            this.middleNameTextBox.Size = new System.Drawing.Size(200, 22);
+            this.middleNameTextBox.Size = new System.Drawing.Size(304, 22);
             this.middleNameTextBox.TabIndex = 8;
-            // 
-            // yearOfBirthLabel
-            // 
-            yearOfBirthLabel.AutoSize = true;
-            yearOfBirthLabel.Location = new System.Drawing.Point(61, 176);
-            yearOfBirthLabel.Name = "yearOfBirthLabel";
-            yearOfBirthLabel.Size = new System.Drawing.Size(94, 17);
-            yearOfBirthLabel.TabIndex = 9;
-            yearOfBirthLabel.Text = "Year Of Birth:";
             // 
             // yearOfBirthDateTimePicker
             // 
             this.yearOfBirthDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.credentialsListBindingSource, "YearOfBirth", true));
-            this.yearOfBirthDateTimePicker.Location = new System.Drawing.Point(161, 172);
+            this.yearOfBirthDateTimePicker.Location = new System.Drawing.Point(161, 142);
             this.yearOfBirthDateTimePicker.Name = "yearOfBirthDateTimePicker";
             this.yearOfBirthDateTimePicker.Size = new System.Drawing.Size(200, 22);
             this.yearOfBirthDateTimePicker.TabIndex = 10;
             // 
-            // credentialsListBindingSource
-            // 
-            this.credentialsListBindingSource.DataSource = typeof(PhoneBookChain.Credentials);
-            // 
             // button1
             // 
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.Location = new System.Drawing.Point(80, 287);
+            this.button1.Location = new System.Drawing.Point(64, 213);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 29);
             this.button1.TabIndex = 11;
@@ -297,24 +284,51 @@ namespace PhoneBookChain
             // button2
             // 
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button2.Location = new System.Drawing.Point(192, 287);
+            this.button2.Location = new System.Drawing.Point(205, 213);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(97, 29);
             this.button2.TabIndex = 12;
             this.button2.Text = "Отменить";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(161, 170);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(74, 21);
+            this.radioButton1.TabIndex = 13;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Мужск.";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(241, 170);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(76, 21);
+            this.radioButton2.TabIndex = 14;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Женск.";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // credentialsListBindingSource
+            // 
+            this.credentialsListBindingSource.DataSource = typeof(PhoneBookChain.Credentials);
+            // 
             // Form6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(477, 264);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(firstNameLabel);
             this.Controls.Add(this.firstNameTextBox);
             this.Controls.Add(genderLabel);
-            this.Controls.Add(this.genderCheckBox);
             this.Controls.Add(lastNameLabel);
             this.Controls.Add(this.lastNameTextBox);
             this.Controls.Add(middleNameLabel);
@@ -323,7 +337,7 @@ namespace PhoneBookChain
             this.Controls.Add(this.yearOfBirthDateTimePicker);
             this.Controls.Add(this.credentialsListBindingNavigator);
             this.Name = "Form6";
-            this.Text = "Form6";
+            this.Text = "Добавление в список людей";
             ((System.ComponentModel.ISupportInitialize)(this.credentialsListBindingNavigator)).EndInit();
             this.credentialsListBindingNavigator.ResumeLayout(false);
             this.credentialsListBindingNavigator.PerformLayout();
@@ -350,11 +364,12 @@ namespace PhoneBookChain
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton credentialsListBindingNavigatorSaveItem;
         private System.Windows.Forms.TextBox firstNameTextBox;
-        private System.Windows.Forms.CheckBox genderCheckBox;
         private System.Windows.Forms.TextBox lastNameTextBox;
         private System.Windows.Forms.TextBox middleNameTextBox;
         private System.Windows.Forms.DateTimePicker yearOfBirthDateTimePicker;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
     }
 }

@@ -11,6 +11,7 @@ namespace PhoneBookChain
 {
     public partial class Form6 : Form
     {
+        string gender = "муж";
         public BindingList<Credentials> CredentialsList { get; set; }
         public Form6()
         {
@@ -24,8 +25,17 @@ namespace PhoneBookChain
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (radioButton1.Checked)
+            {
+                gender = "Мужск.";
+            }
+            if (radioButton2.Checked)
+            {
+                gender = "Женск.";
+
+            }
             CredentialsList.Add(new Credentials(firstNameTextBox.Text, lastNameTextBox.Text,
-                middleNameTextBox.Text, genderCheckBox.Checked, yearOfBirthDateTimePicker.Value));
+                middleNameTextBox.Text, gender, yearOfBirthDateTimePicker.Value));
         }
     }
 }
