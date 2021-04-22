@@ -11,7 +11,7 @@ namespace PhoneBookChain
 {
     public partial class Form6 : Form
     {
-        string gender = "муж"; //никогда это значение
+        string gender = ""; //никогда это значение
         public BindingList<Credentials> CredentialsList { get; set; }
         public Form6()
         {
@@ -36,7 +36,7 @@ namespace PhoneBookChain
             }
             if ((firstNameTextBox.Text == "") || (lastNameTextBox.Text == ""))
             {
-                MessageBox.Show("Имя и фамилия не должны быть пустыми");
+                MessageBox.Show("Имя и фамилия не должны быть пустыми!");
             }
             else
             {
