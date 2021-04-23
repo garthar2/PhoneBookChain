@@ -9,15 +9,15 @@ using System.Windows.Forms;
 
 namespace PhoneBookChain
 {
-    public partial class Form2 : Form
+    public partial class AddPhoneBookForm : Form
     {
         public BindingList<PhoneBook> PhoneBookList { get; set; }
-        public Form2()
+        public AddPhoneBookForm()
         {
             InitializeComponent();
         }
 
-        public Form2(BindingList<PhoneBook> phoneBookList)
+        public AddPhoneBookForm(BindingList<PhoneBook> phoneBookList)
         {
             PhoneBookList = phoneBookList;
             InitializeComponent();
@@ -47,19 +47,19 @@ namespace PhoneBookChain
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form3 form3 = new Form3();
+            AddCredForm form3 = new AddCredForm();
             form3.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form4 form4 = new Form4();
+            AddAddressForm form4 = new AddAddressForm();
             form4.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Form5 form5 = new Form5();
+            AddPhoneForm form5 = new AddPhoneForm();
             form5.ShowDialog();
         }
     }

@@ -9,15 +9,15 @@ using System.Windows.Forms;
 
 namespace PhoneBookChain
 {
-    public partial class Form6 : Form
+    public partial class AddRowCredForm : Form
     {
         string gender = ""; //никогда это значение
         public BindingList<Credentials> CredentialsList { get; set; }
-        public Form6()
+        public AddRowCredForm()
         {
             InitializeComponent();
         }
-        public Form6(BindingList<Credentials> credentialsList)
+        public AddRowCredForm(BindingList<Credentials> credentialsList)
         {
             CredentialsList = credentialsList;
             InitializeComponent();

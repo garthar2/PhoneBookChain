@@ -1,7 +1,7 @@
 ﻿
 namespace PhoneBookChain
 {
-    partial class Form2
+    partial class AddPhoneBookForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace PhoneBookChain
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddPhoneBookForm));
             System.Windows.Forms.Label buildNumLabel;
             System.Windows.Forms.Label emailLabel;
             System.Windows.Forms.Label firstNameLabel;

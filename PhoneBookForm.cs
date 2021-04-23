@@ -9,11 +9,11 @@ using System.Windows.Forms;
 
 namespace PhoneBookChain
 {
-    public partial class Form1 : Form
+    public partial class PhoneBookForm : Form
     {
         //  https://www.youtube.com/watch?v=6uSWzKMgbzs
         public BindingList<PhoneBook> PhoneBookList { get; set; } = new BindingList<PhoneBook>();
-        public Form1()
+        public PhoneBookForm()
         {
             InitializeComponent();
             phoneBookListBindingSource.DataSource = PhoneBookList;
@@ -21,7 +21,7 @@ namespace PhoneBookChain
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2(PhoneBookList);
+            AddPhoneBookForm form2 = new AddPhoneBookForm(PhoneBookList);
             form2.ShowDialog();
         }
     }

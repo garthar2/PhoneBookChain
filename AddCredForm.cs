@@ -9,10 +9,10 @@ using System.Windows.Forms;
 
 namespace PhoneBookChain
 {
-    public partial class Form3 : Form
+    public partial class AddCredForm : Form
     {
         public BindingList<Credentials> CredentialsList { get; set; } = new BindingList<Credentials>();
-        public Form3()
+        public AddCredForm()
         {
             
             InitializeComponent();
@@ -22,7 +22,7 @@ namespace PhoneBookChain
         private void button1_Click(object sender, EventArgs e)
         {
             //добавить
-            Form6 CreateCredentials = new Form6(CredentialsList);
+            AddRowCredForm CreateCredentials = new AddRowCredForm(CredentialsList);
             CreateCredentials.ShowDialog();
         }
 
@@ -37,14 +37,27 @@ namespace PhoneBookChain
         private void button3_Click(object sender, EventArgs e)
         {
             //удалить строку
+            if (this.credentialsListDataGridView.SelectedRows.Count > 0)
+            {
+                MessageBox.Show("Индекс строки: " + credentialsListDataGridView.SelectedRows[0].Index);
+            }
+            else
+            {
+                MessageBox.Show("Выберите строку");
+            }
 
-                if (this.credentialsListDataGridView.SelectedRows.Count > 0 &&
-                    this.credentialsListDataGridView.SelectedRows[0].Index !=
-                    this.credentialsListDataGridView.Rows.Count - 1)
-                {
-                    this.credentialsListDataGridView.Rows.RemoveAt(
-                        this.credentialsListDataGridView.SelectedRows[0].Index);
-                }
+
+            //if (this.credentialsListDataGridView.SelectedRows.Count > 0 &&
+            //    this.credentialsListDataGridView.SelectedRows[0].Index !=
+            //    this.credentialsListDataGridView.Rows.Count - 1)
+            //{
+            //    this.credentialsListDataGridView.Rows.RemoveAt(
+            //        this.credentialsListDataGridView.SelectedRows[0].Index);
+            //}
+
+            //this.credentialsListDataGridView.Rows.RemoveAt(
+            //    this.credentialsListDataGridView.SelectedRows[0].Index);
+
         }
         //private void textBox1_TextChanged(object sender, EventArgs e)
         //{

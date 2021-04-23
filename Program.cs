@@ -29,7 +29,7 @@ namespace PhoneBookChain
             //jaggArr[0] = new Credentials ("Колян", "Петров", "Иванович", true, new DateTime(1945, 10, 6));
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new PhoneBookForm());
         }
     }
 }

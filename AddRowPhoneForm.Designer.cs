@@ -1,7 +1,7 @@
 ﻿
 namespace PhoneBookChain
 {
-    partial class Form7
+    partial class AddRowPhoneForm
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@ namespace PhoneBookChain
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form7";
+            this.Text = "Form8";
         }
 
         #endregion

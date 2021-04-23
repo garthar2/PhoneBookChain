@@ -1,7 +1,7 @@
 ﻿
 namespace PhoneBookChain
 {
-    partial class Form6
+    partial class AddRowCredForm
     {
         /// <summary>
         /// Required designer variable.

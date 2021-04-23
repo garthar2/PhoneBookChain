@@ -1,7 +1,7 @@
 ﻿
 namespace PhoneBookChain
 {
-    partial class Form4
+    partial class AddPhoneForm
     {
         /// <summary>
         /// Required designer variable.
@@ -31,13 +31,13 @@ namespace PhoneBookChain
         {
             this.SuspendLayout();
             // 
-            // Form4
+            // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "Form4";
-            this.Text = "Добавление адреса";
+            this.Name = "Form5";
+            this.Text = "Добавление номера телефона";
             this.ResumeLayout(false);
 
         }

@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace PhoneBookChain
 {
-    public partial class Form5 : Form
+    public partial class AddPhoneForm : Form
     {
-        public Form5()
+        public AddPhoneForm()
         {
             InitializeComponent();
         }
