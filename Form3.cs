@@ -21,16 +21,30 @@ namespace PhoneBookChain
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form6 form6 = new Form6(CredentialsList);
-            form6.ShowDialog();
+            //добавить
+            Form6 CreateCredentials = new Form6(CredentialsList);
+            CreateCredentials.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             //редактировать
-            //credentialsListDataGridView.SelectedRows
+            MessageBox.Show("Выбрано строк:"+ credentialsListDataGridView.SelectedRows.Count);
             //DataGridView1
-        //    credentialsListDataGridView.
+            //    credentialsListDataGridView.
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //удалить строку
+
+                if (this.credentialsListDataGridView.SelectedRows.Count > 0 &&
+                    this.credentialsListDataGridView.SelectedRows[0].Index !=
+                    this.credentialsListDataGridView.Rows.Count - 1)
+                {
+                    this.credentialsListDataGridView.Rows.RemoveAt(
+                        this.credentialsListDataGridView.SelectedRows[0].Index);
+                }
         }
         //private void textBox1_TextChanged(object sender, EventArgs e)
         //{
