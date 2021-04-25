@@ -43,7 +43,7 @@ namespace PhoneBookChain
             }
             else
             {
-                MessageBox.Show("Выберите строку");
+                MessageBox.Show("Выберите строку для удаления");
             }
 
 

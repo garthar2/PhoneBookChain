@@ -93,7 +93,7 @@ namespace PhoneBookChain
     }
     public class PhoneInfo
     {
-        public PhoneInfo(string phoneNum, bool isMobile, string email)
+        public PhoneInfo(string phoneNum, string isMobile, string email)
         {
             PhoneNum = phoneNum;
             IsMobile = isMobile;
@@ -101,16 +101,16 @@ namespace PhoneBookChain
         }
 
         public string PhoneNum { get; set; }
-        public bool IsMobile { get; set; }
+        public string IsMobile { get; set; }
         public string Email { get; set; }
 
 
     }
     public class PhoneBook
     {
-        public PhoneBook(string firstName, string lastName, string middleName, bool gender, 
+        public PhoneBook(string firstName, string lastName, string middleName, string gender, 
             DateTime yearOfBirth, string streetName, string buildNum, string flatNum, 
-            string phoneNum, bool isMobile, string email)
+            string phoneNum, string isMobile, string email)
         {
             FirstName = firstName;
             LastName = lastName;
@@ -128,13 +128,13 @@ namespace PhoneBookChain
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string MiddleName { get; set; }
-        public bool Gender { get; set; }
+        public string Gender { get; set; }
         public DateTime YearOfBirth { get; set; }
         public string StreetName { get; set; }
         public string BuildNum { get; set; }
         public string FlatNum { get; set; }
         public string PhoneNum { get; set; }
-        public bool IsMobile { get; set; }
+        public string IsMobile { get; set; }
         public string Email { get; set; }
 
     }

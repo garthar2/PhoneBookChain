@@ -95,6 +95,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddRowAddressForm.resx">
+      <DependentUpon>AddRowAddressForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PhoneBookForm.resx">
       <DependentUpon>PhoneBookForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,8 +125,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\AddAddressForm.datasource" />
+    <None Include="Properties\DataSources\AddCredForm.datasource" />
+    <None Include="Properties\DataSources\AddPhoneBookForm.datasource" />
+    <None Include="Properties\DataSources\AddPhoneForm.datasource" />
     <None Include="Properties\DataSources\Form1.datasource" />
     <None Include="Properties\DataSources\Form3.datasource" />
+    <None Include="Properties\DataSources\PhoneBookForm.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

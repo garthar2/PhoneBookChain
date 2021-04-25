@@ -28,20 +28,12 @@ namespace PhoneBookChain
             //todo
             //Сохранить всю строку, с email  и объединенными полями с 3х форм
             //PhoneInfoList.Add(new PhoneInfo(firstNameTextBox.Text, emailTextBox.Text));
-            PhoneBookList.Add(new PhoneBook("Васян", "Дачев", "Бедросович", false, new DateTime(1967, 12, 12),
-                                             "Ленина", "10", "5", "3242342", false, "asd@sdfs.com"));
-
-
-
+            PhoneBookList.Add(new PhoneBook("Филип", "Дачев", "Бедросович", "Мужск.", new DateTime(1967, 12, 12),
+                                             "Ленина", "10", "5", "3242342", "Мобил.", "asd@sdfs.com"));
 
             PhoneBookList.Add(new PhoneBook(firstNameTextBox.Text, lastNameTextBox.Text, middleNameTextBox.Text,
-                genderCheckBox.Checked, yearOfBirthDateTimePicker.Value, streetNameTextBox.Text, buildNumTextBox.Text,
-                flatNumTextBox.Text, phoneNumTextBox.Text, isMobileCheckBox.Checked, emailTextBox.Text));
-
-
-
-
-
+                genderTextBox.Text, yearOfBirthDateTimePicker.Value, streetNameTextBox.Text, buildNumTextBox.Text,
+                flatNumTextBox.Text, phoneNumTextBox.Text, isMobileTextBox.Text, emailTextBox.Text));
 
         }
 

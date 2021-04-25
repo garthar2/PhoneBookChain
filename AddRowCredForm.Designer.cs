@@ -36,6 +36,7 @@ namespace PhoneBookChain
             System.Windows.Forms.Label middleNameLabel;
             System.Windows.Forms.Label yearOfBirthLabel;
             this.firstNameTextBox = new System.Windows.Forms.TextBox();
+            this.credentialsListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lastNameTextBox = new System.Windows.Forms.TextBox();
             this.middleNameTextBox = new System.Windows.Forms.TextBox();
             this.yearOfBirthDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -43,7 +44,6 @@ namespace PhoneBookChain
             this.button2 = new System.Windows.Forms.Button();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.credentialsListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             firstNameLabel = new System.Windows.Forms.Label();
             genderLabel = new System.Windows.Forms.Label();
             lastNameLabel = new System.Windows.Forms.Label();
@@ -105,6 +105,10 @@ namespace PhoneBookChain
             this.firstNameTextBox.Size = new System.Drawing.Size(304, 22);
             this.firstNameTextBox.TabIndex = 2;
             // 
+            // credentialsListBindingSource
+            // 
+            this.credentialsListBindingSource.DataSource = typeof(PhoneBookChain.Credentials);
+            // 
             // lastNameTextBox
             // 
             this.lastNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.credentialsListBindingSource, "LastName", true));
@@ -126,13 +130,13 @@ namespace PhoneBookChain
             this.yearOfBirthDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.credentialsListBindingSource, "YearOfBirth", true));
             this.yearOfBirthDateTimePicker.Location = new System.Drawing.Point(161, 96);
             this.yearOfBirthDateTimePicker.Name = "yearOfBirthDateTimePicker";
-            this.yearOfBirthDateTimePicker.Size = new System.Drawing.Size(200, 22);
+            this.yearOfBirthDateTimePicker.Size = new System.Drawing.Size(304, 22);
             this.yearOfBirthDateTimePicker.TabIndex = 10;
             // 
             // button1
             // 
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.Location = new System.Drawing.Point(138, 176);
+            this.button1.Location = new System.Drawing.Point(16, 176);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 29);
             this.button1.TabIndex = 11;
@@ -143,7 +147,7 @@ namespace PhoneBookChain
             // button2
             // 
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button2.Location = new System.Drawing.Point(264, 176);
+            this.button2.Location = new System.Drawing.Point(138, 176);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(97, 29);
             this.button2.TabIndex = 12;
@@ -166,18 +170,14 @@ namespace PhoneBookChain
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(241, 128);
+            this.radioButton2.Location = new System.Drawing.Point(285, 128);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(76, 21);
             this.radioButton2.TabIndex = 14;
             this.radioButton2.Text = "Женск.";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
-            // credentialsListBindingSource
-            // 
-            this.credentialsListBindingSource.DataSource = typeof(PhoneBookChain.Credentials);
-            // 
-            // Form6
+            // AddRowCredForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -196,7 +196,7 @@ namespace PhoneBookChain
             this.Controls.Add(yearOfBirthLabel);
             this.Controls.Add(this.yearOfBirthDateTimePicker);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "Form6";
+            this.Name = "AddRowCredForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавление в список людей";
             ((System.ComponentModel.ISupportInitialize)(this.credentialsListBindingSource)).EndInit();
