@@ -106,8 +106,13 @@ namespace PhoneBookChain
 
 
     }
+    [Serializable]
+
     public class PhoneBook
     {
+        // стандартный конструктор без параметров
+        public PhoneBook()
+        { }
         public PhoneBook(string firstName, string lastName, string middleName, string gender, 
             DateTime yearOfBirth, string streetName, string buildNum, string flatNum, 
             string phoneNum, string isMobile, string email)
