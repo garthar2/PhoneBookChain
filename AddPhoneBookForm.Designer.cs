@@ -30,7 +30,6 @@ namespace PhoneBookChain
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddPhoneBookForm));
             System.Windows.Forms.Label buildNumLabel;
             System.Windows.Forms.Label emailLabel;
             System.Windows.Forms.Label firstNameLabel;
@@ -42,8 +41,10 @@ namespace PhoneBookChain
             System.Windows.Forms.Label phoneNumLabel;
             System.Windows.Forms.Label streetNameLabel;
             System.Windows.Forms.Label yearOfBirthLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddPhoneBookForm));
             this.phoneInfoListBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.phoneInfoListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -61,7 +62,6 @@ namespace PhoneBookChain
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.phoneBookListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.phoneInfoListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buildNumTextBox = new System.Windows.Forms.TextBox();
             this.emailTextBox = new System.Windows.Forms.TextBox();
             this.firstNameTextBox = new System.Windows.Forms.TextBox();
@@ -86,9 +86,108 @@ namespace PhoneBookChain
             yearOfBirthLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.phoneInfoListBindingNavigator)).BeginInit();
             this.phoneInfoListBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.phoneBookListBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phoneInfoListBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phoneBookListBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // buildNumLabel
+            // 
+            buildNumLabel.AutoSize = true;
+            buildNumLabel.Location = new System.Drawing.Point(30, 51);
+            buildNumLabel.Name = "buildNumLabel";
+            buildNumLabel.Size = new System.Drawing.Size(76, 17);
+            buildNumLabel.TabIndex = 46;
+            buildNumLabel.Text = "Build Num:";
+            // 
+            // emailLabel
+            // 
+            emailLabel.AutoSize = true;
+            emailLabel.Location = new System.Drawing.Point(30, 79);
+            emailLabel.Name = "emailLabel";
+            emailLabel.Size = new System.Drawing.Size(46, 17);
+            emailLabel.TabIndex = 48;
+            emailLabel.Text = "Email:";
+            // 
+            // firstNameLabel
+            // 
+            firstNameLabel.AutoSize = true;
+            firstNameLabel.Location = new System.Drawing.Point(30, 107);
+            firstNameLabel.Name = "firstNameLabel";
+            firstNameLabel.Size = new System.Drawing.Size(80, 17);
+            firstNameLabel.TabIndex = 50;
+            firstNameLabel.Text = "First Name:";
+            // 
+            // flatNumLabel
+            // 
+            flatNumLabel.AutoSize = true;
+            flatNumLabel.Location = new System.Drawing.Point(30, 135);
+            flatNumLabel.Name = "flatNumLabel";
+            flatNumLabel.Size = new System.Drawing.Size(68, 17);
+            flatNumLabel.TabIndex = 52;
+            flatNumLabel.Text = "Flat Num:";
+            // 
+            // genderLabel
+            // 
+            genderLabel.AutoSize = true;
+            genderLabel.Location = new System.Drawing.Point(30, 163);
+            genderLabel.Name = "genderLabel";
+            genderLabel.Size = new System.Drawing.Size(60, 17);
+            genderLabel.TabIndex = 54;
+            genderLabel.Text = "Gender:";
+            // 
+            // isMobileLabel
+            // 
+            isMobileLabel.AutoSize = true;
+            isMobileLabel.Location = new System.Drawing.Point(30, 191);
+            isMobileLabel.Name = "isMobileLabel";
+            isMobileLabel.Size = new System.Drawing.Size(67, 17);
+            isMobileLabel.TabIndex = 56;
+            isMobileLabel.Text = "Is Mobile:";
+            // 
+            // lastNameLabel
+            // 
+            lastNameLabel.AutoSize = true;
+            lastNameLabel.Location = new System.Drawing.Point(30, 219);
+            lastNameLabel.Name = "lastNameLabel";
+            lastNameLabel.Size = new System.Drawing.Size(80, 17);
+            lastNameLabel.TabIndex = 58;
+            lastNameLabel.Text = "Last Name:";
+            // 
+            // middleNameLabel
+            // 
+            middleNameLabel.AutoSize = true;
+            middleNameLabel.Location = new System.Drawing.Point(30, 247);
+            middleNameLabel.Name = "middleNameLabel";
+            middleNameLabel.Size = new System.Drawing.Size(94, 17);
+            middleNameLabel.TabIndex = 60;
+            middleNameLabel.Text = "Middle Name:";
+            // 
+            // phoneNumLabel
+            // 
+            phoneNumLabel.AutoSize = true;
+            phoneNumLabel.Location = new System.Drawing.Point(30, 275);
+            phoneNumLabel.Name = "phoneNumLabel";
+            phoneNumLabel.Size = new System.Drawing.Size(86, 17);
+            phoneNumLabel.TabIndex = 62;
+            phoneNumLabel.Text = "Phone Num:";
+            // 
+            // streetNameLabel
+            // 
+            streetNameLabel.AutoSize = true;
+            streetNameLabel.Location = new System.Drawing.Point(30, 303);
+            streetNameLabel.Name = "streetNameLabel";
+            streetNameLabel.Size = new System.Drawing.Size(91, 17);
+            streetNameLabel.TabIndex = 64;
+            streetNameLabel.Text = "Street Name:";
+            // 
+            // yearOfBirthLabel
+            // 
+            yearOfBirthLabel.AutoSize = true;
+            yearOfBirthLabel.Location = new System.Drawing.Point(30, 332);
+            yearOfBirthLabel.Name = "yearOfBirthLabel";
+            yearOfBirthLabel.Size = new System.Drawing.Size(94, 17);
+            yearOfBirthLabel.TabIndex = 66;
+            yearOfBirthLabel.Text = "Year Of Birth:";
             // 
             // phoneInfoListBindingNavigator
             // 
@@ -129,6 +228,10 @@ namespace PhoneBookChain
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // phoneInfoListBindingSource
+            // 
+            this.phoneInfoListBindingSource.DataSource = typeof(PhoneBookChain.PhoneInfo);
             // 
             // bindingNavigatorCountItem
             // 
@@ -268,19 +371,6 @@ namespace PhoneBookChain
             // 
             this.phoneBookListBindingSource.DataSource = typeof(PhoneBookChain.PhoneBook);
             // 
-            // phoneInfoListBindingSource
-            // 
-            this.phoneInfoListBindingSource.DataSource = typeof(PhoneBookChain.PhoneInfo);
-            // 
-            // buildNumLabel
-            // 
-            buildNumLabel.AutoSize = true;
-            buildNumLabel.Location = new System.Drawing.Point(30, 51);
-            buildNumLabel.Name = "buildNumLabel";
-            buildNumLabel.Size = new System.Drawing.Size(76, 17);
-            buildNumLabel.TabIndex = 46;
-            buildNumLabel.Text = "Build Num:";
-            // 
             // buildNumTextBox
             // 
             this.buildNumTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.phoneBookListBindingSource, "BuildNum", true));
@@ -288,15 +378,6 @@ namespace PhoneBookChain
             this.buildNumTextBox.Name = "buildNumTextBox";
             this.buildNumTextBox.Size = new System.Drawing.Size(200, 22);
             this.buildNumTextBox.TabIndex = 47;
-            // 
-            // emailLabel
-            // 
-            emailLabel.AutoSize = true;
-            emailLabel.Location = new System.Drawing.Point(30, 79);
-            emailLabel.Name = "emailLabel";
-            emailLabel.Size = new System.Drawing.Size(46, 17);
-            emailLabel.TabIndex = 48;
-            emailLabel.Text = "Email:";
             // 
             // emailTextBox
             // 
@@ -306,15 +387,6 @@ namespace PhoneBookChain
             this.emailTextBox.Size = new System.Drawing.Size(200, 22);
             this.emailTextBox.TabIndex = 49;
             // 
-            // firstNameLabel
-            // 
-            firstNameLabel.AutoSize = true;
-            firstNameLabel.Location = new System.Drawing.Point(30, 107);
-            firstNameLabel.Name = "firstNameLabel";
-            firstNameLabel.Size = new System.Drawing.Size(80, 17);
-            firstNameLabel.TabIndex = 50;
-            firstNameLabel.Text = "First Name:";
-            // 
             // firstNameTextBox
             // 
             this.firstNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.phoneBookListBindingSource, "FirstName", true));
@@ -322,15 +394,6 @@ namespace PhoneBookChain
             this.firstNameTextBox.Name = "firstNameTextBox";
             this.firstNameTextBox.Size = new System.Drawing.Size(200, 22);
             this.firstNameTextBox.TabIndex = 51;
-            // 
-            // flatNumLabel
-            // 
-            flatNumLabel.AutoSize = true;
-            flatNumLabel.Location = new System.Drawing.Point(30, 135);
-            flatNumLabel.Name = "flatNumLabel";
-            flatNumLabel.Size = new System.Drawing.Size(68, 17);
-            flatNumLabel.TabIndex = 52;
-            flatNumLabel.Text = "Flat Num:";
             // 
             // flatNumTextBox
             // 
@@ -340,15 +403,6 @@ namespace PhoneBookChain
             this.flatNumTextBox.Size = new System.Drawing.Size(200, 22);
             this.flatNumTextBox.TabIndex = 53;
             // 
-            // genderLabel
-            // 
-            genderLabel.AutoSize = true;
-            genderLabel.Location = new System.Drawing.Point(30, 163);
-            genderLabel.Name = "genderLabel";
-            genderLabel.Size = new System.Drawing.Size(60, 17);
-            genderLabel.TabIndex = 54;
-            genderLabel.Text = "Gender:";
-            // 
             // genderTextBox
             // 
             this.genderTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.phoneBookListBindingSource, "Gender", true));
@@ -356,15 +410,6 @@ namespace PhoneBookChain
             this.genderTextBox.Name = "genderTextBox";
             this.genderTextBox.Size = new System.Drawing.Size(200, 22);
             this.genderTextBox.TabIndex = 55;
-            // 
-            // isMobileLabel
-            // 
-            isMobileLabel.AutoSize = true;
-            isMobileLabel.Location = new System.Drawing.Point(30, 191);
-            isMobileLabel.Name = "isMobileLabel";
-            isMobileLabel.Size = new System.Drawing.Size(67, 17);
-            isMobileLabel.TabIndex = 56;
-            isMobileLabel.Text = "Is Mobile:";
             // 
             // isMobileTextBox
             // 
@@ -374,15 +419,6 @@ namespace PhoneBookChain
             this.isMobileTextBox.Size = new System.Drawing.Size(200, 22);
             this.isMobileTextBox.TabIndex = 57;
             // 
-            // lastNameLabel
-            // 
-            lastNameLabel.AutoSize = true;
-            lastNameLabel.Location = new System.Drawing.Point(30, 219);
-            lastNameLabel.Name = "lastNameLabel";
-            lastNameLabel.Size = new System.Drawing.Size(80, 17);
-            lastNameLabel.TabIndex = 58;
-            lastNameLabel.Text = "Last Name:";
-            // 
             // lastNameTextBox
             // 
             this.lastNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.phoneBookListBindingSource, "LastName", true));
@@ -390,15 +426,6 @@ namespace PhoneBookChain
             this.lastNameTextBox.Name = "lastNameTextBox";
             this.lastNameTextBox.Size = new System.Drawing.Size(200, 22);
             this.lastNameTextBox.TabIndex = 59;
-            // 
-            // middleNameLabel
-            // 
-            middleNameLabel.AutoSize = true;
-            middleNameLabel.Location = new System.Drawing.Point(30, 247);
-            middleNameLabel.Name = "middleNameLabel";
-            middleNameLabel.Size = new System.Drawing.Size(94, 17);
-            middleNameLabel.TabIndex = 60;
-            middleNameLabel.Text = "Middle Name:";
             // 
             // middleNameTextBox
             // 
@@ -408,15 +435,6 @@ namespace PhoneBookChain
             this.middleNameTextBox.Size = new System.Drawing.Size(200, 22);
             this.middleNameTextBox.TabIndex = 61;
             // 
-            // phoneNumLabel
-            // 
-            phoneNumLabel.AutoSize = true;
-            phoneNumLabel.Location = new System.Drawing.Point(30, 275);
-            phoneNumLabel.Name = "phoneNumLabel";
-            phoneNumLabel.Size = new System.Drawing.Size(86, 17);
-            phoneNumLabel.TabIndex = 62;
-            phoneNumLabel.Text = "Phone Num:";
-            // 
             // phoneNumTextBox
             // 
             this.phoneNumTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.phoneBookListBindingSource, "PhoneNum", true));
@@ -425,15 +443,6 @@ namespace PhoneBookChain
             this.phoneNumTextBox.Size = new System.Drawing.Size(200, 22);
             this.phoneNumTextBox.TabIndex = 63;
             // 
-            // streetNameLabel
-            // 
-            streetNameLabel.AutoSize = true;
-            streetNameLabel.Location = new System.Drawing.Point(30, 303);
-            streetNameLabel.Name = "streetNameLabel";
-            streetNameLabel.Size = new System.Drawing.Size(91, 17);
-            streetNameLabel.TabIndex = 64;
-            streetNameLabel.Text = "Street Name:";
-            // 
             // streetNameTextBox
             // 
             this.streetNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.phoneBookListBindingSource, "StreetName", true));
@@ -441,15 +450,6 @@ namespace PhoneBookChain
             this.streetNameTextBox.Name = "streetNameTextBox";
             this.streetNameTextBox.Size = new System.Drawing.Size(200, 22);
             this.streetNameTextBox.TabIndex = 65;
-            // 
-            // yearOfBirthLabel
-            // 
-            yearOfBirthLabel.AutoSize = true;
-            yearOfBirthLabel.Location = new System.Drawing.Point(30, 332);
-            yearOfBirthLabel.Name = "yearOfBirthLabel";
-            yearOfBirthLabel.Size = new System.Drawing.Size(94, 17);
-            yearOfBirthLabel.TabIndex = 66;
-            yearOfBirthLabel.Text = "Year Of Birth:";
             // 
             // yearOfBirthDateTimePicker
             // 
@@ -494,11 +494,12 @@ namespace PhoneBookChain
             this.Controls.Add(this.phoneInfoListBindingNavigator);
             this.Name = "AddPhoneBookForm";
             this.Text = "Добавление в телефонный справочник (обобщающий класс)";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddPhoneBookForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.phoneInfoListBindingNavigator)).EndInit();
             this.phoneInfoListBindingNavigator.ResumeLayout(false);
             this.phoneInfoListBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.phoneBookListBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.phoneInfoListBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phoneBookListBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

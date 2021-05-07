@@ -28,12 +28,12 @@ namespace PhoneBookChain
             //todo
             //Сохранить всю строку, с email  и объединенными полями с 3х форм
             //PhoneInfoList.Add(new PhoneInfo(firstNameTextBox.Text, emailTextBox.Text));
-            PhoneBookList.Add(new PhoneBook("Филип", "Дачев", "Бедросович", "Мужск.", new DateTime(1967, 12, 12),
-                                             "Ленина", "10", "5", "3242342", "Мобил.", "asd@sdfs.com"));
+            //PhoneBookList.Add(new PhoneBook("dfs1452@gmail.com", new Credentials("Филип", "Дачев", "Бедросович", "Мужск.", new DateTime(1967, 12, 12)),
+            //    new Address("Ленина", "10", "5"), new PhoneInfo("3242342", "Мобил.")));
 
-            PhoneBookList.Add(new PhoneBook(firstNameTextBox.Text, lastNameTextBox.Text, middleNameTextBox.Text,
-                genderTextBox.Text, yearOfBirthDateTimePicker.Value, streetNameTextBox.Text, buildNumTextBox.Text,
-                flatNumTextBox.Text, phoneNumTextBox.Text, isMobileTextBox.Text, emailTextBox.Text));
+            PhoneBookList.Add(new PhoneBook(emailTextBox.Text, new Credentials(firstNameTextBox.Text, lastNameTextBox.Text, middleNameTextBox.Text,
+                genderTextBox.Text, yearOfBirthDateTimePicker.Value),new Address(streetNameTextBox.Text, buildNumTextBox.Text,
+                flatNumTextBox.Text), new PhoneInfo(phoneNumTextBox.Text, isMobileTextBox.Text)));
 
         }
 
@@ -53,6 +53,11 @@ namespace PhoneBookChain
         {
             AddPhoneForm form5 = new AddPhoneForm();
             form5.ShowDialog();
+        }
+
+        private void AddPhoneBookForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
         }
     }
 }

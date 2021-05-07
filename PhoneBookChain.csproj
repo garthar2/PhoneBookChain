@@ -129,8 +129,6 @@
     <None Include="Properties\DataSources\AddCredForm.datasource" />
     <None Include="Properties\DataSources\AddPhoneBookForm.datasource" />
     <None Include="Properties\DataSources\AddPhoneForm.datasource" />
-    <None Include="Properties\DataSources\Form1.datasource" />
-    <None Include="Properties\DataSources\Form3.datasource" />
     <None Include="Properties\DataSources\PhoneBookForm.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

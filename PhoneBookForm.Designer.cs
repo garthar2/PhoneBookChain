@@ -47,22 +47,32 @@ namespace PhoneBookChain
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.phoneBookListDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.newphoneBookBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.phoneBookGridListDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneBookGridListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.phoneBookListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.saveToFile = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.phoneInfoListBindingNavigator)).BeginInit();
             this.phoneInfoListBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.phoneBookListDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.newphoneBookBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phoneBookGridListDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phoneBookGridListBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phoneBookListBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,7 +102,7 @@ namespace PhoneBookChain
             this.phoneInfoListBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.phoneInfoListBindingNavigator.Name = "phoneInfoListBindingNavigator";
             this.phoneInfoListBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.phoneInfoListBindingNavigator.Size = new System.Drawing.Size(1335, 27);
+            this.phoneInfoListBindingNavigator.Size = new System.Drawing.Size(1141, 27);
             this.phoneInfoListBindingNavigator.TabIndex = 0;
             this.phoneInfoListBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -218,143 +228,203 @@ namespace PhoneBookChain
             this.button3.Text = "Удалить";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // phoneBookListDataGridView
+            // dataGridViewTextBoxColumn12
             // 
-            this.phoneBookListDataGridView.AllowUserToAddRows = false;
-            this.phoneBookListDataGridView.AllowUserToDeleteRows = false;
-            this.phoneBookListDataGridView.AutoGenerateColumns = false;
-            this.phoneBookListDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.phoneBookListDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.phoneBookListDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11});
-            this.phoneBookListDataGridView.DataSource = this.phoneBookListBindingSource;
-            this.phoneBookListDataGridView.Location = new System.Drawing.Point(12, 69);
-            this.phoneBookListDataGridView.Name = "phoneBookListDataGridView";
-            this.phoneBookListDataGridView.ReadOnly = true;
-            this.phoneBookListDataGridView.RowHeadersWidth = 51;
-            this.phoneBookListDataGridView.RowTemplate.Height = 24;
-            this.phoneBookListDataGridView.Size = new System.Drawing.Size(1247, 369);
-            this.phoneBookListDataGridView.TabIndex = 4;
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "Address";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Адрес";
+            this.dataGridViewTextBoxColumn12.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.Width = 125;
             // 
-            // dataGridViewTextBoxColumn2
+            // dataGridViewTextBoxColumn13
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "LastName";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Фамилия";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 125;
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "PhoneInfo";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Телефон";
+            this.dataGridViewTextBoxColumn13.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.Width = 125;
             // 
-            // dataGridViewTextBoxColumn1
+            // dataGridViewTextBoxColumn14
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "FirstName";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Имя";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 125;
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "Address";
+            this.dataGridViewTextBoxColumn14.HeaderText = "Адрес";
+            this.dataGridViewTextBoxColumn14.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            this.dataGridViewTextBoxColumn14.Width = 125;
             // 
-            // dataGridViewTextBoxColumn3
+            // dataGridViewTextBoxColumn15
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "MiddleName";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Отчество";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Gender";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Пол";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "YearOfBirth";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Дата рождения";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "StreetName";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Улица";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "BuildNum";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Номер дома";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "FlatNum";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Квартира";
-            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "PhoneNum";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Номер телефона";
-            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "IsMobile";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Мобильный/Домашний";
-            this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.Width = 125;
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "PhoneInfo";
+            this.dataGridViewTextBoxColumn15.HeaderText = "Телефон";
+            this.dataGridViewTextBoxColumn15.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.ReadOnly = true;
+            this.dataGridViewTextBoxColumn15.Width = 125;
             // 
             // dataGridViewTextBoxColumn11
             // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "Email";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Email";
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "PhoneInfo";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Column1";
             this.dataGridViewTextBoxColumn11.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
             this.dataGridViewTextBoxColumn11.Width = 125;
+            // 
+            // newphoneBookBindingSource
+            // 
+            this.newphoneBookBindingSource.DataSource = typeof(PhoneBookChain.PhoneBook[]);
+            // 
+            // phoneBookGridListDataGridView
+            // 
+            this.phoneBookGridListDataGridView.AllowUserToAddRows = false;
+            this.phoneBookGridListDataGridView.AllowUserToDeleteRows = false;
+            this.phoneBookGridListDataGridView.AutoGenerateColumns = false;
+            this.phoneBookGridListDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.phoneBookGridListDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn16,
+            this.dataGridViewTextBoxColumn17,
+            this.dataGridViewTextBoxColumn18,
+            this.dataGridViewTextBoxColumn19,
+            this.dataGridViewTextBoxColumn20,
+            this.dataGridViewTextBoxColumn21,
+            this.dataGridViewTextBoxColumn22,
+            this.dataGridViewTextBoxColumn23,
+            this.dataGridViewTextBoxColumn24,
+            this.dataGridViewTextBoxColumn25,
+            this.dataGridViewTextBoxColumn26});
+            this.phoneBookGridListDataGridView.DataSource = this.phoneBookGridListBindingSource;
+            this.phoneBookGridListDataGridView.Location = new System.Drawing.Point(15, 84);
+            this.phoneBookGridListDataGridView.Name = "phoneBookGridListDataGridView";
+            this.phoneBookGridListDataGridView.ReadOnly = true;
+            this.phoneBookGridListDataGridView.RowHeadersWidth = 51;
+            this.phoneBookGridListDataGridView.RowTemplate.Height = 24;
+            this.phoneBookGridListDataGridView.Size = new System.Drawing.Size(1099, 420);
+            this.phoneBookGridListDataGridView.TabIndex = 4;
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "Email";
+            this.dataGridViewTextBoxColumn16.HeaderText = "Email";
+            this.dataGridViewTextBoxColumn16.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.ReadOnly = true;
+            this.dataGridViewTextBoxColumn16.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.DataPropertyName = "LastName";
+            this.dataGridViewTextBoxColumn17.HeaderText = "LastName";
+            this.dataGridViewTextBoxColumn17.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.dataGridViewTextBoxColumn17.ReadOnly = true;
+            this.dataGridViewTextBoxColumn17.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            this.dataGridViewTextBoxColumn18.DataPropertyName = "FirstName";
+            this.dataGridViewTextBoxColumn18.HeaderText = "FirstName";
+            this.dataGridViewTextBoxColumn18.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            this.dataGridViewTextBoxColumn18.ReadOnly = true;
+            this.dataGridViewTextBoxColumn18.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn19
+            // 
+            this.dataGridViewTextBoxColumn19.DataPropertyName = "MiddleName";
+            this.dataGridViewTextBoxColumn19.HeaderText = "MiddleName";
+            this.dataGridViewTextBoxColumn19.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            this.dataGridViewTextBoxColumn19.ReadOnly = true;
+            this.dataGridViewTextBoxColumn19.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn20
+            // 
+            this.dataGridViewTextBoxColumn20.DataPropertyName = "Gender";
+            this.dataGridViewTextBoxColumn20.HeaderText = "Gender";
+            this.dataGridViewTextBoxColumn20.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            this.dataGridViewTextBoxColumn20.ReadOnly = true;
+            this.dataGridViewTextBoxColumn20.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn21
+            // 
+            this.dataGridViewTextBoxColumn21.DataPropertyName = "YearOfBirth";
+            this.dataGridViewTextBoxColumn21.HeaderText = "YearOfBirth";
+            this.dataGridViewTextBoxColumn21.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            this.dataGridViewTextBoxColumn21.ReadOnly = true;
+            this.dataGridViewTextBoxColumn21.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn22
+            // 
+            this.dataGridViewTextBoxColumn22.DataPropertyName = "StreetName";
+            this.dataGridViewTextBoxColumn22.HeaderText = "StreetName";
+            this.dataGridViewTextBoxColumn22.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            this.dataGridViewTextBoxColumn22.ReadOnly = true;
+            this.dataGridViewTextBoxColumn22.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn23
+            // 
+            this.dataGridViewTextBoxColumn23.DataPropertyName = "BuildNum";
+            this.dataGridViewTextBoxColumn23.HeaderText = "BuildNum";
+            this.dataGridViewTextBoxColumn23.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
+            this.dataGridViewTextBoxColumn23.ReadOnly = true;
+            this.dataGridViewTextBoxColumn23.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn24
+            // 
+            this.dataGridViewTextBoxColumn24.DataPropertyName = "FlatNum";
+            this.dataGridViewTextBoxColumn24.HeaderText = "FlatNum";
+            this.dataGridViewTextBoxColumn24.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
+            this.dataGridViewTextBoxColumn24.ReadOnly = true;
+            this.dataGridViewTextBoxColumn24.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn25
+            // 
+            this.dataGridViewTextBoxColumn25.DataPropertyName = "PhoneNum";
+            this.dataGridViewTextBoxColumn25.HeaderText = "PhoneNum";
+            this.dataGridViewTextBoxColumn25.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
+            this.dataGridViewTextBoxColumn25.ReadOnly = true;
+            this.dataGridViewTextBoxColumn25.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn26
+            // 
+            this.dataGridViewTextBoxColumn26.DataPropertyName = "IsMobile";
+            this.dataGridViewTextBoxColumn26.HeaderText = "IsMobile";
+            this.dataGridViewTextBoxColumn26.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
+            this.dataGridViewTextBoxColumn26.ReadOnly = true;
+            this.dataGridViewTextBoxColumn26.Width = 125;
+            // 
+            // phoneBookGridListBindingSource
+            // 
+            this.phoneBookGridListBindingSource.DataSource = typeof(PhoneBookChain.PhoneBookGrid);
             // 
             // phoneBookListBindingSource
             // 
             this.phoneBookListBindingSource.DataSource = typeof(PhoneBookChain.PhoneBook);
             // 
+            // saveToFile
+            // 
+            this.saveToFile.Location = new System.Drawing.Point(453, 30);
+            this.saveToFile.Name = "saveToFile";
+            this.saveToFile.Size = new System.Drawing.Size(145, 33);
+            this.saveToFile.TabIndex = 5;
+            this.saveToFile.Text = "Сохр в файл";
+            this.saveToFile.UseVisualStyleBackColor = true;
+            this.saveToFile.Click += new System.EventHandler(this.saveToFile_Click);
+            // 
             // PhoneBookForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1335, 450);
-            this.Controls.Add(this.phoneBookListDataGridView);
+            this.ClientSize = new System.Drawing.Size(1141, 587);
+            this.Controls.Add(this.saveToFile);
+            this.Controls.Add(this.phoneBookGridListDataGridView);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -362,10 +432,13 @@ namespace PhoneBookChain
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PhoneBookForm";
             this.Text = "Телефонный справочник (обобщающий класс)";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PhoneBookForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.phoneInfoListBindingNavigator)).EndInit();
             this.phoneInfoListBindingNavigator.ResumeLayout(false);
             this.phoneInfoListBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.phoneBookListDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.newphoneBookBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phoneBookGridListDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phoneBookGridListBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.phoneBookListBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -390,7 +463,6 @@ namespace PhoneBookChain
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.BindingSource phoneBookListBindingSource;
-        private System.Windows.Forms.DataGridView phoneBookListDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -401,7 +473,26 @@ namespace PhoneBookChain
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.BindingSource newphoneBookBindingSource;
+        private System.Windows.Forms.BindingSource phoneBookGridListBindingSource;
+        private System.Windows.Forms.DataGridView phoneBookGridListDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
+        private System.Windows.Forms.Button saveToFile;
     }
 }
 
