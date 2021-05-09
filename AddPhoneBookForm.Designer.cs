@@ -93,7 +93,7 @@ namespace PhoneBookChain
             // buildNumLabel
             // 
             buildNumLabel.AutoSize = true;
-            buildNumLabel.Location = new System.Drawing.Point(30, 51);
+            buildNumLabel.Location = new System.Drawing.Point(30, 272);
             buildNumLabel.Name = "buildNumLabel";
             buildNumLabel.Size = new System.Drawing.Size(76, 17);
             buildNumLabel.TabIndex = 46;
@@ -102,7 +102,7 @@ namespace PhoneBookChain
             // emailLabel
             // 
             emailLabel.AutoSize = true;
-            emailLabel.Location = new System.Drawing.Point(30, 79);
+            emailLabel.Location = new System.Drawing.Point(30, 217);
             emailLabel.Name = "emailLabel";
             emailLabel.Size = new System.Drawing.Size(46, 17);
             emailLabel.TabIndex = 48;
@@ -147,7 +147,7 @@ namespace PhoneBookChain
             // lastNameLabel
             // 
             lastNameLabel.AutoSize = true;
-            lastNameLabel.Location = new System.Drawing.Point(30, 219);
+            lastNameLabel.Location = new System.Drawing.Point(30, 79);
             lastNameLabel.Name = "lastNameLabel";
             lastNameLabel.Size = new System.Drawing.Size(80, 17);
             lastNameLabel.TabIndex = 58;
@@ -165,7 +165,7 @@ namespace PhoneBookChain
             // phoneNumLabel
             // 
             phoneNumLabel.AutoSize = true;
-            phoneNumLabel.Location = new System.Drawing.Point(30, 275);
+            phoneNumLabel.Location = new System.Drawing.Point(30, 51);
             phoneNumLabel.Name = "phoneNumLabel";
             phoneNumLabel.Size = new System.Drawing.Size(86, 17);
             phoneNumLabel.TabIndex = 62;
@@ -174,7 +174,7 @@ namespace PhoneBookChain
             // streetNameLabel
             // 
             streetNameLabel.AutoSize = true;
-            streetNameLabel.Location = new System.Drawing.Point(30, 303);
+            streetNameLabel.Location = new System.Drawing.Point(30, 300);
             streetNameLabel.Name = "streetNameLabel";
             streetNameLabel.Size = new System.Drawing.Size(91, 17);
             streetNameLabel.TabIndex = 64;
@@ -183,7 +183,7 @@ namespace PhoneBookChain
             // yearOfBirthLabel
             // 
             yearOfBirthLabel.AutoSize = true;
-            yearOfBirthLabel.Location = new System.Drawing.Point(30, 332);
+            yearOfBirthLabel.Location = new System.Drawing.Point(30, 333);
             yearOfBirthLabel.Name = "yearOfBirthLabel";
             yearOfBirthLabel.Size = new System.Drawing.Size(94, 17);
             yearOfBirthLabel.TabIndex = 66;
@@ -374,7 +374,7 @@ namespace PhoneBookChain
             // buildNumTextBox
             // 
             this.buildNumTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.phoneBookListBindingSource, "BuildNum", true));
-            this.buildNumTextBox.Location = new System.Drawing.Point(130, 48);
+            this.buildNumTextBox.Location = new System.Drawing.Point(130, 272);
             this.buildNumTextBox.Name = "buildNumTextBox";
             this.buildNumTextBox.Size = new System.Drawing.Size(200, 22);
             this.buildNumTextBox.TabIndex = 47;
@@ -382,7 +382,7 @@ namespace PhoneBookChain
             // emailTextBox
             // 
             this.emailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.phoneBookListBindingSource, "Email", true));
-            this.emailTextBox.Location = new System.Drawing.Point(130, 76);
+            this.emailTextBox.Location = new System.Drawing.Point(130, 214);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(200, 22);
             this.emailTextBox.TabIndex = 49;
@@ -422,7 +422,7 @@ namespace PhoneBookChain
             // lastNameTextBox
             // 
             this.lastNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.phoneBookListBindingSource, "LastName", true));
-            this.lastNameTextBox.Location = new System.Drawing.Point(130, 216);
+            this.lastNameTextBox.Location = new System.Drawing.Point(130, 76);
             this.lastNameTextBox.Name = "lastNameTextBox";
             this.lastNameTextBox.Size = new System.Drawing.Size(200, 22);
             this.lastNameTextBox.TabIndex = 59;
@@ -438,7 +438,7 @@ namespace PhoneBookChain
             // phoneNumTextBox
             // 
             this.phoneNumTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.phoneBookListBindingSource, "PhoneNum", true));
-            this.phoneNumTextBox.Location = new System.Drawing.Point(130, 272);
+            this.phoneNumTextBox.Location = new System.Drawing.Point(130, 48);
             this.phoneNumTextBox.Name = "phoneNumTextBox";
             this.phoneNumTextBox.Size = new System.Drawing.Size(200, 22);
             this.phoneNumTextBox.TabIndex = 63;

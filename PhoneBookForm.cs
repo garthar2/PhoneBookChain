@@ -56,22 +56,24 @@ namespace PhoneBookChain
             {
                 PhoneBookList.Add(new PhoneBook("dfs1452@gmail.com", new Credentials("Филип", "Дачев", "Бедросович", "Мужск.", new DateTime(1967, 12, 12)),
                 new Address("Ленина", "10", "5"), new PhoneInfo("3242342", "Мобил.")));
-                // получаем поток, куда будем записывать сериализованный объект
-                using (FileStream fs = new FileStream("base.xml", FileMode.OpenOrCreate))
-                {
-                    formatter.Serialize(fs, PhoneBookList);
-                    //fs.Close();
-                }
+                save_Base();
                 //PhoneBookList.Clear();
                 MessageBox.Show("Файл base.xml не найден, создан новый.");
             }
             // десериализация PhoneBookList
-            using (FileStream fs = new FileStream("base.xml", FileMode.Open))
+            try
             {
-                //BindingList<PhoneBook> PhoneBookList = (BindingList<PhoneBook>)formatter.Deserialize(fs);
-                PhoneBookList = (BindingList<PhoneBook>)formatter.Deserialize(fs);
-                //fs.Close();
+                using (FileStream fs = new FileStream("base.xml", FileMode.Open))
+                {
+                    PhoneBookList = (BindingList<PhoneBook>)formatter.Deserialize(fs);
+                    //fs.Close();
 
+                }
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show("Ошибка чтения" + ex);
+                //throw;
             }
             Console.WriteLine("Объект PhoneBookList десериализован");
             foreach (PhoneBook p in PhoneBookList)
@@ -98,6 +100,15 @@ namespace PhoneBookChain
             }
             
         }
+        private void save_Base()
+        {
+            // передаем в конструктор тип класса
+            XmlSerializer serializer = new XmlSerializer(typeof(BindingList<PhoneBook>));
+            //FileStream fs = new FileStream("base.xml", FileMode.OpenOrCreate);
+            TextWriter writer = new StreamWriter("base.xml");
+            serializer.Serialize(writer, PhoneBookList);
+            writer.Close();
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             AddPhoneBookForm form2 = new AddPhoneBookForm(PhoneBookList);
@@ -110,23 +121,33 @@ namespace PhoneBookChain
 
         private void PhoneBookForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            // передаем в конструктор тип класса
-            XmlSerializer writer = new XmlSerializer(typeof(BindingList<PhoneBook>));
-            using (FileStream fs = new FileStream("base.xml", FileMode.OpenOrCreate))
-            {
-                writer.Serialize(fs, PhoneBookList);
-                //fs.Close();
-            }
+            save_Base();
         }
 
         private void saveToFile_Click(object sender, EventArgs e)
         {
-            // передаем в конструктор тип класса
-            XmlSerializer writer = new XmlSerializer(typeof(BindingList<PhoneBook>));
-            using (FileStream fs = new FileStream("base.xml", FileMode.OpenOrCreate))
+            save_Base();
+        }
+
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            //редактировать
+            MessageBox.Show("Выбрано строк:" + phoneBookGridListDataGridView.SelectedRows.Count);
+
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            //удалить строку
+            if (this.phoneBookGridListDataGridView.SelectedRows.Count > 0)
             {
-                writer.Serialize(fs, PhoneBookList);
-                //fs.Close();
+                PhoneBookList.RemoveAt(phoneBookGridListDataGridView.SelectedRows[0].Index);
+                CopyToGrid();
+                //MessageBox.Show("Индекс удаленной строки: " + phoneBookGridListDataGridView.SelectedRows[0].Index);
+            }
+            else
+            {
+                MessageBox.Show("Выберите строку для удаления");
             }
         }
     }

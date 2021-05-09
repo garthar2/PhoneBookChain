@@ -30,8 +30,7 @@ namespace PhoneBookChain
         {
             //редактировать
             MessageBox.Show("Выбрано строк:"+ credentialsListDataGridView.SelectedRows.Count);
-            //DataGridView1
-            //    credentialsListDataGridView.
+            //вызвать форму AddPhoneForm() с параметрами для "редактирования", всего 4е ФИО, адрес,номер телефона,email
         }
 
         private void button3_Click(object sender, EventArgs e)
