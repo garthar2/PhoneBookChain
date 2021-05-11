@@ -132,8 +132,26 @@ namespace PhoneBookChain
         private void editButton_Click(object sender, EventArgs e)
         {
             //редактировать
-            MessageBox.Show("Выбрано строк:" + phoneBookGridListDataGridView.SelectedRows.Count);
+            //MessageBox.Show("Выбрано строк:" + phoneBookGridListDataGridView.SelectedRows.Count);
+            if (this.phoneBookGridListDataGridView.SelectedRows.Count > 0)
+            {
+                AddPhoneBookForm form2 = new AddPhoneBookForm(PhoneBookList, phoneBookGridListDataGridView.SelectedRows[0].Index);
 
+                DialogResult dr = form2.ShowDialog();
+                if (dr == DialogResult.Cancel)
+                {
+                    CopyToGrid();
+                }
+            }
+            else
+            {
+                AddPhoneBookForm form2 = new AddPhoneBookForm(PhoneBookList, phoneBookGridListDataGridView.CurrentCell.RowIndex);
+                DialogResult dr = form2.ShowDialog();
+                if (dr == DialogResult.Cancel)
+                {
+                    CopyToGrid();
+                }
+            }
         }
 
         private void deleteButton_Click(object sender, EventArgs e)

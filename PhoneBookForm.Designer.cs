@@ -31,6 +31,9 @@ namespace PhoneBookChain
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhoneBookForm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.phoneInfoListBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -53,8 +56,6 @@ namespace PhoneBookChain
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneBookGridListDataGridView = new System.Windows.Forms.DataGridView();
-            this.phoneBookGridListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.phoneBookListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +67,8 @@ namespace PhoneBookChain
             this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneBookGridListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.phoneBookListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.phoneInfoListBindingNavigator)).BeginInit();
             this.phoneInfoListBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phoneBookGridListDataGridView)).BeginInit();
@@ -199,9 +202,9 @@ namespace PhoneBookChain
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(0, 30);
+            this.button1.Location = new System.Drawing.Point(336, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(145, 33);
+            this.button1.Size = new System.Drawing.Size(145, 27);
             this.button1.TabIndex = 2;
             this.button1.Text = "Добавить";
             this.button1.UseVisualStyleBackColor = true;
@@ -209,9 +212,9 @@ namespace PhoneBookChain
             // 
             // editButton
             // 
-            this.editButton.Location = new System.Drawing.Point(151, 30);
+            this.editButton.Location = new System.Drawing.Point(487, 0);
             this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(145, 33);
+            this.editButton.Size = new System.Drawing.Size(145, 27);
             this.editButton.TabIndex = 3;
             this.editButton.Text = "Редактировать";
             this.editButton.UseVisualStyleBackColor = true;
@@ -219,9 +222,9 @@ namespace PhoneBookChain
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(302, 30);
+            this.deleteButton.Location = new System.Drawing.Point(638, 0);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(145, 33);
+            this.deleteButton.Size = new System.Drawing.Size(145, 27);
             this.deleteButton.TabIndex = 4;
             this.deleteButton.Text = "Удалить";
             this.deleteButton.UseVisualStyleBackColor = true;
@@ -288,25 +291,20 @@ namespace PhoneBookChain
             this.dataGridViewTextBoxColumn23,
             this.dataGridViewTextBoxColumn24});
             this.phoneBookGridListDataGridView.DataSource = this.phoneBookGridListBindingSource;
-            this.phoneBookGridListDataGridView.Location = new System.Drawing.Point(15, 84);
+            this.phoneBookGridListDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.phoneBookGridListDataGridView.Location = new System.Drawing.Point(0, 27);
             this.phoneBookGridListDataGridView.Name = "phoneBookGridListDataGridView";
             this.phoneBookGridListDataGridView.ReadOnly = true;
             this.phoneBookGridListDataGridView.RowHeadersWidth = 51;
             this.phoneBookGridListDataGridView.RowTemplate.Height = 24;
-            this.phoneBookGridListDataGridView.Size = new System.Drawing.Size(1099, 420);
+            this.phoneBookGridListDataGridView.Size = new System.Drawing.Size(1141, 560);
             this.phoneBookGridListDataGridView.TabIndex = 4;
-            // 
-            // phoneBookGridListBindingSource
-            // 
-            this.phoneBookGridListBindingSource.DataSource = typeof(PhoneBookChain.PhoneBookGrid);
-            // 
-            // phoneBookListBindingSource
-            // 
-            this.phoneBookListBindingSource.DataSource = typeof(PhoneBookChain.PhoneBook);
             // 
             // dataGridViewTextBoxColumn25
             // 
             this.dataGridViewTextBoxColumn25.DataPropertyName = "PhoneNum";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn25.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewTextBoxColumn25.HeaderText = "Номер телефона";
             this.dataGridViewTextBoxColumn25.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
@@ -316,6 +314,8 @@ namespace PhoneBookChain
             // dataGridViewTextBoxColumn26
             // 
             this.dataGridViewTextBoxColumn26.DataPropertyName = "IsMobile";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn26.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewTextBoxColumn26.HeaderText = "Моб/дом";
             this.dataGridViewTextBoxColumn26.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
@@ -325,11 +325,14 @@ namespace PhoneBookChain
             // dataGridViewTextBoxColumn17
             // 
             this.dataGridViewTextBoxColumn17.DataPropertyName = "LastName";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn17.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewTextBoxColumn17.HeaderText = "Фамилия";
             this.dataGridViewTextBoxColumn17.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
             this.dataGridViewTextBoxColumn17.ReadOnly = true;
-            this.dataGridViewTextBoxColumn17.Width = 125;
+            this.dataGridViewTextBoxColumn17.ToolTipText = "Фамилия";
+            this.dataGridViewTextBoxColumn17.Width = 110;
             // 
             // dataGridViewTextBoxColumn18
             // 
@@ -383,7 +386,7 @@ namespace PhoneBookChain
             this.dataGridViewTextBoxColumn22.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
             this.dataGridViewTextBoxColumn22.ReadOnly = true;
-            this.dataGridViewTextBoxColumn22.Width = 125;
+            this.dataGridViewTextBoxColumn22.Width = 80;
             // 
             // dataGridViewTextBoxColumn23
             // 
@@ -392,7 +395,7 @@ namespace PhoneBookChain
             this.dataGridViewTextBoxColumn23.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
             this.dataGridViewTextBoxColumn23.ReadOnly = true;
-            this.dataGridViewTextBoxColumn23.Width = 125;
+            this.dataGridViewTextBoxColumn23.Width = 60;
             // 
             // dataGridViewTextBoxColumn24
             // 
@@ -401,7 +404,15 @@ namespace PhoneBookChain
             this.dataGridViewTextBoxColumn24.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
             this.dataGridViewTextBoxColumn24.ReadOnly = true;
-            this.dataGridViewTextBoxColumn24.Width = 125;
+            this.dataGridViewTextBoxColumn24.Width = 60;
+            // 
+            // phoneBookGridListBindingSource
+            // 
+            this.phoneBookGridListBindingSource.DataSource = typeof(PhoneBookChain.PhoneBookGrid);
+            // 
+            // phoneBookListBindingSource
+            // 
+            this.phoneBookListBindingSource.DataSource = typeof(PhoneBookChain.PhoneBook);
             // 
             // PhoneBookForm
             // 

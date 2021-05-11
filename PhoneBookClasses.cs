@@ -29,7 +29,11 @@ namespace PhoneBookChain
         public string LastName { get; set; }
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
+        [System.ComponentModel.DefaultValueAttribute("Мужск.")]
+
         public string Gender { get; set; }
+        [System.ComponentModel.DefaultValueAttribute("2002")]
+
         public DateTime YearOfBirth { get; set; }
         public string StreetName { get; set; }
         public string BuildNum { get; set; }
