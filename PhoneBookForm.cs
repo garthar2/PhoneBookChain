@@ -124,11 +124,6 @@ namespace PhoneBookChain
             save_Base();
         }
 
-        private void saveToFile_Click(object sender, EventArgs e)
-        {
-            save_Base();
-        }
-
         private void editButton_Click(object sender, EventArgs e)
         {
             //редактировать
@@ -155,6 +150,56 @@ namespace PhoneBookChain
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
+        {
+            //удалить строку
+            if (this.phoneBookGridListDataGridView.SelectedRows.Count > 0)
+            {
+                PhoneBookList.RemoveAt(phoneBookGridListDataGridView.SelectedRows[0].Index);
+                CopyToGrid();
+                //MessageBox.Show("Индекс удаленной строки: " + phoneBookGridListDataGridView.SelectedRows[0].Index);
+            }
+            else
+            {
+                MessageBox.Show("Выберите строку для удаления");
+            }
+        }
+
+        private void Add_toolStripButton1_Click(object sender, EventArgs e)
+        {
+            AddPhoneBookForm form2 = new AddPhoneBookForm(PhoneBookList);
+            DialogResult dr = form2.ShowDialog();
+            if (dr == DialogResult.Cancel)
+            {
+                CopyToGrid();
+            }
+        }
+
+        private void Edit_toolStripButton2_Click(object sender, EventArgs e)
+        {
+            //редактировать
+            //MessageBox.Show("Выбрано строк:" + phoneBookGridListDataGridView.SelectedRows.Count);
+            if (this.phoneBookGridListDataGridView.SelectedRows.Count > 0)
+            {
+                AddPhoneBookForm form2 = new AddPhoneBookForm(PhoneBookList, phoneBookGridListDataGridView.SelectedRows[0].Index);
+
+                DialogResult dr = form2.ShowDialog();
+                if (dr == DialogResult.Cancel)
+                {
+                    CopyToGrid();
+                }
+            }
+            else
+            {
+                AddPhoneBookForm form2 = new AddPhoneBookForm(PhoneBookList, phoneBookGridListDataGridView.CurrentCell.RowIndex);
+                DialogResult dr = form2.ShowDialog();
+                if (dr == DialogResult.Cancel)
+                {
+                    CopyToGrid();
+                }
+            }
+        }
+
+        private void Delete_toolStripButton3_Click(object sender, EventArgs e)
         {
             //удалить строку
             if (this.phoneBookGridListDataGridView.SelectedRows.Count > 0)
