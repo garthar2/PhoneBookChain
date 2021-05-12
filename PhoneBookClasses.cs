@@ -10,7 +10,8 @@ namespace PhoneBookChain
         // стандартный конструктор без параметров
         public PhoneBookGrid()
         { }
-        public PhoneBookGrid(string email, string lastName, string firstName, string middleName, string gender, DateTime yearOfBirth, string streetName, string buildNum, string flatNum, string phoneNum, string isMobile)
+        public PhoneBookGrid(string email, string lastName, string firstName, string middleName, string gender,
+            string yearOfBirth, string address, string phoneNum, string isMobile)
         {
             Email = email;
             LastName = lastName;
@@ -18,9 +19,9 @@ namespace PhoneBookChain
             MiddleName = middleName;
             Gender = gender;
             YearOfBirth = yearOfBirth;
-            StreetName = streetName;
-            BuildNum = buildNum;
-            FlatNum = flatNum;
+            Address = address;
+            //BuildNum = buildNum;
+            //FlatNum = flatNum;
             PhoneNum = phoneNum;
             IsMobile = isMobile;
         }
@@ -32,10 +33,11 @@ namespace PhoneBookChain
         [System.ComponentModel.DefaultValueAttribute("Мужск.")]
         public string Gender { get; set; }
         [System.ComponentModel.DefaultValueAttribute("2002")]
-        public DateTime YearOfBirth { get; set; }
-        public string StreetName { get; set; }
-        public string BuildNum { get; set; }
-        public string FlatNum { get; set; }
+        //public DateTime YearOfBirth { get; set; }
+        public string YearOfBirth { get; set; }
+        public string Address { get; set; }
+        //public string BuildNum { get; set; }
+        //public string FlatNum { get; set; }
         public string PhoneNum { get; set; }
         public string IsMobile { get; set; }
 

@@ -494,6 +494,7 @@ namespace PhoneBookChain
             this.Controls.Add(this.button1);
             this.Controls.Add(this.phoneInfoListBindingNavigator);
             this.Name = "AddPhoneBookForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавление в телефонный справочник (обобщающий класс)";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddPhoneBookForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.phoneInfoListBindingNavigator)).EndInit();
