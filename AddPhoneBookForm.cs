@@ -30,27 +30,29 @@ namespace PhoneBookChain
             InitializeComponent();
             emailTextBox.Text = PhoneBookList[currentIndex].Email;
             lastNameTextBox.Text = PhoneBookList[currentIndex].Credentials.LastName;
+            firstNameTextBox.Text = PhoneBookList[currentIndex].Credentials.FirstName;
+            middleNameTextBox.Text = PhoneBookList[currentIndex].Credentials.MiddleName;
+            yearOfBirthDateTimePicker.Text = PhoneBookList[currentIndex].Credentials.YearOfBirth.ToString();
             phoneBookIndex = index;
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void save_button4_Click(object sender, EventArgs e)
         {
             //todo
             //Сохранить всю строку, с email  и объединенными полями с 3х форм
             //PhoneInfoList.Add(new PhoneInfo(firstNameTextBox.Text, emailTextBox.Text));
             //PhoneBookList.Add(new PhoneBook("dfs1452@gmail.com", new Credentials("Филип", "Дачев", "Бедросович", "Мужск.", new DateTime(1967, 12, 12)),
             //    new Address("Ленина", "10", "5"), new PhoneInfo("3242342", "Мобил.")));
+            PhoneBook newPhoneBook = new PhoneBook(emailTextBox.Text, new Credentials(firstNameTextBox.Text, lastNameTextBox.Text, middleNameTextBox.Text,
+                    genderTextBox.Text, yearOfBirthDateTimePicker.Value), new Address(streetNameTextBox.Text, buildNumTextBox.Text,
+                    flatNumTextBox.Text), new PhoneInfo(phoneNumTextBox.Text, isMobileTextBox.Text));
             if (phoneBookIndex==-1)
             {
-                PhoneBookList.Add(new PhoneBook(emailTextBox.Text, new Credentials(firstNameTextBox.Text, lastNameTextBox.Text, middleNameTextBox.Text,
-                    genderTextBox.Text, yearOfBirthDateTimePicker.Value), new Address(streetNameTextBox.Text, buildNumTextBox.Text,
-                    flatNumTextBox.Text), new PhoneInfo(phoneNumTextBox.Text, isMobileTextBox.Text)));
+                PhoneBookList.Add(newPhoneBook);
             }
             else
             {
-                PhoneBookList[phoneBookIndex] = new PhoneBook(emailTextBox.Text, new Credentials(firstNameTextBox.Text, lastNameTextBox.Text, middleNameTextBox.Text,
-                    genderTextBox.Text, yearOfBirthDateTimePicker.Value), new Address(streetNameTextBox.Text, buildNumTextBox.Text,
-                    flatNumTextBox.Text), new PhoneInfo(phoneNumTextBox.Text, isMobileTextBox.Text));
+                PhoneBookList[phoneBookIndex] = newPhoneBook;
             }
             this.Close();
 
@@ -77,6 +79,11 @@ namespace PhoneBookChain
         private void AddPhoneBookForm_FormClosing(object sender, FormClosingEventArgs e)
         {
 
+        }
+
+        private void cancel_button5_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -91,12 +91,12 @@ namespace PhoneBookChain
         public void CopyToGrid()
         {
             PhoneBookGridList.Clear();
-            foreach (PhoneBook rowPhoneBookList in PhoneBookList)
+            foreach (PhoneBook r in PhoneBookList)
             {
-                PhoneBookGridList.Add(new PhoneBookGrid (rowPhoneBookList.Email, rowPhoneBookList.Credentials.LastName, rowPhoneBookList.Credentials.FirstName,
-                    rowPhoneBookList.Credentials.MiddleName, rowPhoneBookList.Credentials.Gender, rowPhoneBookList.Credentials.YearOfBirth,
-                    rowPhoneBookList.Address.StreetName, rowPhoneBookList.Address.BuildNum, rowPhoneBookList.Address.FlatNum,
-                    rowPhoneBookList.PhoneInfo.PhoneNum, rowPhoneBookList.PhoneInfo.IsMobile));
+                PhoneBookGridList.Add(new PhoneBookGrid (r.Email, r.Credentials.LastName, r.Credentials.FirstName,
+                    r.Credentials.MiddleName, r.Credentials.Gender, r.Credentials.YearOfBirth,
+                    r.Address.StreetName, r.Address.BuildNum, r.Address.FlatNum,
+                    r.PhoneInfo.PhoneNum, r.PhoneInfo.IsMobile));
             }
             
         }

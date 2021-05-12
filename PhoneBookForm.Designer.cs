@@ -56,6 +56,8 @@ namespace PhoneBookChain
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneBookGridListDataGridView = new System.Windows.Forms.DataGridView();
+            this.phoneBookGridListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.phoneBookListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,8 +69,6 @@ namespace PhoneBookChain
             this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneBookGridListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.phoneBookListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.phoneInfoListBindingNavigator)).BeginInit();
             this.phoneInfoListBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phoneBookGridListDataGridView)).BeginInit();
@@ -300,6 +300,14 @@ namespace PhoneBookChain
             this.phoneBookGridListDataGridView.Size = new System.Drawing.Size(1141, 560);
             this.phoneBookGridListDataGridView.TabIndex = 4;
             // 
+            // phoneBookGridListBindingSource
+            // 
+            this.phoneBookGridListBindingSource.DataSource = typeof(PhoneBookChain.PhoneBookGrid);
+            // 
+            // phoneBookListBindingSource
+            // 
+            this.phoneBookListBindingSource.DataSource = typeof(PhoneBookChain.PhoneBook);
+            // 
             // dataGridViewTextBoxColumn25
             // 
             this.dataGridViewTextBoxColumn25.DataPropertyName = "PhoneNum";
@@ -377,7 +385,7 @@ namespace PhoneBookChain
             this.dataGridViewTextBoxColumn21.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
             this.dataGridViewTextBoxColumn21.ReadOnly = true;
-            this.dataGridViewTextBoxColumn21.Width = 125;
+            this.dataGridViewTextBoxColumn21.Width = 120;
             // 
             // dataGridViewTextBoxColumn22
             // 
@@ -404,15 +412,7 @@ namespace PhoneBookChain
             this.dataGridViewTextBoxColumn24.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
             this.dataGridViewTextBoxColumn24.ReadOnly = true;
-            this.dataGridViewTextBoxColumn24.Width = 60;
-            // 
-            // phoneBookGridListBindingSource
-            // 
-            this.phoneBookGridListBindingSource.DataSource = typeof(PhoneBookChain.PhoneBookGrid);
-            // 
-            // phoneBookListBindingSource
-            // 
-            this.phoneBookListBindingSource.DataSource = typeof(PhoneBookChain.PhoneBook);
+            this.dataGridViewTextBoxColumn24.Width = 80;
             // 
             // PhoneBookForm
             // 

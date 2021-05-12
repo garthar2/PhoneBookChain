@@ -44,7 +44,6 @@ namespace PhoneBookChain
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddPhoneBookForm));
             this.phoneInfoListBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.phoneInfoListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -59,9 +58,8 @@ namespace PhoneBookChain
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.phoneBookListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.save_button4 = new System.Windows.Forms.Button();
+            this.cancel_button5 = new System.Windows.Forms.Button();
             this.buildNumTextBox = new System.Windows.Forms.TextBox();
             this.emailTextBox = new System.Windows.Forms.TextBox();
             this.firstNameTextBox = new System.Windows.Forms.TextBox();
@@ -73,6 +71,8 @@ namespace PhoneBookChain
             this.phoneNumTextBox = new System.Windows.Forms.TextBox();
             this.streetNameTextBox = new System.Windows.Forms.TextBox();
             this.yearOfBirthDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.phoneBookListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.phoneInfoListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             buildNumLabel = new System.Windows.Forms.Label();
             emailLabel = new System.Windows.Forms.Label();
             firstNameLabel = new System.Windows.Forms.Label();
@@ -86,8 +86,8 @@ namespace PhoneBookChain
             yearOfBirthLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.phoneInfoListBindingNavigator)).BeginInit();
             this.phoneInfoListBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.phoneInfoListBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phoneBookListBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phoneInfoListBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // buildNumLabel
@@ -229,10 +229,6 @@ namespace PhoneBookChain
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
-            // phoneInfoListBindingSource
-            // 
-            this.phoneInfoListBindingSource.DataSource = typeof(PhoneBookChain.PhoneInfo);
-            // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
@@ -348,28 +344,25 @@ namespace PhoneBookChain
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button4
+            // save_button4
             // 
-            this.button4.Location = new System.Drawing.Point(28, 406);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(97, 32);
-            this.button4.TabIndex = 45;
-            this.button4.Text = "Сохранить";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.save_button4.Location = new System.Drawing.Point(28, 406);
+            this.save_button4.Name = "save_button4";
+            this.save_button4.Size = new System.Drawing.Size(97, 32);
+            this.save_button4.TabIndex = 45;
+            this.save_button4.Text = "Сохранить";
+            this.save_button4.UseVisualStyleBackColor = true;
+            this.save_button4.Click += new System.EventHandler(this.save_button4_Click);
             // 
-            // button5
+            // cancel_button5
             // 
-            this.button5.Location = new System.Drawing.Point(151, 406);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(97, 32);
-            this.button5.TabIndex = 46;
-            this.button5.Text = "Отменить";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // phoneBookListBindingSource
-            // 
-            this.phoneBookListBindingSource.DataSource = typeof(PhoneBookChain.PhoneBook);
+            this.cancel_button5.Location = new System.Drawing.Point(151, 406);
+            this.cancel_button5.Name = "cancel_button5";
+            this.cancel_button5.Size = new System.Drawing.Size(97, 32);
+            this.cancel_button5.TabIndex = 46;
+            this.cancel_button5.Text = "Отменить";
+            this.cancel_button5.UseVisualStyleBackColor = true;
+            this.cancel_button5.Click += new System.EventHandler(this.cancel_button5_Click);
             // 
             // buildNumTextBox
             // 
@@ -459,6 +452,14 @@ namespace PhoneBookChain
             this.yearOfBirthDateTimePicker.Size = new System.Drawing.Size(200, 22);
             this.yearOfBirthDateTimePicker.TabIndex = 67;
             // 
+            // phoneBookListBindingSource
+            // 
+            this.phoneBookListBindingSource.DataSource = typeof(PhoneBookChain.PhoneBook);
+            // 
+            // phoneInfoListBindingSource
+            // 
+            this.phoneInfoListBindingSource.DataSource = typeof(PhoneBookChain.PhoneInfo);
+            // 
             // AddPhoneBookForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -486,8 +487,8 @@ namespace PhoneBookChain
             this.Controls.Add(this.streetNameTextBox);
             this.Controls.Add(yearOfBirthLabel);
             this.Controls.Add(this.yearOfBirthDateTimePicker);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.cancel_button5);
+            this.Controls.Add(this.save_button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -498,8 +499,8 @@ namespace PhoneBookChain
             ((System.ComponentModel.ISupportInitialize)(this.phoneInfoListBindingNavigator)).EndInit();
             this.phoneInfoListBindingNavigator.ResumeLayout(false);
             this.phoneInfoListBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.phoneInfoListBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.phoneBookListBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phoneInfoListBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -524,8 +525,8 @@ namespace PhoneBookChain
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button save_button4;
+        private System.Windows.Forms.Button cancel_button5;
         private System.Windows.Forms.BindingSource phoneBookListBindingSource;
         private System.Windows.Forms.TextBox buildNumTextBox;
         private System.Windows.Forms.TextBox emailTextBox;
