@@ -5,6 +5,10 @@ using System.Text;
 
 namespace PhoneBookChain
 {
+    //static class Data
+    //{
+    //    public static string Value { get; set; }
+    //}
     public class PhoneBookGrid
     {
         // стандартный конструктор без параметров

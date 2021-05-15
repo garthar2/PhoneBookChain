@@ -12,6 +12,8 @@ namespace PhoneBookChain
     public partial class AddRowCredForm : Form
     {
         string gender = ""; //никогда это значение
+        private BindingList<PhoneBook> PhoneBookList;
+
         public BindingList<Credentials> CredentialsList { get; set; }
         public AddRowCredForm()
         {
@@ -22,6 +24,7 @@ namespace PhoneBookChain
             CredentialsList = credentialsList;
             InitializeComponent();
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {

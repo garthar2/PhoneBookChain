@@ -93,12 +93,12 @@ namespace PhoneBookChain
             PhoneBookGridList.Clear();
             foreach (PhoneBook r in PhoneBookList)
             {
-                PhoneBookGridList.Add(new PhoneBookGrid (r.Email, r.Credentials.LastName, r.Credentials.FirstName,
+                PhoneBookGridList.Add(new PhoneBookGrid(r.Email, r.Credentials.LastName, r.Credentials.FirstName,
                     r.Credentials.MiddleName, r.Credentials.Gender, r.Credentials.YearOfBirth.ToString("yyyy"),
                     r.Address.StreetName + " " + r.Address.BuildNum + "-" + r.Address.FlatNum,
                     r.PhoneInfo.PhoneNum, r.PhoneInfo.IsMobile));
             }
-            
+
         }
         private void save_Base()
         {

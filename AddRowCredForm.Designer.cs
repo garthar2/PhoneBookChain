@@ -55,7 +55,7 @@ namespace PhoneBookChain
             // firstNameLabel
             // 
             firstNameLabel.AutoSize = true;
-            firstNameLabel.Location = new System.Drawing.Point(13, 15);
+            firstNameLabel.Location = new System.Drawing.Point(13, 43);
             firstNameLabel.Name = "firstNameLabel";
             firstNameLabel.Size = new System.Drawing.Size(35, 17);
             firstNameLabel.TabIndex = 1;
@@ -73,7 +73,7 @@ namespace PhoneBookChain
             // lastNameLabel
             // 
             lastNameLabel.AutoSize = true;
-            lastNameLabel.Location = new System.Drawing.Point(13, 43);
+            lastNameLabel.Location = new System.Drawing.Point(12, 9);
             lastNameLabel.Name = "lastNameLabel";
             lastNameLabel.Size = new System.Drawing.Size(70, 17);
             lastNameLabel.TabIndex = 5;
@@ -100,7 +100,7 @@ namespace PhoneBookChain
             // firstNameTextBox
             // 
             this.firstNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.credentialsListBindingSource, "FirstName", true));
-            this.firstNameTextBox.Location = new System.Drawing.Point(161, 12);
+            this.firstNameTextBox.Location = new System.Drawing.Point(161, 40);
             this.firstNameTextBox.Name = "firstNameTextBox";
             this.firstNameTextBox.Size = new System.Drawing.Size(304, 22);
             this.firstNameTextBox.TabIndex = 2;
@@ -112,7 +112,7 @@ namespace PhoneBookChain
             // lastNameTextBox
             // 
             this.lastNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.credentialsListBindingSource, "LastName", true));
-            this.lastNameTextBox.Location = new System.Drawing.Point(161, 40);
+            this.lastNameTextBox.Location = new System.Drawing.Point(161, 12);
             this.lastNameTextBox.Name = "lastNameTextBox";
             this.lastNameTextBox.Size = new System.Drawing.Size(304, 22);
             this.lastNameTextBox.TabIndex = 6;

@@ -28,31 +28,77 @@ namespace PhoneBookChain
             int currentIndex = index;
             PhoneBookList = phoneBookList;
             InitializeComponent();
+            this.Text = "Редактирование телефонного справочника (обобщающий класс)";
+            //заполняем поля формы для редактирования
             emailTextBox.Text = PhoneBookList[currentIndex].Email;
-            lastNameTextBox.Text = PhoneBookList[currentIndex].Credentials.LastName;
-            firstNameTextBox.Text = PhoneBookList[currentIndex].Credentials.FirstName;
-            middleNameTextBox.Text = PhoneBookList[currentIndex].Credentials.MiddleName;
-            yearOfBirthDateTimePicker.Text = PhoneBookList[currentIndex].Credentials.YearOfBirth.ToString();
+            lastNameTextBox.Text = PhoneBookList[currentIndex].Credentials.LastName + " " + 
+                PhoneBookList[currentIndex].Credentials.FirstName + " " + PhoneBookList[currentIndex].Credentials.MiddleName;
+            addressTextBox.Text = PhoneBookList[currentIndex].Address.StreetName + " " +
+                PhoneBookList[currentIndex].Address.BuildNum + " " + PhoneBookList[currentIndex].Address.FlatNum;
+            phoneNumTextBox.Text = PhoneBookList[currentIndex].PhoneInfo.PhoneNum;
             phoneBookIndex = index;
         }
 
         private void save_button4_Click(object sender, EventArgs e)
         {
-            //todo
-            //Сохранить всю строку, с email  и объединенными полями с 3х форм
-            //PhoneInfoList.Add(new PhoneInfo(firstNameTextBox.Text, emailTextBox.Text));
-            //PhoneBookList.Add(new PhoneBook("dfs1452@gmail.com", new Credentials("Филип", "Дачев", "Бедросович", "Мужск.", new DateTime(1967, 12, 12)),
-            //    new Address("Ленина", "10", "5"), new PhoneInfo("3242342", "Мобил.")));
-            PhoneBook newPhoneBook = new PhoneBook(emailTextBox.Text, new Credentials(firstNameTextBox.Text, lastNameTextBox.Text, middleNameTextBox.Text,
-                    genderTextBox.Text, yearOfBirthDateTimePicker.Value), new Address(streetNameTextBox.Text, buildNumTextBox.Text,
-                    flatNumTextBox.Text), new PhoneInfo(phoneNumTextBox.Text, isMobileTextBox.Text));
+            //PhoneBook newPhoneBook = new PhoneBook(emailTextBox.Text, new Credentials(PhoneBookList[phoneBookIndex].Credentials.FirstName,
+            //    PhoneBookList[phoneBookIndex].Credentials.LastName, PhoneBookList[phoneBookIndex].Credentials.MiddleName,
+            //    PhoneBookList[phoneBookIndex].Credentials.Gender, PhoneBookList[phoneBookIndex].Credentials.YearOfBirth),
+            //    new Address(PhoneBookList[phoneBookIndex].Address.StreetName, PhoneBookList[phoneBookIndex].Address.BuildNum,
+            //    PhoneBookList[phoneBookIndex].Address.FlatNum), new PhoneInfo(PhoneBookList[phoneBookIndex].PhoneInfo.PhoneNum,
+            //    PhoneBookList[phoneBookIndex].PhoneInfo.IsMobile));
+            PhoneBook newPhoneBook = new PhoneBook();
+            string savedGender = PhoneBookList[phoneBookIndex].Credentials.Gender;
+            string savedIsMobile = PhoneBookList[phoneBookIndex].PhoneInfo.IsMobile;
+            if (phoneBookIndex>=0)
+            {
+                newPhoneBook = PhoneBookList[phoneBookIndex];
+            }
+
+            char[] delimiterChars = { ' ', ',', ':', '\t','-' };
+            string[] splitAddress = addressTextBox.Text.Split(delimiterChars, System.StringSplitOptions.RemoveEmptyEntries);
+            string[] newAddress = new string[] { " ", " ", " " };
+            int z = splitAddress.Length > 3 ? 3 : splitAddress.Length;
+            for (int i = 0; i < z; i++)
+            {
+                newAddress[i] = splitAddress[i];
+            }
+            newPhoneBook.Address = new Address (newAddress[0], newAddress[1], newAddress[2]);
+
+            string[] splitCreds = lastNameTextBox.Text.Split(delimiterChars, System.StringSplitOptions.RemoveEmptyEntries);
+            string[] newCreds = new string[] { " ", " ", " " , " " };
+            z = splitCreds.Length > 4 ? 4 : splitCreds.Length;
+            for (int i = 0; i < z; i++)
+            {
+                newCreds[i] = splitCreds[i];
+            }
+            newPhoneBook.Credentials = new Credentials(newCreds[0], newCreds[1], newCreds[2], newCreds[3], DateTime.Now);
+            //newPhoneBook.Credentials.FirstName = newCreds[0];
+            //newPhoneBook.Credentials.LastName = newCreds[1];
+            //newPhoneBook.Credentials.MiddleName = newCreds[2];
+            //newPhoneBook.Credentials.Gender = newCreds[3];
+
+            string[] splitPhone = phoneNumTextBox.Text.Split(delimiterChars, System.StringSplitOptions.RemoveEmptyEntries);
+            string[] newPhone = new string[] { " ", " " };
+            z = splitPhone.Length > 2 ? 2 : splitPhone.Length;
+            for (int i = 0; i < z; i++)
+            {
+                newPhone[i] = splitPhone[i];
+            }
+            newPhoneBook.PhoneInfo = new PhoneInfo (newPhone[0], newPhone[1]);
+
+            newPhoneBook.Email = emailTextBox.Text;
             if (phoneBookIndex==-1)
             {
                 PhoneBookList.Add(newPhoneBook);
             }
             else
             {
-                PhoneBookList[phoneBookIndex] = newPhoneBook;
+                //newPhoneBook.Credentials.Gender = PhoneBookList[phoneBookIndex].Credentials.Gender;
+                newPhoneBook.Credentials.Gender = savedGender;
+                //newPhoneBook.PhoneInfo.IsMobile = PhoneBookList[phoneBookIndex].PhoneInfo.IsMobile;
+                newPhoneBook.PhoneInfo.IsMobile = savedIsMobile;
+                PhoneBookList[phoneBookIndex] = newPhoneBook; //затираются 2 поля "Пол" "Тип телефона"
             }
             this.Close();
 
@@ -60,8 +106,16 @@ namespace PhoneBookChain
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AddCredForm form3 = new AddCredForm();
-            form3.ShowDialog();
+            //AddCredForm form3 = new AddCredForm();
+            //form3.ShowDialog();
+
+
+            AddCredForm form3 = new AddCredForm(PhoneBookList[phoneBookIndex].Credentials, phoneBookIndex);
+            DialogResult dr = form3.ShowDialog();
+            if (dr == DialogResult.Cancel)
+            {
+                //PhoneBookForm.CopyToGrid();
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -85,5 +139,6 @@ namespace PhoneBookChain
         {
             this.Close();
         }
+
     }
 }

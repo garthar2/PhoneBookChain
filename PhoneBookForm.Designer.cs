@@ -32,14 +32,14 @@ namespace PhoneBookChain
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhoneBookForm));
             this.phoneInfoListBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.Add_toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.Edit_toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.Delete_toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Add_toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.Edit_toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.Delete_toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.phoneBookGridListDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,6 +79,33 @@ namespace PhoneBookChain
             this.phoneInfoListBindingNavigator.Size = new System.Drawing.Size(1100, 27);
             this.phoneInfoListBindingNavigator.TabIndex = 0;
             this.phoneInfoListBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // Add_toolStripButton1
+            // 
+            this.Add_toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("Add_toolStripButton1.Image")));
+            this.Add_toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Add_toolStripButton1.Name = "Add_toolStripButton1";
+            this.Add_toolStripButton1.Size = new System.Drawing.Size(100, 24);
+            this.Add_toolStripButton1.Text = "Добавить";
+            this.Add_toolStripButton1.Click += new System.EventHandler(this.Add_toolStripButton1_Click);
+            // 
+            // Edit_toolStripButton2
+            // 
+            this.Edit_toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("Edit_toolStripButton2.Image")));
+            this.Edit_toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Edit_toolStripButton2.Name = "Edit_toolStripButton2";
+            this.Edit_toolStripButton2.Size = new System.Drawing.Size(135, 24);
+            this.Edit_toolStripButton2.Text = "Редактировать";
+            this.Edit_toolStripButton2.Click += new System.EventHandler(this.Edit_toolStripButton2_Click);
+            // 
+            // Delete_toolStripButton3
+            // 
+            this.Delete_toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("Delete_toolStripButton3.Image")));
+            this.Delete_toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Delete_toolStripButton3.Name = "Delete_toolStripButton3";
+            this.Delete_toolStripButton3.Size = new System.Drawing.Size(89, 24);
+            this.Delete_toolStripButton3.Text = "Удалить";
+            this.Delete_toolStripButton3.Click += new System.EventHandler(this.Delete_toolStripButton3_Click);
             // 
             // dataGridViewTextBoxColumn12
             // 
@@ -121,33 +148,6 @@ namespace PhoneBookChain
             this.dataGridViewTextBoxColumn11.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             this.dataGridViewTextBoxColumn11.Width = 125;
-            // 
-            // Add_toolStripButton1
-            // 
-            this.Add_toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("Add_toolStripButton1.Image")));
-            this.Add_toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Add_toolStripButton1.Name = "Add_toolStripButton1";
-            this.Add_toolStripButton1.Size = new System.Drawing.Size(100, 24);
-            this.Add_toolStripButton1.Text = "Добавить";
-            this.Add_toolStripButton1.Click += new System.EventHandler(this.Add_toolStripButton1_Click);
-            // 
-            // Edit_toolStripButton2
-            // 
-            this.Edit_toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("Edit_toolStripButton2.Image")));
-            this.Edit_toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Edit_toolStripButton2.Name = "Edit_toolStripButton2";
-            this.Edit_toolStripButton2.Size = new System.Drawing.Size(135, 24);
-            this.Edit_toolStripButton2.Text = "Редактировать";
-            this.Edit_toolStripButton2.Click += new System.EventHandler(this.Edit_toolStripButton2_Click);
-            // 
-            // Delete_toolStripButton3
-            // 
-            this.Delete_toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("Delete_toolStripButton3.Image")));
-            this.Delete_toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Delete_toolStripButton3.Name = "Delete_toolStripButton3";
-            this.Delete_toolStripButton3.Size = new System.Drawing.Size(89, 24);
-            this.Delete_toolStripButton3.Text = "Удалить";
-            this.Delete_toolStripButton3.Click += new System.EventHandler(this.Delete_toolStripButton3_Click);
             // 
             // phoneBookGridListDataGridView
             // 
