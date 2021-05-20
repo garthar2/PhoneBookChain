@@ -14,12 +14,12 @@ namespace PhoneBookChain
         // стандартный конструктор без параметров
         public PhoneBookGrid()
         { }
-        public PhoneBookGrid(string email, string lastName, string firstName, string middleName, string gender,
+        public PhoneBookGrid(string email,  string firstName,string lastName, string middleName, string gender,
             string yearOfBirth, string address, string phoneNum, string isMobile)
         {
             Email = email;
-            LastName = lastName;
             FirstName = firstName;
+            LastName = lastName;
             MiddleName = middleName;
             Gender = gender;
             YearOfBirth = yearOfBirth;

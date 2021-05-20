@@ -34,16 +34,16 @@ namespace PhoneBookChain
             System.Windows.Forms.Label lastNameLabel;
             System.Windows.Forms.Label phoneNumLabel;
             System.Windows.Forms.Label streetNameLabel;
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.CredTripleDot_button1 = new System.Windows.Forms.Button();
+            this.AdrTripleDot_button2 = new System.Windows.Forms.Button();
+            this.PhoneTripleDot_button3 = new System.Windows.Forms.Button();
             this.save_button4 = new System.Windows.Forms.Button();
             this.cancel_button5 = new System.Windows.Forms.Button();
             this.emailTextBox = new System.Windows.Forms.TextBox();
+            this.phoneBookListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lastNameTextBox = new System.Windows.Forms.TextBox();
             this.phoneNumTextBox = new System.Windows.Forms.TextBox();
             this.addressTextBox = new System.Windows.Forms.TextBox();
-            this.phoneBookListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.phoneInfoListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             emailLabel = new System.Windows.Forms.Label();
             lastNameLabel = new System.Windows.Forms.Label();
@@ -89,35 +89,35 @@ namespace PhoneBookChain
             streetNameLabel.TabIndex = 64;
             streetNameLabel.Text = "Телефон";
             // 
-            // button1
+            // CredTripleDot_button1
             // 
-            this.button1.Location = new System.Drawing.Point(385, 49);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 31);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "...";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.CredTripleDot_button1.Location = new System.Drawing.Point(385, 49);
+            this.CredTripleDot_button1.Name = "CredTripleDot_button1";
+            this.CredTripleDot_button1.Size = new System.Drawing.Size(75, 31);
+            this.CredTripleDot_button1.TabIndex = 21;
+            this.CredTripleDot_button1.Text = "...";
+            this.CredTripleDot_button1.UseVisualStyleBackColor = true;
+            this.CredTripleDot_button1.Click += new System.EventHandler(this.CredTripleDot_button1_Click);
             // 
-            // button2
+            // AdrTripleDot_button2
             // 
-            this.button2.Location = new System.Drawing.Point(385, 100);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 31);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "...";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.AdrTripleDot_button2.Location = new System.Drawing.Point(385, 100);
+            this.AdrTripleDot_button2.Name = "AdrTripleDot_button2";
+            this.AdrTripleDot_button2.Size = new System.Drawing.Size(75, 31);
+            this.AdrTripleDot_button2.TabIndex = 22;
+            this.AdrTripleDot_button2.Text = "...";
+            this.AdrTripleDot_button2.UseVisualStyleBackColor = true;
+            this.AdrTripleDot_button2.Click += new System.EventHandler(this.AdrTripleDot_button2_Click);
             // 
-            // button3
+            // PhoneTripleDot_button3
             // 
-            this.button3.Location = new System.Drawing.Point(385, 151);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 31);
-            this.button3.TabIndex = 23;
-            this.button3.Text = "...";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.PhoneTripleDot_button3.Location = new System.Drawing.Point(385, 151);
+            this.PhoneTripleDot_button3.Name = "PhoneTripleDot_button3";
+            this.PhoneTripleDot_button3.Size = new System.Drawing.Size(75, 31);
+            this.PhoneTripleDot_button3.TabIndex = 23;
+            this.PhoneTripleDot_button3.Text = "...";
+            this.PhoneTripleDot_button3.UseVisualStyleBackColor = true;
+            this.PhoneTripleDot_button3.Click += new System.EventHandler(this.PhoneTripleDot_button3_Click);
             // 
             // save_button4
             // 
@@ -147,6 +147,10 @@ namespace PhoneBookChain
             this.emailTextBox.Size = new System.Drawing.Size(275, 22);
             this.emailTextBox.TabIndex = 49;
             // 
+            // phoneBookListBindingSource
+            // 
+            this.phoneBookListBindingSource.DataSource = typeof(PhoneBookChain.PhoneBook);
+            // 
             // lastNameTextBox
             // 
             this.lastNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.phoneBookListBindingSource, "LastName", true));
@@ -171,10 +175,6 @@ namespace PhoneBookChain
             this.addressTextBox.Size = new System.Drawing.Size(275, 22);
             this.addressTextBox.TabIndex = 65;
             // 
-            // phoneBookListBindingSource
-            // 
-            this.phoneBookListBindingSource.DataSource = typeof(PhoneBookChain.PhoneBook);
-            // 
             // phoneInfoListBindingSource
             // 
             this.phoneInfoListBindingSource.DataSource = typeof(PhoneBookChain.PhoneInfo);
@@ -194,9 +194,9 @@ namespace PhoneBookChain
             this.Controls.Add(this.addressTextBox);
             this.Controls.Add(this.cancel_button5);
             this.Controls.Add(this.save_button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.PhoneTripleDot_button3);
+            this.Controls.Add(this.AdrTripleDot_button2);
+            this.Controls.Add(this.CredTripleDot_button1);
             this.Name = "AddPhoneBookForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавление в телефонный справочник (обобщающий класс)";
@@ -211,9 +211,9 @@ namespace PhoneBookChain
         #endregion
 
         private System.Windows.Forms.BindingSource phoneInfoListBindingSource;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button CredTripleDot_button1;
+        private System.Windows.Forms.Button AdrTripleDot_button2;
+        private System.Windows.Forms.Button PhoneTripleDot_button3;
         private System.Windows.Forms.Button save_button4;
         private System.Windows.Forms.Button cancel_button5;
         private System.Windows.Forms.BindingSource phoneBookListBindingSource;

@@ -56,7 +56,7 @@ namespace PhoneBookChain
             {
                 PhoneBookList.Add(new PhoneBook("dfs1452@gmail.com", new Credentials("Филип", "Дачев", "Бедросович", "Мужск.", new DateTime(1967, 12, 12)),
                 new Address("Ленина", "10", "5"), new PhoneInfo("3242342", "Мобил.")));
-                save_Base();
+                saveToXmlFile();
                 //PhoneBookList.Clear();
                 MessageBox.Show("Файл base.xml не найден, создан новый.");
             }
@@ -84,23 +84,26 @@ namespace PhoneBookChain
                 Console.WriteLine($"Имя: {p.Credentials.FirstName} --- Возраст: {age}");
 
             }
-            CopyToGrid();
+            CopyListToGrid();
 
         }
 
-        public void CopyToGrid()
+        /// <summary>
+        /// Метод копирует базовый список в отображаемый DataGridView список
+        /// </summary>
+        public void CopyListToGrid()
         {
             PhoneBookGridList.Clear();
             foreach (PhoneBook r in PhoneBookList)
             {
-                PhoneBookGridList.Add(new PhoneBookGrid(r.Email, r.Credentials.LastName, r.Credentials.FirstName,
+                PhoneBookGridList.Add(new PhoneBookGrid(r.Email, r.Credentials.FirstName, r.Credentials.LastName,
                     r.Credentials.MiddleName, r.Credentials.Gender, r.Credentials.YearOfBirth.ToString("yyyy"),
                     r.Address.StreetName + " " + r.Address.BuildNum + "-" + r.Address.FlatNum,
                     r.PhoneInfo.PhoneNum, r.PhoneInfo.IsMobile));
             }
 
         }
-        private void save_Base()
+        private void saveToXmlFile()
         {
             // передаем в конструктор тип класса
             XmlSerializer serializer = new XmlSerializer(typeof(BindingList<PhoneBook>));
@@ -115,13 +118,13 @@ namespace PhoneBookChain
             DialogResult dr = form2.ShowDialog();
             if (dr == DialogResult.Cancel)
             {
-               CopyToGrid();
+               CopyListToGrid();
             }
         }
 
         private void PhoneBookForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            save_Base();
+            saveToXmlFile();
         }
 
         private void editButton_Click(object sender, EventArgs e)
@@ -135,7 +138,7 @@ namespace PhoneBookChain
                 DialogResult dr = form2.ShowDialog();
                 if (dr == DialogResult.Cancel)
                 {
-                    CopyToGrid();
+                    CopyListToGrid();
                 }
             }
             else
@@ -144,7 +147,7 @@ namespace PhoneBookChain
                 DialogResult dr = form2.ShowDialog();
                 if (dr == DialogResult.Cancel)
                 {
-                    CopyToGrid();
+                    CopyListToGrid();
                 }
             }
         }
@@ -155,7 +158,7 @@ namespace PhoneBookChain
             if (this.phoneBookGridListDataGridView.SelectedRows.Count > 0)
             {
                 PhoneBookList.RemoveAt(phoneBookGridListDataGridView.SelectedRows[0].Index);
-                CopyToGrid();
+                CopyListToGrid();
                 //MessageBox.Show("Индекс удаленной строки: " + phoneBookGridListDataGridView.SelectedRows[0].Index);
             }
             else
@@ -170,7 +173,7 @@ namespace PhoneBookChain
             DialogResult dr = form2.ShowDialog();
             if (dr == DialogResult.Cancel)
             {
-                CopyToGrid();
+                CopyListToGrid();
             }
         }
 
@@ -185,7 +188,7 @@ namespace PhoneBookChain
                 DialogResult dr = form2.ShowDialog();
                 if (dr == DialogResult.Cancel)
                 {
-                    CopyToGrid();
+                    CopyListToGrid();
                 }
             }
             else
@@ -194,7 +197,7 @@ namespace PhoneBookChain
                 DialogResult dr = form2.ShowDialog();
                 if (dr == DialogResult.Cancel)
                 {
-                    CopyToGrid();
+                    CopyListToGrid();
                 }
             }
         }
@@ -205,7 +208,7 @@ namespace PhoneBookChain
             if (this.phoneBookGridListDataGridView.SelectedRows.Count > 0)
             {
                 PhoneBookList.RemoveAt(phoneBookGridListDataGridView.SelectedRows[0].Index);
-                CopyToGrid();
+                CopyListToGrid();
                 //MessageBox.Show("Индекс удаленной строки: " + phoneBookGridListDataGridView.SelectedRows[0].Index);
             }
             else

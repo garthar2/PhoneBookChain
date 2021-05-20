@@ -40,8 +40,8 @@ namespace PhoneBookChain
             this.lastNameTextBox = new System.Windows.Forms.TextBox();
             this.middleNameTextBox = new System.Windows.Forms.TextBox();
             this.yearOfBirthDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.saveRow_button1 = new System.Windows.Forms.Button();
+            this.cancelRow_button2 = new System.Windows.Forms.Button();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             firstNameLabel = new System.Windows.Forms.Label();
@@ -115,7 +115,7 @@ namespace PhoneBookChain
             this.lastNameTextBox.Location = new System.Drawing.Point(161, 12);
             this.lastNameTextBox.Name = "lastNameTextBox";
             this.lastNameTextBox.Size = new System.Drawing.Size(304, 22);
-            this.lastNameTextBox.TabIndex = 6;
+            this.lastNameTextBox.TabIndex = 1;
             // 
             // middleNameTextBox
             // 
@@ -123,7 +123,7 @@ namespace PhoneBookChain
             this.middleNameTextBox.Location = new System.Drawing.Point(161, 68);
             this.middleNameTextBox.Name = "middleNameTextBox";
             this.middleNameTextBox.Size = new System.Drawing.Size(304, 22);
-            this.middleNameTextBox.TabIndex = 8;
+            this.middleNameTextBox.TabIndex = 3;
             // 
             // yearOfBirthDateTimePicker
             // 
@@ -131,29 +131,29 @@ namespace PhoneBookChain
             this.yearOfBirthDateTimePicker.Location = new System.Drawing.Point(161, 96);
             this.yearOfBirthDateTimePicker.Name = "yearOfBirthDateTimePicker";
             this.yearOfBirthDateTimePicker.Size = new System.Drawing.Size(304, 22);
-            this.yearOfBirthDateTimePicker.TabIndex = 10;
+            this.yearOfBirthDateTimePicker.TabIndex = 4;
             // 
-            // button1
+            // saveRow_button1
             // 
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.Location = new System.Drawing.Point(16, 176);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(97, 29);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Сохранить";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.saveRow_button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.saveRow_button1.Location = new System.Drawing.Point(16, 176);
+            this.saveRow_button1.Name = "saveRow_button1";
+            this.saveRow_button1.Size = new System.Drawing.Size(97, 29);
+            this.saveRow_button1.TabIndex = 7;
+            this.saveRow_button1.Text = "Сохранить";
+            this.saveRow_button1.UseVisualStyleBackColor = true;
+            this.saveRow_button1.Click += new System.EventHandler(this.saveRow_button1_Click);
             // 
-            // button2
+            // cancelRow_button2
             // 
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button2.Location = new System.Drawing.Point(138, 176);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(97, 29);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Отменить";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.cancelRow_button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.cancelRow_button2.Location = new System.Drawing.Point(138, 176);
+            this.cancelRow_button2.Name = "cancelRow_button2";
+            this.cancelRow_button2.Size = new System.Drawing.Size(97, 29);
+            this.cancelRow_button2.TabIndex = 8;
+            this.cancelRow_button2.Text = "Отменить";
+            this.cancelRow_button2.UseVisualStyleBackColor = true;
+            this.cancelRow_button2.Click += new System.EventHandler(this.cancelRow_button2_Click);
             // 
             // radioButton1
             // 
@@ -162,7 +162,7 @@ namespace PhoneBookChain
             this.radioButton1.Location = new System.Drawing.Point(161, 128);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(74, 21);
-            this.radioButton1.TabIndex = 13;
+            this.radioButton1.TabIndex = 5;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Мужск.";
             this.radioButton1.UseVisualStyleBackColor = true;
@@ -173,7 +173,7 @@ namespace PhoneBookChain
             this.radioButton2.Location = new System.Drawing.Point(285, 128);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(76, 21);
-            this.radioButton2.TabIndex = 14;
+            this.radioButton2.TabIndex = 6;
             this.radioButton2.Text = "Женск.";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
@@ -184,8 +184,8 @@ namespace PhoneBookChain
             this.ClientSize = new System.Drawing.Size(477, 225);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.cancelRow_button2);
+            this.Controls.Add(this.saveRow_button1);
             this.Controls.Add(firstNameLabel);
             this.Controls.Add(this.firstNameTextBox);
             this.Controls.Add(genderLabel);
@@ -197,6 +197,7 @@ namespace PhoneBookChain
             this.Controls.Add(this.yearOfBirthDateTimePicker);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "AddRowCredForm";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавление в список людей";
             ((System.ComponentModel.ISupportInitialize)(this.credentialsListBindingSource)).EndInit();
@@ -212,8 +213,8 @@ namespace PhoneBookChain
         private System.Windows.Forms.TextBox lastNameTextBox;
         private System.Windows.Forms.TextBox middleNameTextBox;
         private System.Windows.Forms.DateTimePicker yearOfBirthDateTimePicker;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button saveRow_button1;
+        private System.Windows.Forms.Button cancelRow_button2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
     }

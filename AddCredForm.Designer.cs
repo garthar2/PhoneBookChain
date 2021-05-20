@@ -32,16 +32,16 @@ namespace PhoneBookChain
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddCredForm));
             this.credentialsListDataGridView = new System.Windows.Forms.DataGridView();
-            this.credentialsListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.Add_toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.Edit_toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.Delete_toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.credentialsListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.Add_toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.Edit_toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.Delete_toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.credentialsListDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.credentialsListBindingSource)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -68,50 +68,6 @@ namespace PhoneBookChain
             this.credentialsListDataGridView.RowTemplate.Height = 24;
             this.credentialsListDataGridView.Size = new System.Drawing.Size(679, 255);
             this.credentialsListDataGridView.TabIndex = 4;
-            // 
-            // credentialsListBindingSource
-            // 
-            this.credentialsListBindingSource.DataSource = typeof(PhoneBookChain.Credentials);
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Add_toolStripButton1,
-            this.Edit_toolStripButton2,
-            this.Delete_toolStripButton3});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(679, 27);
-            this.toolStrip1.TabIndex = 5;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // Add_toolStripButton1
-            // 
-            this.Add_toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("Add_toolStripButton1.Image")));
-            this.Add_toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Add_toolStripButton1.Name = "Add_toolStripButton1";
-            this.Add_toolStripButton1.Size = new System.Drawing.Size(100, 24);
-            this.Add_toolStripButton1.Text = "Добавить";
-            this.Add_toolStripButton1.Click += new System.EventHandler(this.Add_toolStripButton1_Click);
-            // 
-            // Edit_toolStripButton2
-            // 
-            this.Edit_toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("Edit_toolStripButton2.Image")));
-            this.Edit_toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Edit_toolStripButton2.Name = "Edit_toolStripButton2";
-            this.Edit_toolStripButton2.Size = new System.Drawing.Size(135, 24);
-            this.Edit_toolStripButton2.Text = "Редактировать";
-            this.Edit_toolStripButton2.Click += new System.EventHandler(this.Edit_toolStripButton2_Click);
-            // 
-            // Delete_toolStripButton3
-            // 
-            this.Delete_toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("Delete_toolStripButton3.Image")));
-            this.Delete_toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Delete_toolStripButton3.Name = "Delete_toolStripButton3";
-            this.Delete_toolStripButton3.Size = new System.Drawing.Size(89, 24);
-            this.Delete_toolStripButton3.Text = "Удалить";
-            this.Delete_toolStripButton3.Click += new System.EventHandler(this.Delete_toolStripButton3_Click);
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -158,6 +114,50 @@ namespace PhoneBookChain
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             this.dataGridViewTextBoxColumn5.Width = 125;
             // 
+            // credentialsListBindingSource
+            // 
+            this.credentialsListBindingSource.DataSource = typeof(PhoneBookChain.Credentials);
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Add_toolStripButton1,
+            this.Edit_toolStripButton2,
+            this.Delete_toolStripButton3});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(679, 27);
+            this.toolStrip1.TabIndex = 5;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // Add_toolStripButton1
+            // 
+            this.Add_toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("Add_toolStripButton1.Image")));
+            this.Add_toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Add_toolStripButton1.Name = "Add_toolStripButton1";
+            this.Add_toolStripButton1.Size = new System.Drawing.Size(100, 24);
+            this.Add_toolStripButton1.Text = "Добавить";
+            this.Add_toolStripButton1.Click += new System.EventHandler(this.Add_toolStripButton1_Click);
+            // 
+            // Edit_toolStripButton2
+            // 
+            this.Edit_toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("Edit_toolStripButton2.Image")));
+            this.Edit_toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Edit_toolStripButton2.Name = "Edit_toolStripButton2";
+            this.Edit_toolStripButton2.Size = new System.Drawing.Size(135, 24);
+            this.Edit_toolStripButton2.Text = "Редактировать";
+            this.Edit_toolStripButton2.Click += new System.EventHandler(this.Edit_toolStripButton2_Click);
+            // 
+            // Delete_toolStripButton3
+            // 
+            this.Delete_toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("Delete_toolStripButton3.Image")));
+            this.Delete_toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Delete_toolStripButton3.Name = "Delete_toolStripButton3";
+            this.Delete_toolStripButton3.Size = new System.Drawing.Size(89, 24);
+            this.Delete_toolStripButton3.Text = "Удалить";
+            this.Delete_toolStripButton3.Click += new System.EventHandler(this.Delete_toolStripButton3_Click);
+            // 
             // AddCredForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -166,6 +166,8 @@ namespace PhoneBookChain
             this.Controls.Add(this.credentialsListDataGridView);
             this.Controls.Add(this.toolStrip1);
             this.Name = "AddCredForm";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Список людей";
             ((System.ComponentModel.ISupportInitialize)(this.credentialsListDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.credentialsListBindingSource)).EndInit();

@@ -172,7 +172,7 @@ namespace PhoneBookChain
             this.phoneBookGridListDataGridView.ReadOnly = true;
             this.phoneBookGridListDataGridView.RowHeadersWidth = 51;
             this.phoneBookGridListDataGridView.RowTemplate.Height = 24;
-            this.phoneBookGridListDataGridView.Size = new System.Drawing.Size(1100, 560);
+            this.phoneBookGridListDataGridView.Size = new System.Drawing.Size(1100, 590);
             this.phoneBookGridListDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn17
@@ -268,7 +268,7 @@ namespace PhoneBookChain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1100, 587);
+            this.ClientSize = new System.Drawing.Size(1100, 617);
             this.Controls.Add(this.phoneBookGridListDataGridView);
             this.Controls.Add(this.phoneInfoListBindingNavigator);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
