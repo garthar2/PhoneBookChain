@@ -74,7 +74,7 @@ namespace PhoneBookChain
             // phoneNumLabel
             // 
             phoneNumLabel.AutoSize = true;
-            phoneNumLabel.Location = new System.Drawing.Point(30, 107);
+            phoneNumLabel.Location = new System.Drawing.Point(24, 107);
             phoneNumLabel.Name = "phoneNumLabel";
             phoneNumLabel.Size = new System.Drawing.Size(48, 17);
             phoneNumLabel.TabIndex = 62;
@@ -83,7 +83,7 @@ namespace PhoneBookChain
             // streetNameLabel
             // 
             streetNameLabel.AutoSize = true;
-            streetNameLabel.Location = new System.Drawing.Point(30, 158);
+            streetNameLabel.Location = new System.Drawing.Point(4, 155);
             streetNameLabel.Name = "streetNameLabel";
             streetNameLabel.Size = new System.Drawing.Size(68, 17);
             streetNameLabel.TabIndex = 64;
@@ -91,7 +91,7 @@ namespace PhoneBookChain
             // 
             // CredTripleDot_button1
             // 
-            this.CredTripleDot_button1.Location = new System.Drawing.Point(385, 49);
+            this.CredTripleDot_button1.Location = new System.Drawing.Point(401, 49);
             this.CredTripleDot_button1.Name = "CredTripleDot_button1";
             this.CredTripleDot_button1.Size = new System.Drawing.Size(75, 31);
             this.CredTripleDot_button1.TabIndex = 21;
@@ -101,7 +101,7 @@ namespace PhoneBookChain
             // 
             // AdrTripleDot_button2
             // 
-            this.AdrTripleDot_button2.Location = new System.Drawing.Point(385, 100);
+            this.AdrTripleDot_button2.Location = new System.Drawing.Point(401, 100);
             this.AdrTripleDot_button2.Name = "AdrTripleDot_button2";
             this.AdrTripleDot_button2.Size = new System.Drawing.Size(75, 31);
             this.AdrTripleDot_button2.TabIndex = 22;
@@ -111,7 +111,7 @@ namespace PhoneBookChain
             // 
             // PhoneTripleDot_button3
             // 
-            this.PhoneTripleDot_button3.Location = new System.Drawing.Point(385, 151);
+            this.PhoneTripleDot_button3.Location = new System.Drawing.Point(401, 148);
             this.PhoneTripleDot_button3.Name = "PhoneTripleDot_button3";
             this.PhoneTripleDot_button3.Size = new System.Drawing.Size(75, 31);
             this.PhoneTripleDot_button3.TabIndex = 23;
@@ -121,7 +121,7 @@ namespace PhoneBookChain
             // 
             // save_button4
             // 
-            this.save_button4.Location = new System.Drawing.Point(33, 264);
+            this.save_button4.Location = new System.Drawing.Point(78, 264);
             this.save_button4.Name = "save_button4";
             this.save_button4.Size = new System.Drawing.Size(97, 32);
             this.save_button4.TabIndex = 45;
@@ -131,7 +131,7 @@ namespace PhoneBookChain
             // 
             // cancel_button5
             // 
-            this.cancel_button5.Location = new System.Drawing.Point(233, 264);
+            this.cancel_button5.Location = new System.Drawing.Point(298, 264);
             this.cancel_button5.Name = "cancel_button5";
             this.cancel_button5.Size = new System.Drawing.Size(97, 32);
             this.cancel_button5.TabIndex = 46;
@@ -142,9 +142,9 @@ namespace PhoneBookChain
             // emailTextBox
             // 
             this.emailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.phoneBookListBindingSource, "Email", true));
-            this.emailTextBox.Location = new System.Drawing.Point(104, 206);
+            this.emailTextBox.Location = new System.Drawing.Point(77, 206);
             this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(275, 22);
+            this.emailTextBox.Size = new System.Drawing.Size(318, 22);
             this.emailTextBox.TabIndex = 49;
             // 
             // phoneBookListBindingSource
@@ -154,25 +154,25 @@ namespace PhoneBookChain
             // lastNameTextBox
             // 
             this.lastNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.phoneBookListBindingSource, "LastName", true));
-            this.lastNameTextBox.Location = new System.Drawing.Point(104, 53);
+            this.lastNameTextBox.Location = new System.Drawing.Point(78, 53);
             this.lastNameTextBox.Name = "lastNameTextBox";
-            this.lastNameTextBox.Size = new System.Drawing.Size(275, 22);
+            this.lastNameTextBox.Size = new System.Drawing.Size(317, 22);
             this.lastNameTextBox.TabIndex = 59;
             // 
             // phoneNumTextBox
             // 
             this.phoneNumTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.phoneBookListBindingSource, "PhoneNum", true));
-            this.phoneNumTextBox.Location = new System.Drawing.Point(104, 155);
+            this.phoneNumTextBox.Location = new System.Drawing.Point(78, 155);
             this.phoneNumTextBox.Name = "phoneNumTextBox";
-            this.phoneNumTextBox.Size = new System.Drawing.Size(275, 22);
+            this.phoneNumTextBox.Size = new System.Drawing.Size(317, 22);
             this.phoneNumTextBox.TabIndex = 63;
             // 
             // addressTextBox
             // 
             this.addressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.phoneBookListBindingSource, "StreetName", true));
-            this.addressTextBox.Location = new System.Drawing.Point(104, 104);
+            this.addressTextBox.Location = new System.Drawing.Point(78, 104);
             this.addressTextBox.Name = "addressTextBox";
-            this.addressTextBox.Size = new System.Drawing.Size(275, 22);
+            this.addressTextBox.Size = new System.Drawing.Size(317, 22);
             this.addressTextBox.TabIndex = 65;
             // 
             // phoneInfoListBindingSource

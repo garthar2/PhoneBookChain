@@ -19,6 +19,7 @@ namespace PhoneBookChain
         public AddPhoneBookForm()
         {
             InitializeComponent();
+
         }
 
         public AddPhoneBookForm(BindingList<PhoneBook> phoneBookList)
@@ -26,6 +27,7 @@ namespace PhoneBookChain
             isEditForm = false;
             PhoneBookList = phoneBookList;
             InitializeComponent();
+
         }
         public AddPhoneBookForm(BindingList<PhoneBook> phoneBookList, int index)
         {
@@ -139,8 +141,7 @@ namespace PhoneBookChain
                 DialogResult dr = form3.ShowDialog();
                 if (dr == DialogResult.Cancel)
                 {
-                    //this.PhoneBookList[phoneBookIndex].Credentials = form3.resultCredentials;
-                    // переделать . Писать не в базу, а в текст бокс. В базу пишет кнопка  Сохранить
+                    this.PhoneBookList[phoneBookIndex].Credentials = form3.resultCredentials;
                     lastNameTextBox.Text = form3.resultCredentials.LastName + " " + form3.resultCredentials.FirstName
                         + " " + form3.resultCredentials.MiddleName + " " + form3.resultCredentials.Gender + " " + form3.resultCredentials.YearOfBirth.ToString("yyyy");
                 }

@@ -26,9 +26,19 @@ namespace PhoneBookChain
         public BindingList<PhoneBookGrid> PhoneBookGridList { get; set; } = new BindingList<PhoneBookGrid>();
         public PhoneBookForm()
         {
+
             InitializeComponent();
             phoneBookListBindingSource.DataSource = PhoneBookList;
             phoneBookGridListBindingSource.DataSource = PhoneBookGridList;
+            phoneBookGridListDataGridView.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            phoneBookGridListDataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
+            phoneBookGridListDataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Calibri", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+
+            foreach (DataGridViewHeaderCell header in phoneBookGridListDataGridView.Rows)
+            {
+                header.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                header.Style.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Pixel);
+            }
             // передаем в конструктор тип класса
             XmlSerializer formatter = new XmlSerializer(typeof(BindingList<PhoneBook>));
             //credentialsListBindingSource.DataSource = CredentialsList;

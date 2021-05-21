@@ -44,6 +44,9 @@ namespace PhoneBookChain
             CredentialsList.Add(new Credentials());
             CredentialsList[0] = Credentials;
             credentialsListBindingSource.DataSource = CredentialsList;
+            credentialsListDataGridView.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            credentialsListDataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
+            credentialsListDataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Calibri", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
         }
 
          private void Add_toolStripButton1_Click(object sender, EventArgs e)
