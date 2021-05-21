@@ -167,10 +167,36 @@ namespace PhoneBookChain
 
         private void AdrTripleDot_button2_Click(object sender, EventArgs e)
         {
-            AddAddressForm form4 = new AddAddressForm();
-            form4.ShowDialog();
+            //AddAddressForm form4 = new AddAddressForm();
+            //form4.ShowDialog();
             //addressTextBox.Text = PhoneBookList[phoneBookIndex].Address.StreetName + " " +
             //    PhoneBookList[phoneBookIndex].Address.BuildNum + " " + PhoneBookList[phoneBookIndex].Address.FlatNum;
+            if (isEditForm)
+            {
+                AddAddressForm form4 = new AddAddressForm(PhoneBookList[phoneBookIndex].Address, phoneBookIndex);
+                //вышли из формы, заносим в поле результат
+                DialogResult dr = form4.ShowDialog();
+                if (dr == DialogResult.Cancel)
+                {
+                    this.PhoneBookList[phoneBookIndex].Address = form4.resultAddresss;
+                    addressTextBox.Text = form4.resultAddresss.StreetName + " " + form4.resultAddresss.BuildNum
+                        + " " + form4.resultAddresss.FlatNum;
+                }
+            }
+            else
+            {
+                AddAddressForm form4 = new AddAddressForm();
+                //вышли из формы, заносим в поле результат
+                DialogResult dr = form4.ShowDialog();
+                if (dr == DialogResult.Cancel)
+                {
+                    //this.PhoneBookList.Add(new PhoneBook());
+                    //this.PhoneBookList.Add(new PhoneBook("", new Credentials("", "", "", "Мужск.", new DateTime(1967, 12, 12)),new Address("", "", ""), new PhoneInfo("", "Мобил.")));
+                    //this.PhoneBookList[PhoneBookList.Count - 1].Credentials = form3.resultCredentials;
+                    addressTextBox.Text = form4.resultAddresss.StreetName + " " + form4.resultAddresss.BuildNum
+                        + " " + form4.resultAddresss.FlatNum;
+                }
+            }
         }
 
         private void PhoneTripleDot_button3_Click(object sender, EventArgs e)

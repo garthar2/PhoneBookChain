@@ -11,16 +11,32 @@ namespace PhoneBookChain
 {
     public partial class AddRowAddressForm : Form
     {
-        string gender = ""; //никогда это значение
+        bool isEditedForm = false;
+        int currentIndex;
         public BindingList<Address> AddressList { get; set; }
+
         public AddRowAddressForm()
         {
+            isEditedForm = false;
             InitializeComponent();
         }
         public AddRowAddressForm(BindingList<Address> addressList)
         {
+            isEditedForm = false;
             AddressList = addressList;
             InitializeComponent();
+        }
+        public AddRowAddressForm(BindingList<Address> addressList,int index)
+        {
+            isEditedForm = false;
+            AddressList = addressList;
+            currentIndex = index;
+            InitializeComponent();
+            this.Text = "Редактирование адреса";
+            //заполняем поля формы для редактирования
+            streetNameTextBox.Text = AddressList[index].StreetName;
+            buildNumTextBox.Text = AddressList[index].BuildNum;
+            flatNumTextBox.Text = AddressList[index].FlatNum;
         }
 
         private void saveAddAdrbutton_Click(object sender, EventArgs e)
@@ -33,6 +49,17 @@ namespace PhoneBookChain
             //{
             //    AddressList.Add(new Address(streetNameTextBox.Text));
             //}
+            if (isEditedForm)
+            {
+                AddressList[currentIndex] = new Address(streetNameTextBox.Text, buildNumTextBox.Text,
+                flatNumTextBox.Text);
+            }
+            else
+            {
+                AddressList.Add(new Address(streetNameTextBox.Text, buildNumTextBox.Text,
+                flatNumTextBox.Text));
+            }
+
             this.Close();
         }
 

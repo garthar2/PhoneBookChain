@@ -198,6 +198,7 @@ namespace PhoneBookChain
             this.Controls.Add(this.AdrTripleDot_button2);
             this.Controls.Add(this.CredTripleDot_button1);
             this.Name = "AddPhoneBookForm";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавление в телефонный справочник (обобщающий класс)";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddPhoneBookForm_FormClosing);

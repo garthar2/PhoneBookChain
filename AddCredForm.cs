@@ -11,7 +11,6 @@ namespace PhoneBookChain
 {
     public partial class AddCredForm : Form
     {
-        //private BindingList<PhoneBook> PhoneBookList;
         private Credentials Credentials;
         public Credentials resultCredentials
         {
