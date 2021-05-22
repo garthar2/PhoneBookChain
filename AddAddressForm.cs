@@ -52,8 +52,8 @@ namespace PhoneBookChain
         }
         private void Add_toolStripButton1_Click(object sender, EventArgs e)
         {
-            AddRowAddressForm CreateCredentials = new AddRowAddressForm(AddressList);
-            CreateCredentials.ShowDialog();
+            AddRowAddressForm CreateAddress = new AddRowAddressForm(AddressList);
+            CreateAddress.ShowDialog();
         }
 
         private void Edit_toolStripButton2_Click(object sender, EventArgs e)
@@ -61,35 +61,33 @@ namespace PhoneBookChain
             //редактировать
             //MessageBox.Show("Выбрано строк:" + addressListDataGridView.SelectedRows.Count);
 
-            if (this.addressListDataGridView.SelectedRows.Count > 0)
+            if (this.addressListDataGridView.CurrentCell != null)
             {
-                AddRowAddressForm CreateAddress = new AddRowAddressForm(AddressList, addressListDataGridView.SelectedRows[0].Index);
+                AddRowAddressForm EditAddress = new AddRowAddressForm(AddressList, addressListDataGridView.CurrentCell.RowIndex);
+                DialogResult dr = EditAddress.ShowDialog();
+                if (dr == DialogResult.Cancel)
+                {
+                }
+            }
+            //else
+            //{
+            //    MessageBox.Show("Выберите строку для редактирования.");
+            //    //AddRowAddressForm CreateAddress = new AddRowAddressForm(AddressList, addressListDataGridView.CurrentCell.RowIndex);
+            //    //DialogResult dr = CreateAddress.ShowDialog();
+            //    //if (dr == DialogResult.Cancel)
+            //    //{
+            //    //    //CopyListToGrid();
+            //    //}
+            //}
 
-                DialogResult dr = CreateAddress.ShowDialog();
-                if (dr == DialogResult.Cancel)
-                {
-                    //CopyListToGrid();
-                }
-            }
-            else
-            {
-                AddRowAddressForm CreateAddress = new AddRowAddressForm(AddressList, addressListDataGridView.CurrentCell.RowIndex);
-                DialogResult dr = CreateAddress.ShowDialog();
-                if (dr == DialogResult.Cancel)
-                {
-                    //CopyListToGrid();
-                }
-            }
         }
 
-    private void Del_toolStripButton3_Click(object sender, EventArgs e)
+        private void Del_toolStripButton3_Click(object sender, EventArgs e)
         {
             //удалить строку
             if (this.addressListDataGridView.SelectedRows.Count > 0)
             {
-                //MessageBox.Show("Индекс строки: " + credentialsListDataGridView.SelectedRows[0].Index);
                 AddressList.RemoveAt(addressListDataGridView.SelectedRows[0].Index);
-
             }
             else
             {

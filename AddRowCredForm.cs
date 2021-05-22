@@ -48,8 +48,17 @@ namespace PhoneBookChain
             {
                 radioButton2.Checked = true;
             }
-            yearOfBirthDateTimePicker.Value = CredentialsList[index].YearOfBirth;
 
+            DateTimePicker dateTimePicker1 = new DateTimePicker();
+
+            if (CredentialsList[index].YearOfBirth > dateTimePicker1.MinDate && CredentialsList[index].YearOfBirth < dateTimePicker1.MaxDate)
+            {
+                yearOfBirthDateTimePicker.Value = CredentialsList[index].YearOfBirth;
+            }
+            else
+            {
+                yearOfBirthDateTimePicker.Value = DateTime.Today;
+            }
         }
 
         private void saveRow_button1_Click(object sender, EventArgs e)

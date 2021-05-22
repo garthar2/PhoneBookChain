@@ -28,7 +28,7 @@ namespace PhoneBookChain
         }
         public AddRowAddressForm(BindingList<Address> addressList,int index)
         {
-            isEditedForm = false;
+            isEditedForm = true;
             AddressList = addressList;
             currentIndex = index;
             InitializeComponent();

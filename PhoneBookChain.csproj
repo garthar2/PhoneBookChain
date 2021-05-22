@@ -98,6 +98,9 @@
     <EmbeddedResource Include="AddRowAddressForm.resx">
       <DependentUpon>AddRowAddressForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddRowPhoneForm.resx">
+      <DependentUpon>AddRowPhoneForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PhoneBookForm.resx">
       <DependentUpon>PhoneBookForm.cs</DependentUpon>
     </EmbeddedResource>
