@@ -11,7 +11,7 @@ namespace PhoneBookChain
 {
     public partial class AddCredForm : Form
     {
-        private Credentials Credentials;
+        private readonly Credentials Credentials;
         public Credentials resultCredentials
         {
             get
@@ -31,7 +31,6 @@ namespace PhoneBookChain
         public BindingList<Credentials> CredentialsList { get; set; } = new BindingList<Credentials>();
         public AddCredForm()
         {
-            
             InitializeComponent();
             credentialsListBindingSource.DataSource = CredentialsList;
         }
@@ -58,26 +57,22 @@ namespace PhoneBookChain
         private void Edit_toolStripButton2_Click(object sender, EventArgs e)
         {
             //редактировать
-            //MessageBox.Show("Выбрано строк:" + credentialsListDataGridView.SelectedRows.Count);
-
             if (this.credentialsListDataGridView.SelectedRows.Count > 0)
             {
-                AddRowCredForm CreateCredentials = new AddRowCredForm(CredentialsList, credentialsListDataGridView.SelectedRows[0].Index);
-
-                DialogResult dr = CreateCredentials.ShowDialog();
+                AddRowCredForm EditCredentials = new AddRowCredForm(CredentialsList, credentialsListDataGridView.SelectedRows[0].Index);
+                DialogResult dr = EditCredentials.ShowDialog();
                 if (dr == DialogResult.Cancel)
                 {
-                    //CopyListToGrid();
                 }
             }
             else
             {
-                AddRowCredForm CreateCredentials = new AddRowCredForm(CredentialsList, credentialsListDataGridView.CurrentCell.RowIndex);
-                DialogResult dr = CreateCredentials.ShowDialog();
-                if (dr == DialogResult.Cancel)
-                {
-                    //CopyListToGrid();
-                }
+                MessageBox.Show("Выберите строку для редактирования.");
+                //AddRowCredForm CreateCredentials = new AddRowCredForm(CredentialsList, credentialsListDataGridView.CurrentCell.RowIndex);
+                //DialogResult dr = CreateCredentials.ShowDialog();
+                //if (dr == DialogResult.Cancel)
+                //{
+                //}
             }
         }
 
@@ -86,9 +81,7 @@ namespace PhoneBookChain
             //удалить строку
             if (this.credentialsListDataGridView.SelectedRows.Count > 0)
             {
-                //MessageBox.Show("Индекс строки: " + credentialsListDataGridView.SelectedRows[0].Index);
                 CredentialsList.RemoveAt(credentialsListDataGridView.SelectedRows[0].Index);
-
             }
             else
             {

@@ -167,10 +167,6 @@ namespace PhoneBookChain
 
         private void AdrTripleDot_button2_Click(object sender, EventArgs e)
         {
-            //AddAddressForm form4 = new AddAddressForm();
-            //form4.ShowDialog();
-            //addressTextBox.Text = PhoneBookList[phoneBookIndex].Address.StreetName + " " +
-            //    PhoneBookList[phoneBookIndex].Address.BuildNum + " " + PhoneBookList[phoneBookIndex].Address.FlatNum;
             if (isEditForm)
             {
                 AddAddressForm form4 = new AddAddressForm(PhoneBookList[phoneBookIndex].Address, phoneBookIndex);
@@ -190,9 +186,6 @@ namespace PhoneBookChain
                 DialogResult dr = form4.ShowDialog();
                 if (dr == DialogResult.Cancel)
                 {
-                    //this.PhoneBookList.Add(new PhoneBook());
-                    //this.PhoneBookList.Add(new PhoneBook("", new Credentials("", "", "", "Мужск.", new DateTime(1967, 12, 12)),new Address("", "", ""), new PhoneInfo("", "Мобил.")));
-                    //this.PhoneBookList[PhoneBookList.Count - 1].Credentials = form3.resultCredentials;
                     addressTextBox.Text = form4.resultAddresss.StreetName + " " + form4.resultAddresss.BuildNum
                         + " " + form4.resultAddresss.FlatNum;
                 }
@@ -201,10 +194,28 @@ namespace PhoneBookChain
 
         private void PhoneTripleDot_button3_Click(object sender, EventArgs e)
         {
-            AddPhoneForm form5 = new AddPhoneForm();
-            form5.ShowDialog();
-            //phoneNumTextBox.Text = PhoneBookList[phoneBookIndex].PhoneInfo.PhoneNum;
-            //PhoneBookForm.CopyListToGrid();
+            if (isEditForm)
+            {
+                AddPhoneForm form5 = new AddPhoneForm(PhoneBookList[phoneBookIndex].PhoneInfo, phoneBookIndex);
+                //вышли из формы, заносим в текстбокс результат
+                DialogResult dr = form5.ShowDialog();
+                if (dr == DialogResult.Cancel)
+                {
+                    this.PhoneBookList[phoneBookIndex].PhoneInfo = form5.resultPhoneInfo;
+                    phoneNumTextBox.Text = form5.resultPhoneInfo.PhoneNum + " " + form5.resultPhoneInfo.IsMobile;
+                }
+            }
+            else
+            {
+                AddPhoneForm form5 = new AddPhoneForm();
+                //вышли из формы, заносим в текстбокс результат
+                DialogResult dr = form5.ShowDialog();
+                if (dr == DialogResult.Cancel)
+                {
+                    this.PhoneBookList[phoneBookIndex].PhoneInfo = form5.resultPhoneInfo;
+                    phoneNumTextBox.Text = form5.resultPhoneInfo.PhoneNum + " " + form5.resultPhoneInfo.IsMobile;
+                }
+            }
         }
 
         private void AddPhoneBookForm_FormClosing(object sender, FormClosingEventArgs e)
