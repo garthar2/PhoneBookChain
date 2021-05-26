@@ -41,10 +41,13 @@ namespace PhoneBookChain
             this.cancel_button5 = new System.Windows.Forms.Button();
             this.emailTextBox = new System.Windows.Forms.TextBox();
             this.phoneBookListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lastNameTextBox = new System.Windows.Forms.TextBox();
+            this.credenTextBox = new System.Windows.Forms.TextBox();
             this.phoneNumTextBox = new System.Windows.Forms.TextBox();
             this.addressTextBox = new System.Windows.Forms.TextBox();
             this.phoneInfoListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.XCred_button = new System.Windows.Forms.Button();
+            this.XAddr_button = new System.Windows.Forms.Button();
+            this.XPhone_button = new System.Windows.Forms.Button();
             emailLabel = new System.Windows.Forms.Label();
             lastNameLabel = new System.Windows.Forms.Label();
             phoneNumLabel = new System.Windows.Forms.Label();
@@ -111,7 +114,7 @@ namespace PhoneBookChain
             // 
             // PhoneTripleDot_button3
             // 
-            this.PhoneTripleDot_button3.Location = new System.Drawing.Point(401, 148);
+            this.PhoneTripleDot_button3.Location = new System.Drawing.Point(401, 151);
             this.PhoneTripleDot_button3.Name = "PhoneTripleDot_button3";
             this.PhoneTripleDot_button3.Size = new System.Drawing.Size(75, 31);
             this.PhoneTripleDot_button3.TabIndex = 23;
@@ -137,7 +140,7 @@ namespace PhoneBookChain
             this.cancel_button5.TabIndex = 46;
             this.cancel_button5.Text = "Отменить";
             this.cancel_button5.UseVisualStyleBackColor = true;
-            this.cancel_button5.Click += new System.EventHandler(this.cancel_button5_Click);
+            this.cancel_button5.Click += new System.EventHandler(this.Cancel_button5_Click);
             // 
             // emailTextBox
             // 
@@ -151,13 +154,13 @@ namespace PhoneBookChain
             // 
             this.phoneBookListBindingSource.DataSource = typeof(PhoneBookChain.PhoneBook);
             // 
-            // lastNameTextBox
+            // credenTextBox
             // 
-            this.lastNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.phoneBookListBindingSource, "LastName", true));
-            this.lastNameTextBox.Location = new System.Drawing.Point(78, 53);
-            this.lastNameTextBox.Name = "lastNameTextBox";
-            this.lastNameTextBox.Size = new System.Drawing.Size(317, 22);
-            this.lastNameTextBox.TabIndex = 59;
+            this.credenTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.phoneBookListBindingSource, "LastName", true));
+            this.credenTextBox.Location = new System.Drawing.Point(78, 53);
+            this.credenTextBox.Name = "credenTextBox";
+            this.credenTextBox.Size = new System.Drawing.Size(317, 22);
+            this.credenTextBox.TabIndex = 59;
             // 
             // phoneNumTextBox
             // 
@@ -179,15 +182,51 @@ namespace PhoneBookChain
             // 
             this.phoneInfoListBindingSource.DataSource = typeof(PhoneBookChain.PhoneInfo);
             // 
+            // XCred_button
+            // 
+            this.XCred_button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.XCred_button.Location = new System.Drawing.Point(482, 49);
+            this.XCred_button.Name = "XCred_button";
+            this.XCred_button.Size = new System.Drawing.Size(35, 31);
+            this.XCred_button.TabIndex = 66;
+            this.XCred_button.Text = "x";
+            this.XCred_button.UseVisualStyleBackColor = true;
+            this.XCred_button.Click += new System.EventHandler(this.XCred_button_Click);
+            // 
+            // XAddr_button
+            // 
+            this.XAddr_button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.XAddr_button.Location = new System.Drawing.Point(482, 100);
+            this.XAddr_button.Name = "XAddr_button";
+            this.XAddr_button.Size = new System.Drawing.Size(35, 31);
+            this.XAddr_button.TabIndex = 67;
+            this.XAddr_button.Text = "x";
+            this.XAddr_button.UseVisualStyleBackColor = true;
+            this.XAddr_button.Click += new System.EventHandler(this.XAddr_button_Click);
+            // 
+            // XPhone_button
+            // 
+            this.XPhone_button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.XPhone_button.Location = new System.Drawing.Point(482, 151);
+            this.XPhone_button.Name = "XPhone_button";
+            this.XPhone_button.Size = new System.Drawing.Size(35, 31);
+            this.XPhone_button.TabIndex = 68;
+            this.XPhone_button.Text = "x";
+            this.XPhone_button.UseVisualStyleBackColor = true;
+            this.XPhone_button.Click += new System.EventHandler(this.XPhone_button_Click);
+            // 
             // AddPhoneBookForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(603, 339);
+            this.ClientSize = new System.Drawing.Size(563, 339);
+            this.Controls.Add(this.XPhone_button);
+            this.Controls.Add(this.XAddr_button);
+            this.Controls.Add(this.XCred_button);
             this.Controls.Add(emailLabel);
             this.Controls.Add(this.emailTextBox);
             this.Controls.Add(lastNameLabel);
-            this.Controls.Add(this.lastNameTextBox);
+            this.Controls.Add(this.credenTextBox);
             this.Controls.Add(phoneNumLabel);
             this.Controls.Add(this.phoneNumTextBox);
             this.Controls.Add(streetNameLabel);
@@ -219,8 +258,11 @@ namespace PhoneBookChain
         private System.Windows.Forms.Button cancel_button5;
         private System.Windows.Forms.BindingSource phoneBookListBindingSource;
         private System.Windows.Forms.TextBox emailTextBox;
-        private System.Windows.Forms.TextBox lastNameTextBox;
+        private System.Windows.Forms.TextBox credenTextBox;
         private System.Windows.Forms.TextBox phoneNumTextBox;
         private System.Windows.Forms.TextBox addressTextBox;
+        private System.Windows.Forms.Button XCred_button;
+        private System.Windows.Forms.Button XAddr_button;
+        private System.Windows.Forms.Button XPhone_button;
     }
 }

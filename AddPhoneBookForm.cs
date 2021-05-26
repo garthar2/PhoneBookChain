@@ -43,7 +43,7 @@ namespace PhoneBookChain
             //lastNameTextBox.Text = PhoneBookList[index].Credentials.LastName + " " + 
             //    PhoneBookList[index].Credentials.FirstName + " " + PhoneBookList[index].Credentials.MiddleName;
 
-            lastNameTextBox.Text = PhoneBookList[index].Credentials.LastName + " " + PhoneBookList[index].Credentials.FirstName
+            credenTextBox.Text = PhoneBookList[index].Credentials.LastName + " " + PhoneBookList[index].Credentials.FirstName
                 + " " + PhoneBookList[index].Credentials.MiddleName + " " + PhoneBookList[index].Credentials.Gender + " " + PhoneBookList[index].Credentials.YearOfBirth.ToString("yyyy");
 
             addressTextBox.Text = PhoneBookList[index].Address.StreetName + " " +
@@ -77,7 +77,7 @@ namespace PhoneBookChain
             }
 
             char[] delimiterChars = { ' ', ',', ':', '\t','-' };
-            string[] splitCreds = lastNameTextBox.Text.Split(delimiterChars, System.StringSplitOptions.RemoveEmptyEntries);
+            string[] splitCreds = credenTextBox.Text.Split(delimiterChars, System.StringSplitOptions.RemoveEmptyEntries);
             string[] newCreds = new string[] { " ", " ", " " , " " ," "};
             int z = splitCreds.Length > 5 ? 5 : splitCreds.Length;
             for (int i = 0; i < z; i++)
@@ -147,7 +147,7 @@ namespace PhoneBookChain
                 if (dr == DialogResult.Cancel)
                 {
                     this.PhoneBookList[phoneBookIndex].Credentials = form3.ResultCredentials;
-                    lastNameTextBox.Text = form3.ResultCredentials.LastName + " " + form3.ResultCredentials.FirstName
+                    credenTextBox.Text = form3.ResultCredentials.LastName + " " + form3.ResultCredentials.FirstName
                         + " " + form3.ResultCredentials.MiddleName + " " + form3.ResultCredentials.Gender + " " + form3.ResultCredentials.YearOfBirth.ToString("yyyy");
                 }
             }
@@ -158,7 +158,7 @@ namespace PhoneBookChain
                 //вышли из формы добавления, заносим в текстбокс  результат
                 if (dr == DialogResult.Cancel)
                 {
-                    lastNameTextBox.Text = form3.ResultCredentials.LastName + " " + form3.ResultCredentials.FirstName
+                    credenTextBox.Text = form3.ResultCredentials.LastName + " " + form3.ResultCredentials.FirstName
                         + " " + form3.ResultCredentials.MiddleName + " " + form3.ResultCredentials.Gender + " " + form3.ResultCredentials.YearOfBirth.ToString("yyyy");
                 }
             }
@@ -223,10 +223,24 @@ namespace PhoneBookChain
 
         }
 
-        private void cancel_button5_Click(object sender, EventArgs e)
+        private void Cancel_button5_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        private void XCred_button_Click(object sender, EventArgs e)
+        {
+            credenTextBox.Text = " ";
+        }
+
+        private void XAddr_button_Click(object sender, EventArgs e)
+        {
+            addressTextBox.Text = " ";
+        }
+
+        private void XPhone_button_Click(object sender, EventArgs e)
+        {
+            phoneNumTextBox.Text = " ";
+        }
     }
 }
