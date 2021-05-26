@@ -32,6 +32,7 @@ namespace PhoneBookChain
         public AddCredForm()
         {
             InitializeComponent();
+            CredentialsList.Add(new Credentials());
             credentialsListBindingSource.DataSource = CredentialsList;
         }
         public AddCredForm(Credentials credentials, int RowIndex)
@@ -82,11 +83,18 @@ namespace PhoneBookChain
             //удалить строку
             if (this.credentialsListDataGridView.SelectedRows.Count > 0)
             {
-                CredentialsList.RemoveAt(credentialsListDataGridView.SelectedRows[0].Index);
+                if (this.credentialsListDataGridView.Rows.Count != 1)
+                {
+                    CredentialsList.RemoveAt(credentialsListDataGridView.SelectedRows[0].Index);
+                }
+                else
+                {
+                    MessageBox.Show("Всегда должна быть хоть одна строка...");
+                }
             }
             else
             {
-                MessageBox.Show("Выберите строку для удаления");
+                MessageBox.Show("Выберите строку для удаления.");
             }
 
         }

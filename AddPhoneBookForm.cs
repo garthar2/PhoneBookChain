@@ -168,14 +168,15 @@ namespace PhoneBookChain
         {
             if (isEditForm)
             {
-                AddAddressForm form4 = new AddAddressForm(PhoneBookList[phoneBookIndex].Address, phoneBookIndex);
+                //AddAddressForm form4 = new AddAddressForm(PhoneBookList[phoneBookIndex].Address, phoneBookIndex);
+                AddAddressForm form4 = new AddAddressForm(PhoneBookList[phoneBookIndex].Address);
                 DialogResult dr = form4.ShowDialog();
                 //вышли из формы редактирования, заносим в текстбокс и в базу  результат
                 if (dr == DialogResult.Cancel)
                 {
-                    this.PhoneBookList[phoneBookIndex].Address = form4.resultAddresss;
-                    addressTextBox.Text = form4.resultAddresss.StreetName + " " + form4.resultAddresss.BuildNum
-                        + " " + form4.resultAddresss.FlatNum;
+                    this.PhoneBookList[phoneBookIndex].Address = form4.ResultAddresss;
+                    addressTextBox.Text = form4.ResultAddresss.StreetName + " " + form4.ResultAddresss.BuildNum
+                        + " " + form4.ResultAddresss.FlatNum;
                 }
             }
             else
@@ -185,8 +186,8 @@ namespace PhoneBookChain
                 //вышли из формы добавления, заносим в текстбокс  результат
                 if (dr == DialogResult.Cancel)
                 {
-                    addressTextBox.Text = form4.resultAddresss.StreetName + " " + form4.resultAddresss.BuildNum
-                        + " " + form4.resultAddresss.FlatNum;
+                    addressTextBox.Text = form4.ResultAddresss.StreetName + " " + form4.ResultAddresss.BuildNum
+                        + " " + form4.ResultAddresss.FlatNum;
                 }
             }
         }

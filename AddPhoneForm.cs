@@ -13,6 +13,7 @@ namespace PhoneBookChain
     {
         public BindingList<PhoneInfo> PhoneInfoList { get; set; } = new BindingList<PhoneInfo>();
 
+        private int rowIndex = 0;
         private PhoneInfo PhoneInfo;
         public PhoneInfo ResultPhoneInfo
         {
@@ -41,15 +42,17 @@ namespace PhoneBookChain
         public AddPhoneForm()
         {
             InitializeComponent();
+            PhoneInfoList.Add(new PhoneInfo());
             phoneInfoListDataGridView.DataSource = PhoneInfoList;
             phoneInfoListDataGridView.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             phoneInfoListDataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
             phoneInfoListDataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Calibri", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+
         }
         public AddPhoneForm(PhoneInfo phoneInfo, int RowIndex)
         {
             PhoneInfo = phoneInfo;
-            int rowIndex = RowIndex;
+            rowIndex = RowIndex;
             InitializeComponent();
             PhoneInfoList.Add(new PhoneInfo());
             PhoneInfoList[0] = PhoneInfo;
@@ -92,14 +95,49 @@ namespace PhoneBookChain
         {
             //удалить строку
             if (this.phoneInfoListDataGridView.SelectedRows.Count > 0)
-            {
-                //MessageBox.Show("Индекс строки: " + credentialsListDataGridView.SelectedRows[0].Index);
-                PhoneInfoList.RemoveAt(phoneInfoListDataGridView.SelectedRows[0].Index);
-
+            { 
+                if (this.phoneInfoListDataGridView.Rows.Count != 1)
+                {
+                    PhoneInfoList.RemoveAt(phoneInfoListDataGridView.SelectedRows[0].Index);
+                }
+                else
+                {
+                    MessageBox.Show("Всегда должна быть хоть одна строка...");
+                }
             }
             else
             {
                 MessageBox.Show("Выберите строку для удаления.");
+            }
+        }
+
+        private void PhoneInfoListDataGridView_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                this.phoneInfoListDataGridView.Rows[e.RowIndex].Selected = true;
+                this.rowIndex = e.RowIndex;
+                this.phoneInfoListDataGridView.CurrentCell = this.phoneInfoListDataGridView.Rows[e.RowIndex].Cells[1];
+                this.contextMenuStrip1.Show(this.phoneInfoListDataGridView, e.Location);
+                contextMenuStrip1.Show(Cursor.Position);
+            }
+        }
+
+        private void AddPhoneForm_Load(object sender, EventArgs e)
+        {
+            this.phoneInfoListDataGridView.RowsDefaultCellStyle.BackColor = Color.Bisque;
+            this.phoneInfoListDataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige;
+        }
+
+        private void удалитьСтрокуToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //if (!this.phoneInfoListDataGridView.Rows[this.rowIndex].IsNewRow)
+            //{
+            //    this.phoneInfoListDataGridView.Rows.RemoveAt(this.rowIndex);
+            //}
+            if (this.phoneInfoListDataGridView.Rows.Count != 1)
+            {
+                this.phoneInfoListDataGridView.Rows.RemoveAt(this.rowIndex);
             }
         }
     }

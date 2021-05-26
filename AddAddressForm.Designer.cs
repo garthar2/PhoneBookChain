@@ -36,15 +36,15 @@ namespace PhoneBookChain
             this.Edit_toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.Del_toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.addressListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.addAddressFormBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.addressListDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addAddressFormBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.addressListBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.addressListDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addAddressFormBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addressListDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -91,6 +91,10 @@ namespace PhoneBookChain
             // 
             this.addressListBindingSource.DataMember = "AddressList";
             this.addressListBindingSource.DataSource = this.addAddressFormBindingSource;
+            // 
+            // addAddressFormBindingSource
+            // 
+            this.addAddressFormBindingSource.DataSource = typeof(PhoneBookChain.AddAddressForm);
             // 
             // addressListDataGridView
             // 
@@ -139,10 +143,6 @@ namespace PhoneBookChain
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 125;
             // 
-            // addAddressFormBindingSource
-            // 
-            this.addAddressFormBindingSource.DataSource = typeof(PhoneBookChain.AddAddressForm);
-            // 
             // AddAddressForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -154,11 +154,12 @@ namespace PhoneBookChain
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавление в список адресов";
+            this.Load += new System.EventHandler(this.AddAddressForm_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.addressListBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.addressListDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addAddressFormBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addressListDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

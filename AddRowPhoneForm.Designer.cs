@@ -33,9 +33,9 @@ namespace PhoneBookChain
             System.Windows.Forms.Label isMobileLabel;
             System.Windows.Forms.Label phoneNumLabel;
             this.phoneNumTextBox = new System.Windows.Forms.TextBox();
+            this.phoneInfoListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.savePhoneInfo_button = new System.Windows.Forms.Button();
             this.Cancel_button1 = new System.Windows.Forms.Button();
-            this.phoneInfoListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.home_radioButton2 = new System.Windows.Forms.RadioButton();
             this.mob_radioButton1 = new System.Windows.Forms.RadioButton();
             isMobileLabel = new System.Windows.Forms.Label();
@@ -69,6 +69,10 @@ namespace PhoneBookChain
             this.phoneNumTextBox.Size = new System.Drawing.Size(185, 22);
             this.phoneNumTextBox.TabIndex = 2;
             // 
+            // phoneInfoListBindingSource
+            // 
+            this.phoneInfoListBindingSource.DataSource = typeof(PhoneBookChain.PhoneInfo);
+            // 
             // savePhoneInfo_button
             // 
             this.savePhoneInfo_button.Location = new System.Drawing.Point(33, 98);
@@ -77,7 +81,7 @@ namespace PhoneBookChain
             this.savePhoneInfo_button.TabIndex = 51;
             this.savePhoneInfo_button.Text = "Сохранить";
             this.savePhoneInfo_button.UseVisualStyleBackColor = true;
-            this.savePhoneInfo_button.Click += new System.EventHandler(this.savePhoneInfo_button_Click);
+            this.savePhoneInfo_button.Click += new System.EventHandler(this.SavePhoneInfo_button_Click);
             // 
             // Cancel_button1
             // 
@@ -88,10 +92,6 @@ namespace PhoneBookChain
             this.Cancel_button1.Text = "Отменить";
             this.Cancel_button1.UseVisualStyleBackColor = true;
             this.Cancel_button1.Click += new System.EventHandler(this.Cancel_button1_Click);
-            // 
-            // phoneInfoListBindingSource
-            // 
-            this.phoneInfoListBindingSource.DataSource = typeof(PhoneBookChain.PhoneInfo);
             // 
             // home_radioButton2
             // 

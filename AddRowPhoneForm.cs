@@ -12,7 +12,7 @@ namespace PhoneBookChain
     public partial class AddRowPhoneForm : Form
     {
         bool isEditedForm = false;
-        int currentIndex;
+        private readonly int currentIndex = 0;
         public BindingList<PhoneInfo> PhoneInfoList { get; set; }
         public AddRowPhoneForm()
         {
@@ -29,7 +29,7 @@ namespace PhoneBookChain
         {
             isEditedForm = true;
             PhoneInfoList = phoneInfoList;
-            currentIndex = index;
+            this.currentIndex = index;
             InitializeComponent();
             this.Text = "Редактирование номера телефона";
             //заполняем поля формы для редактирования
@@ -44,7 +44,7 @@ namespace PhoneBookChain
             }
         }
 
-        private void savePhoneInfo_button_Click(object sender, EventArgs e)
+        private void SavePhoneInfo_button_Click(object sender, EventArgs e)
         {
             var isMobile = "Моб.";
             if (mob_radioButton1.Checked)
@@ -57,7 +57,7 @@ namespace PhoneBookChain
             }
             if (isEditedForm)
             {
-                PhoneInfoList[currentIndex] = new PhoneInfo(phoneNumTextBox.Text, isMobile);
+                PhoneInfoList[this.currentIndex] = new PhoneInfo(phoneNumTextBox.Text, isMobile);
             }
             else
             {

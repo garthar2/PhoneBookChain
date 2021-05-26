@@ -31,8 +31,8 @@ namespace PhoneBookChain
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddPhoneForm));
-            this.phoneInfoListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.phoneInfoListBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.phoneInfoListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Add_toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.Edit_toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -40,15 +40,14 @@ namespace PhoneBookChain
             this.phoneInfoListDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.phoneInfoListBindingSource)).BeginInit();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.удалитьСтрокуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.phoneInfoListBindingNavigator)).BeginInit();
             this.phoneInfoListBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.phoneInfoListBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phoneInfoListDataGridView)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // phoneInfoListBindingSource
-            // 
-            this.phoneInfoListBindingSource.DataSource = typeof(PhoneBookChain.PhoneInfo);
             // 
             // phoneInfoListBindingNavigator
             // 
@@ -72,6 +71,10 @@ namespace PhoneBookChain
             this.phoneInfoListBindingNavigator.Size = new System.Drawing.Size(353, 27);
             this.phoneInfoListBindingNavigator.TabIndex = 0;
             this.phoneInfoListBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // phoneInfoListBindingSource
+            // 
+            this.phoneInfoListBindingSource.DataSource = typeof(PhoneBookChain.PhoneInfo);
             // 
             // Add_toolStripButton1
             // 
@@ -123,6 +126,7 @@ namespace PhoneBookChain
             this.phoneInfoListDataGridView.RowTemplate.Height = 24;
             this.phoneInfoListDataGridView.Size = new System.Drawing.Size(353, 293);
             this.phoneInfoListDataGridView.TabIndex = 1;
+            this.phoneInfoListDataGridView.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.PhoneInfoListDataGridView_CellMouseUp);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -142,6 +146,21 @@ namespace PhoneBookChain
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Width = 150;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.удалитьСтрокуToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 56);
+            // 
+            // удалитьСтрокуToolStripMenuItem
+            // 
+            this.удалитьСтрокуToolStripMenuItem.Name = "удалитьСтрокуToolStripMenuItem";
+            this.удалитьСтрокуToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.удалитьСтрокуToolStripMenuItem.Text = "Удалить строку";
+            this.удалитьСтрокуToolStripMenuItem.Click += new System.EventHandler(this.удалитьСтрокуToolStripMenuItem_Click);
+            // 
             // AddPhoneForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -153,11 +172,13 @@ namespace PhoneBookChain
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавление номера телефона";
-            ((System.ComponentModel.ISupportInitialize)(this.phoneInfoListBindingSource)).EndInit();
+            this.Load += new System.EventHandler(this.AddPhoneForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.phoneInfoListBindingNavigator)).EndInit();
             this.phoneInfoListBindingNavigator.ResumeLayout(false);
             this.phoneInfoListBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.phoneInfoListBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.phoneInfoListDataGridView)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,5 +195,7 @@ namespace PhoneBookChain
         private System.Windows.Forms.DataGridView phoneInfoListDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem удалитьСтрокуToolStripMenuItem;
     }
 }

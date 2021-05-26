@@ -13,8 +13,10 @@ namespace PhoneBookChain
     {
         public BindingList<Address> AddressList { get; set; } = new BindingList<Address>();
 
-        private Address Address;
-        public Address resultAddresss
+        private readonly Address Address;
+        private int rowIndex = 0;
+
+        public Address ResultAddresss
         {
             get
             {
@@ -32,15 +34,18 @@ namespace PhoneBookChain
         public AddAddressForm()
         {
             InitializeComponent();
+            AddressList.Add(new Address());
             addressListBindingSource.DataSource = AddressList;
             addressListDataGridView.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             addressListDataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
             addressListDataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Calibri", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            this.Text = "Добавление в список адресов";
         }
-        public AddAddressForm(Address address, int RowIndex)
+        //public AddAddressForm(Address address, int RowIndex)
+        public AddAddressForm(Address address)
         {
             Address = address;
-            int rowIndex = RowIndex;
+            //int rowIndex = RowIndex;
             InitializeComponent();
             AddressList.Add(new Address());
             AddressList[0] = Address;
@@ -87,14 +92,46 @@ namespace PhoneBookChain
             //удалить строку
             if (this.addressListDataGridView.SelectedRows.Count > 0)
             {
-                AddressList.RemoveAt(addressListDataGridView.SelectedRows[0].Index);
+                if (this.addressListDataGridView.Rows.Count != 1)
+                {
+                    AddressList.RemoveAt(addressListDataGridView.SelectedRows[0].Index);
+                }
+                else
+                {
+                    MessageBox.Show("Всегда должна быть хоть одна строка...");
+                }
             }
             else
             {
-                MessageBox.Show("Выберите строку для удаления");
+                MessageBox.Show("Выберите строку для удаления.");
             }
         }
-}
+
+        private void AddAddressForm_Load(object sender, EventArgs e)
+        {
+            //DataTable dt = new DataTable();
+            //dt.Columns.Add("Id", typeof(int));
+            //dt.Columns.Add("Publisher Name", typeof(string));
+            //dt.Columns.Add("Book", typeof(string));
+
+            //for (int i = 1; i < 11; i++)
+            //{
+            //    dt.Rows.Add(i, "PubName" + i, "Book" + i);
+            //}
+            //addressListDataGridView.DataSource = dt;
+            this.addressListDataGridView.RowsDefaultCellStyle.BackColor = Color.Bisque;
+            this.addressListDataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige;
+        }
+
+        //private void addressListDataGridView_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
+        //{
+        //    this.addressListDataGridView.Rows[e.RowIndex].Selected = true;
+        //    this.rowIndex = e.RowIndex;
+        //    this.addressListDataGridView.CurrentCell = this.addressListDataGridView.Rows[e.RowIndex].Cells[1];
+        //    this.contextMenuStrip1.Show(this.addressListDataGridView, e.Location);
+        //    contextMenuStrip1.Show(Cursor.Position);
+        //}
+    }
 
 
 }
