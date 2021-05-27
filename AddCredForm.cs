@@ -12,7 +12,7 @@ namespace PhoneBookChain
     public partial class AddCredForm : Form
     {
         private readonly Credentials Credentials;
-        public Credentials ResultCredentials
+        public Credentials ResultCred
         {
             get
             {
@@ -98,6 +98,10 @@ namespace PhoneBookChain
             }
 
         }
-
+        private void AddCredForm_Load(object sender, EventArgs e)
+        {
+            this.credentialsListDataGridView.RowsDefaultCellStyle.BackColor = Color.Bisque;
+            this.credentialsListDataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige;
+        }
     }
 }

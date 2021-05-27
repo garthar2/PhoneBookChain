@@ -130,7 +130,7 @@ namespace PhoneBookChain
             this.save_button4.TabIndex = 45;
             this.save_button4.Text = "Сохранить";
             this.save_button4.UseVisualStyleBackColor = true;
-            this.save_button4.Click += new System.EventHandler(this.save_button4_Click);
+            this.save_button4.Click += new System.EventHandler(this.Save_button4_Click);
             // 
             // cancel_button5
             // 

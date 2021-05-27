@@ -16,7 +16,7 @@ namespace PhoneBookChain
         private readonly Address Address;
         private int rowIndex = 0;
 
-        public Address ResultAddresss
+        public Address ResultAddr
         {
             get
             {
@@ -109,16 +109,6 @@ namespace PhoneBookChain
 
         private void AddAddressForm_Load(object sender, EventArgs e)
         {
-            //DataTable dt = new DataTable();
-            //dt.Columns.Add("Id", typeof(int));
-            //dt.Columns.Add("Publisher Name", typeof(string));
-            //dt.Columns.Add("Book", typeof(string));
-
-            //for (int i = 1; i < 11; i++)
-            //{
-            //    dt.Rows.Add(i, "PubName" + i, "Book" + i);
-            //}
-            //addressListDataGridView.DataSource = dt;
             this.addressListDataGridView.RowsDefaultCellStyle.BackColor = Color.Bisque;
             this.addressListDataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige;
         }

@@ -41,7 +41,6 @@ namespace PhoneBookChain
             }
             // передаем в конструктор тип класса
             XmlSerializer formatter = new XmlSerializer(typeof(BindingList<PhoneBook>));
-            //credentialsListBindingSource.DataSource = CredentialsList;
             config = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "\\phonebook.cfg";
             datafile = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "\\base.xml";
             if (File.Exists(config))
@@ -66,7 +65,7 @@ namespace PhoneBookChain
             {
                 PhoneBookList.Add(new PhoneBook("dfs1452@gmail.com", new Credentials("Филип", "Дачев", "Бедросович", "Мужск.", new DateTime(1967, 12, 12)),
                 new Address("Ленина", "10", "5"), new PhoneInfo("3242342", "Мобил.")));
-                saveToXmlFile();
+                SaveToXmlFile();
                 //PhoneBookList.Clear();
                 MessageBox.Show("Файл base.xml не найден, создан новый.");
             }
@@ -113,7 +112,10 @@ namespace PhoneBookChain
             }
 
         }
-        private void saveToXmlFile()
+        /// <summary>
+        /// Метод сохраняет обобщенный список PhoneBookList в XML файл
+        /// </summary>
+        private void SaveToXmlFile()
         {
             // передаем в конструктор тип класса
             XmlSerializer serializer = new XmlSerializer(typeof(BindingList<PhoneBook>));
@@ -122,67 +124,20 @@ namespace PhoneBookChain
             serializer.Serialize(writer, PhoneBookList);
             writer.Close();
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            AddPhoneBookForm form2 = new AddPhoneBookForm(PhoneBookList);
-            DialogResult dr = form2.ShowDialog();
-            if (dr == DialogResult.Cancel)
-            {
-               CopyListToGrid();
-            }
-        }
+        //private void button1_Click(object sender, EventArgs e)
+        //{
+        //    AddPhoneBookForm form2 = new AddPhoneBookForm(PhoneBookList);
+        //    DialogResult dr = form2.ShowDialog();
+        //    if (dr == DialogResult.Cancel)
+        //    {
+        //       CopyListToGrid();
+        //    }
+        //}
 
         private void PhoneBookForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            saveToXmlFile();
+            SaveToXmlFile();
         }
-
-        //private void editButton_Click(object sender, EventArgs e)
-        //{
-        //    //редактировать
-        //    //MessageBox.Show("Выбрано строк:" + phoneBookGridListDataGridView.SelectedRows.Count);
-        //    if (this.phoneBookGridListDataGridView.SelectedRows.Count > 0)
-        //    {
-        //        var rowIndex = phoneBookGridListDataGridView.SelectedRows[0].Index;
-        //        AddPhoneBookForm form2 = new AddPhoneBookForm(PhoneBookList, phoneBookGridListDataGridView.SelectedRows[0].Index);
-
-        //        DialogResult dr = form2.ShowDialog();
-        //        if (dr == DialogResult.Cancel)
-        //        {
-        //            CopyListToGrid();
-        //        }
-        //        //фокус на текущую строку
-        //        phoneBookGridListDataGridView.Rows[rowIndex].Selected = true;
-        //    }
-        //    else
-        //    {
-        //        var rowIndex = phoneBookGridListDataGridView.CurrentCell.RowIndex;
-        //        AddPhoneBookForm form2 = new AddPhoneBookForm(PhoneBookList, phoneBookGridListDataGridView.CurrentCell.RowIndex);
-        //        DialogResult dr = form2.ShowDialog();
-        //        if (dr == DialogResult.Cancel)
-        //        {
-        //            CopyListToGrid();
-        //        }
-        //        //фокус на текущую строку
-        //        phoneBookGridListDataGridView.Rows[rowIndex].Selected = true;
-        //    }
-
-        //}
-
-        //private void deleteButton_Click(object sender, EventArgs e)
-        //{
-        //    //удалить строку
-        //    if (this.phoneBookGridListDataGridView.SelectedRows.Count > 0)
-        //    {
-        //        PhoneBookList.RemoveAt(phoneBookGridListDataGridView.SelectedRows[0].Index);
-        //        CopyListToGrid();
-        //        //MessageBox.Show("Индекс удаленной строки: " + phoneBookGridListDataGridView.SelectedRows[0].Index);
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Выберите строку для удаления");
-        //    }
-        //}
 
         private void Add_toolStripButton1_Click(object sender, EventArgs e)
         {
@@ -198,10 +153,9 @@ namespace PhoneBookChain
         private void Edit_toolStripButton2_Click(object sender, EventArgs e)
         {
             //редактировать
-            //MessageBox.Show("Выбрано строк:" + phoneBookGridListDataGridView.SelectedRows.Count);
             if (this.phoneBookGridListDataGridView.SelectedRows.Count > 0)
             {
-                var rowIndex = phoneBookGridListDataGridView.SelectedRows[0].Index;
+                var rowIndex = phoneBookGridListDataGridView.SelectedRows[0].Index;//сохраняем фокус на текущую строку
                 AddPhoneBookForm form2 = new AddPhoneBookForm(PhoneBookList, phoneBookGridListDataGridView.SelectedRows[0].Index);
                 DialogResult dr = form2.ShowDialog();
                 if (dr == DialogResult.Cancel)
@@ -212,7 +166,7 @@ namespace PhoneBookChain
             }
             else
             {
-                var rowIndex = phoneBookGridListDataGridView.CurrentCell.RowIndex;
+                var rowIndex = phoneBookGridListDataGridView.CurrentCell.RowIndex;  //сохраняем фокус на текущую строку
                 AddPhoneBookForm form2 = new AddPhoneBookForm(PhoneBookList, phoneBookGridListDataGridView.CurrentCell.RowIndex);
                 DialogResult dr = form2.ShowDialog();
                 if (dr == DialogResult.Cancel)
@@ -230,12 +184,17 @@ namespace PhoneBookChain
             {
                 PhoneBookList.RemoveAt(phoneBookGridListDataGridView.SelectedRows[0].Index);
                 CopyListToGrid();
-                //MessageBox.Show("Индекс удаленной строки: " + phoneBookGridListDataGridView.SelectedRows[0].Index);
             }
             else
             {
                 MessageBox.Show("Выберите строку для удаления");
             }
+        }
+
+        private void PhoneBookForm_Load(object sender, EventArgs e)
+        {
+                this.phoneBookGridListDataGridView.RowsDefaultCellStyle.BackColor = Color.Bisque;
+                this.phoneBookGridListDataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige;
         }
     }
 }

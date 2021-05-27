@@ -32,6 +32,7 @@ namespace PhoneBookChain
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhoneBookForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.phoneInfoListBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.Add_toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.Edit_toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -42,8 +43,6 @@ namespace PhoneBookChain
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneBookGridListDataGridView = new System.Windows.Forms.DataGridView();
-            this.phoneBookGridListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.phoneBookListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +52,8 @@ namespace PhoneBookChain
             this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneBookGridListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.phoneBookListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.phoneInfoListBindingNavigator)).BeginInit();
             this.phoneInfoListBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phoneBookGridListDataGridView)).BeginInit();
@@ -176,14 +177,6 @@ namespace PhoneBookChain
             this.phoneBookGridListDataGridView.Size = new System.Drawing.Size(1100, 590);
             this.phoneBookGridListDataGridView.TabIndex = 1;
             // 
-            // phoneBookGridListBindingSource
-            // 
-            this.phoneBookGridListBindingSource.DataSource = typeof(PhoneBookChain.PhoneBookGrid);
-            // 
-            // phoneBookListBindingSource
-            // 
-            this.phoneBookListBindingSource.DataSource = typeof(PhoneBookChain.PhoneBook);
-            // 
             // dataGridViewTextBoxColumn17
             // 
             this.dataGridViewTextBoxColumn17.DataPropertyName = "LastName";
@@ -223,6 +216,8 @@ namespace PhoneBookChain
             // dataGridViewTextBoxColumn21
             // 
             this.dataGridViewTextBoxColumn21.DataPropertyName = "YearOfBirth";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn21.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewTextBoxColumn21.HeaderText = "Год рождения";
             this.dataGridViewTextBoxColumn21.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
@@ -232,8 +227,8 @@ namespace PhoneBookChain
             // dataGridViewTextBoxColumn25
             // 
             this.dataGridViewTextBoxColumn25.DataPropertyName = "Address";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn25.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn25.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewTextBoxColumn25.HeaderText = "Адрес";
             this.dataGridViewTextBoxColumn25.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
@@ -267,6 +262,14 @@ namespace PhoneBookChain
             this.dataGridViewTextBoxColumn16.ReadOnly = true;
             this.dataGridViewTextBoxColumn16.Width = 125;
             // 
+            // phoneBookGridListBindingSource
+            // 
+            this.phoneBookGridListBindingSource.DataSource = typeof(PhoneBookChain.PhoneBookGrid);
+            // 
+            // phoneBookListBindingSource
+            // 
+            this.phoneBookListBindingSource.DataSource = typeof(PhoneBookChain.PhoneBook);
+            // 
             // PhoneBookForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -279,6 +282,7 @@ namespace PhoneBookChain
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Телефонный справочник (обобщающий класс)";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PhoneBookForm_FormClosing);
+            this.Load += new System.EventHandler(this.PhoneBookForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.phoneInfoListBindingNavigator)).EndInit();
             this.phoneInfoListBindingNavigator.ResumeLayout(false);
             this.phoneInfoListBindingNavigator.PerformLayout();

@@ -169,6 +169,7 @@ namespace PhoneBookChain
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Список людей";
+            this.Load += new System.EventHandler(this.AddCredForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.credentialsListDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.credentialsListBindingSource)).EndInit();
             this.toolStrip1.ResumeLayout(false);

@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Globalization;
+
 
 namespace PhoneBookChain
 {
@@ -44,18 +46,19 @@ namespace PhoneBookChain
             //    PhoneBookList[index].Credentials.FirstName + " " + PhoneBookList[index].Credentials.MiddleName;
 
             credenTextBox.Text = PhoneBookList[index].Credentials.LastName + " " + PhoneBookList[index].Credentials.FirstName
-                + " " + PhoneBookList[index].Credentials.MiddleName + " " + PhoneBookList[index].Credentials.Gender + " " + PhoneBookList[index].Credentials.YearOfBirth.ToString("yyyy");
+                + " " + PhoneBookList[index].Credentials.MiddleName + " " + PhoneBookList[index].Credentials.Gender + " " + PhoneBookList[index].Credentials.YearOfBirth.ToString("dd.MM.yyyy");
 
             addressTextBox.Text = PhoneBookList[index].Address.StreetName + " " +
                 PhoneBookList[index].Address.BuildNum + " " + PhoneBookList[index].Address.FlatNum;
-            phoneNumTextBox.Text = PhoneBookList[index].PhoneInfo.PhoneNum;
+
+            phoneNumTextBox.Text = PhoneBookList[index].PhoneInfo.PhoneNum + " " + phoneBookList[index].PhoneInfo.IsMobile;
 
 
 
             phoneBookIndex = index;
         }
 
-        private void save_button4_Click(object sender, EventArgs e)
+        private void Save_button4_Click(object sender, EventArgs e)
         {
             //PhoneBook newPhoneBook = new PhoneBook(emailTextBox.Text, new Credentials(PhoneBookList[phoneBookIndex].Credentials.FirstName,
             //    PhoneBookList[phoneBookIndex].Credentials.LastName, PhoneBookList[phoneBookIndex].Credentials.MiddleName,
@@ -67,8 +70,6 @@ namespace PhoneBookChain
 
             if (isEditForm)
             {
-                //savedGender = PhoneBookList[phoneBookIndex].Credentials.Gender;
-                //savedIsMobile = PhoneBookList[phoneBookIndex].PhoneInfo.IsMobile;
                 newPhoneBook = PhoneBookList[phoneBookIndex];
             }
             else
@@ -89,16 +90,21 @@ namespace PhoneBookChain
             }
             try
             {
-                newPhoneBook.Credentials = new Credentials(newCreds[1], newCreds[0], newCreds[2], newCreds[3], new DateTime(Convert.ToInt32(newCreds[4]), 1, 1));
-
+                //string pattern = "dd.MM.yyyy";
+                //newPhoneBook.Credentials = new Credentials(newCreds[1], newCreds[0], newCreds[2], newCreds[3], 
+                //    new DateTime(Convert.ToInt32(newCreds[4]), 1, 1));
+                DateTime.TryParseExact(newCreds[4], "dd.MM.yyyy", null, DateTimeStyles.None, out DateTime parsedDate);
+                newPhoneBook.Credentials = new Credentials(newCreds[1], newCreds[0], newCreds[2], newCreds[3], parsedDate);
             }
             catch (FormatException)
             {
-                newPhoneBook.Credentials = new Credentials(newCreds[1], newCreds[0], newCreds[2], newCreds[3], new DateTime(Convert.ToInt32("1"), 1, 1));
+                newPhoneBook.Credentials = new Credentials(newCreds[1], newCreds[0], newCreds[2], newCreds[3], 
+                    new DateTime(Convert.ToInt32("1"), 1, 1));
             }
             catch (ArgumentOutOfRangeException)
             {
-                newPhoneBook.Credentials = new Credentials(newCreds[1], newCreds[0], newCreds[2], newCreds[3], new DateTime(Convert.ToInt32("0"), 1, 1));
+                newPhoneBook.Credentials = new Credentials(newCreds[1], newCreds[0], newCreds[2], newCreds[3], 
+                    new DateTime(Convert.ToInt32("0"), 1, 1));
             }
             string[] splitAddress = addressTextBox.Text.Split(delimiterChars, System.StringSplitOptions.RemoveEmptyEntries);
             string[] newAddress = new string[] { " ", " ", " " };
@@ -146,9 +152,9 @@ namespace PhoneBookChain
                 //вышли из формы редактирования, заносим в текстбокс и в базу  результат
                 if (dr == DialogResult.Cancel)
                 {
-                    this.PhoneBookList[phoneBookIndex].Credentials = form3.ResultCredentials;
-                    credenTextBox.Text = form3.ResultCredentials.LastName + " " + form3.ResultCredentials.FirstName
-                        + " " + form3.ResultCredentials.MiddleName + " " + form3.ResultCredentials.Gender + " " + form3.ResultCredentials.YearOfBirth.ToString("yyyy");
+                    this.PhoneBookList[phoneBookIndex].Credentials = form3.ResultCred;
+                    credenTextBox.Text = form3.ResultCred.LastName + " " + form3.ResultCred.FirstName
+                        + " " + form3.ResultCred.MiddleName + " " + form3.ResultCred.Gender + " " + form3.ResultCred.YearOfBirth.ToString("dd.MM.yyyy");
                 }
             }
             else
@@ -158,8 +164,8 @@ namespace PhoneBookChain
                 //вышли из формы добавления, заносим в текстбокс  результат
                 if (dr == DialogResult.Cancel)
                 {
-                    credenTextBox.Text = form3.ResultCredentials.LastName + " " + form3.ResultCredentials.FirstName
-                        + " " + form3.ResultCredentials.MiddleName + " " + form3.ResultCredentials.Gender + " " + form3.ResultCredentials.YearOfBirth.ToString("yyyy");
+                    credenTextBox.Text = form3.ResultCred.LastName + " " + form3.ResultCred.FirstName
+                        + " " + form3.ResultCred.MiddleName + " " + form3.ResultCred.Gender + " " + form3.ResultCred.YearOfBirth.ToString("dd.MM.yyyy");
                 }
             }
         }
@@ -174,9 +180,9 @@ namespace PhoneBookChain
                 //вышли из формы редактирования, заносим в текстбокс и в базу  результат
                 if (dr == DialogResult.Cancel)
                 {
-                    this.PhoneBookList[phoneBookIndex].Address = form4.ResultAddresss;
-                    addressTextBox.Text = form4.ResultAddresss.StreetName + " " + form4.ResultAddresss.BuildNum
-                        + " " + form4.ResultAddresss.FlatNum;
+                    this.PhoneBookList[phoneBookIndex].Address = form4.ResultAddr;
+                    addressTextBox.Text = form4.ResultAddr.StreetName + " " + form4.ResultAddr.BuildNum
+                        + " " + form4.ResultAddr.FlatNum;
                 }
             }
             else
@@ -186,8 +192,8 @@ namespace PhoneBookChain
                 //вышли из формы добавления, заносим в текстбокс  результат
                 if (dr == DialogResult.Cancel)
                 {
-                    addressTextBox.Text = form4.ResultAddresss.StreetName + " " + form4.ResultAddresss.BuildNum
-                        + " " + form4.ResultAddresss.FlatNum;
+                    addressTextBox.Text = form4.ResultAddr.StreetName + " " + form4.ResultAddr.BuildNum
+                        + " " + form4.ResultAddr.FlatNum;
                 }
             }
         }

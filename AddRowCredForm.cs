@@ -34,7 +34,7 @@ namespace PhoneBookChain
             isEditedForm = true;
             CredentialsList = credentialsList;
             InitializeComponent();
-            this.Text = "Редактирование телефонного справочника (обобщающий класс)";
+            this.Text = "Редактирование списка людей";
             //заполняем поля формы для редактирования
             lastNameTextBox.Text = CredentialsList[index].LastName;
             firstNameTextBox.Text = CredentialsList[index].FirstName;
