@@ -89,6 +89,7 @@ namespace PhoneBookChain
                 AddRowPhoneForm CreatePhoneInfo = new AddRowPhoneForm(PhoneInfoList, phoneInfoListDataGridView.CurrentCell.RowIndex);
                 CreatePhoneInfo.ShowDialog();
             }
+
         }
 
         private void Del_toolStripButton3_Click(object sender, EventArgs e)

@@ -137,45 +137,52 @@ namespace PhoneBookChain
             saveToXmlFile();
         }
 
-        private void editButton_Click(object sender, EventArgs e)
-        {
-            //редактировать
-            //MessageBox.Show("Выбрано строк:" + phoneBookGridListDataGridView.SelectedRows.Count);
-            if (this.phoneBookGridListDataGridView.SelectedRows.Count > 0)
-            {
-                AddPhoneBookForm form2 = new AddPhoneBookForm(PhoneBookList, phoneBookGridListDataGridView.SelectedRows[0].Index);
+        //private void editButton_Click(object sender, EventArgs e)
+        //{
+        //    //редактировать
+        //    //MessageBox.Show("Выбрано строк:" + phoneBookGridListDataGridView.SelectedRows.Count);
+        //    if (this.phoneBookGridListDataGridView.SelectedRows.Count > 0)
+        //    {
+        //        var rowIndex = phoneBookGridListDataGridView.SelectedRows[0].Index;
+        //        AddPhoneBookForm form2 = new AddPhoneBookForm(PhoneBookList, phoneBookGridListDataGridView.SelectedRows[0].Index);
 
-                DialogResult dr = form2.ShowDialog();
-                if (dr == DialogResult.Cancel)
-                {
-                    CopyListToGrid();
-                }
-            }
-            else
-            {
-                AddPhoneBookForm form2 = new AddPhoneBookForm(PhoneBookList, phoneBookGridListDataGridView.CurrentCell.RowIndex);
-                DialogResult dr = form2.ShowDialog();
-                if (dr == DialogResult.Cancel)
-                {
-                    CopyListToGrid();
-                }
-            }
-        }
+        //        DialogResult dr = form2.ShowDialog();
+        //        if (dr == DialogResult.Cancel)
+        //        {
+        //            CopyListToGrid();
+        //        }
+        //        //фокус на текущую строку
+        //        phoneBookGridListDataGridView.Rows[rowIndex].Selected = true;
+        //    }
+        //    else
+        //    {
+        //        var rowIndex = phoneBookGridListDataGridView.CurrentCell.RowIndex;
+        //        AddPhoneBookForm form2 = new AddPhoneBookForm(PhoneBookList, phoneBookGridListDataGridView.CurrentCell.RowIndex);
+        //        DialogResult dr = form2.ShowDialog();
+        //        if (dr == DialogResult.Cancel)
+        //        {
+        //            CopyListToGrid();
+        //        }
+        //        //фокус на текущую строку
+        //        phoneBookGridListDataGridView.Rows[rowIndex].Selected = true;
+        //    }
 
-        private void deleteButton_Click(object sender, EventArgs e)
-        {
-            //удалить строку
-            if (this.phoneBookGridListDataGridView.SelectedRows.Count > 0)
-            {
-                PhoneBookList.RemoveAt(phoneBookGridListDataGridView.SelectedRows[0].Index);
-                CopyListToGrid();
-                //MessageBox.Show("Индекс удаленной строки: " + phoneBookGridListDataGridView.SelectedRows[0].Index);
-            }
-            else
-            {
-                MessageBox.Show("Выберите строку для удаления");
-            }
-        }
+        //}
+
+        //private void deleteButton_Click(object sender, EventArgs e)
+        //{
+        //    //удалить строку
+        //    if (this.phoneBookGridListDataGridView.SelectedRows.Count > 0)
+        //    {
+        //        PhoneBookList.RemoveAt(phoneBookGridListDataGridView.SelectedRows[0].Index);
+        //        CopyListToGrid();
+        //        //MessageBox.Show("Индекс удаленной строки: " + phoneBookGridListDataGridView.SelectedRows[0].Index);
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Выберите строку для удаления");
+        //    }
+        //}
 
         private void Add_toolStripButton1_Click(object sender, EventArgs e)
         {
@@ -185,6 +192,7 @@ namespace PhoneBookChain
             {
                 CopyListToGrid();
             }
+            phoneBookGridListDataGridView.Rows[phoneBookGridListDataGridView.RowCount - 1].Selected = true;
         }
 
         private void Edit_toolStripButton2_Click(object sender, EventArgs e)
@@ -193,22 +201,25 @@ namespace PhoneBookChain
             //MessageBox.Show("Выбрано строк:" + phoneBookGridListDataGridView.SelectedRows.Count);
             if (this.phoneBookGridListDataGridView.SelectedRows.Count > 0)
             {
+                var rowIndex = phoneBookGridListDataGridView.SelectedRows[0].Index;
                 AddPhoneBookForm form2 = new AddPhoneBookForm(PhoneBookList, phoneBookGridListDataGridView.SelectedRows[0].Index);
-
                 DialogResult dr = form2.ShowDialog();
                 if (dr == DialogResult.Cancel)
                 {
                     CopyListToGrid();
                 }
+                phoneBookGridListDataGridView.Rows[rowIndex].Selected = true;
             }
             else
             {
+                var rowIndex = phoneBookGridListDataGridView.CurrentCell.RowIndex;
                 AddPhoneBookForm form2 = new AddPhoneBookForm(PhoneBookList, phoneBookGridListDataGridView.CurrentCell.RowIndex);
                 DialogResult dr = form2.ShowDialog();
                 if (dr == DialogResult.Cancel)
                 {
                     CopyListToGrid();
                 }
+                phoneBookGridListDataGridView.Rows[rowIndex].Selected = true;
             }
         }
 
