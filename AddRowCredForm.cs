@@ -71,12 +71,16 @@ namespace PhoneBookChain
             {
                 gender = "Женск.";
             }
-            if ((firstNameTextBox.Text == "") || (lastNameTextBox.Text == ""))
-            {
-                MessageBox.Show("Имя и фамилия не должны быть пустыми!");
-            }
-            else
-            {
+            firstNameTextBox.Text = firstNameTextBox.Text == "" ? "-" : firstNameTextBox.Text;
+            lastNameTextBox.Text = lastNameTextBox.Text == "" ? "-" : lastNameTextBox.Text;
+            middleNameTextBox.Text = middleNameTextBox.Text == "" ? "-" : middleNameTextBox.Text;
+
+            //if ((firstNameTextBox.Text == "") || (lastNameTextBox.Text == ""))
+            //{
+            //    MessageBox.Show("Имя и фамилия не должны быть пустыми!");
+            //}
+            //else
+            //{
                 if (isEditedForm)
                 {
                     CredentialsList[currentIndex] = new Credentials(firstNameTextBox.Text, lastNameTextBox.Text,
@@ -88,7 +92,7 @@ namespace PhoneBookChain
                     middleNameTextBox.Text, gender, yearOfBirthDateTimePicker.Value));
                 }
 
-            }
+            //}
 
             this.Close();
         }

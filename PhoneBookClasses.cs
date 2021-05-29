@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.ComponentModel;
 
 namespace PhoneBookChain
 {
@@ -24,8 +25,6 @@ namespace PhoneBookChain
             Gender = gender;
             YearOfBirth = yearOfBirth;
             Address = address;
-            //BuildNum = buildNum;
-            //FlatNum = flatNum;
             PhoneNum = phoneNum;
             IsMobile = isMobile;
         }
@@ -34,9 +33,9 @@ namespace PhoneBookChain
         public string LastName { get; set; }
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
-        [System.ComponentModel.DefaultValueAttribute("Мужск.")]
+        [DefaultValueAttribute("Мужск.")]
         public string Gender { get; set; }
-        [System.ComponentModel.DefaultValueAttribute("2002")]
+        [DefaultValueAttribute("2002")]
         //public DateTime YearOfBirth { get; set; }
         public string YearOfBirth { get; set; }
         public string Address { get; set; }
@@ -57,7 +56,12 @@ namespace PhoneBookChain
 
         // стандартный конструктор без параметров
         public PhoneBook()
-        { }
+        {
+            Email = "@";
+            Credentials = new Credentials();
+            Address = new Address();
+            PhoneInfo = new PhoneInfo();
+        }
 
         public PhoneBook(string email, Credentials credentials, Address address, PhoneInfo phoneInfo)
         {
@@ -74,11 +78,20 @@ namespace PhoneBookChain
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string MiddleName { get; set; }
+        [DefaultValue("M")]
         public string Gender { get; set; }
+
         public DateTime YearOfBirth { get; set; }
 
         // стандартный конструктор без параметров
-        public Credentials() { }
+        public Credentials() 
+        {
+            FirstName = "Имя";
+            LastName = "Фамилия";
+            MiddleName = "Отчество";
+            Gender = "Пол";
+            YearOfBirth = DateTime.Now;
+        }
 
         public Credentials(string firstName, string lastName, string middleName, string gender, DateTime yearOfBirth)
         {
@@ -96,7 +109,12 @@ namespace PhoneBookChain
         public string BuildNum { get; set; }
         public string FlatNum { get; set; }
         // стандартный конструктор без параметров
-        public Address() { }
+        public Address() 
+        {
+            StreetName = "Улица";
+            BuildNum = "1";
+            FlatNum = "2";
+        }
         public Address(string streetName, string buildNum, string flatNum)
         {
             StreetName = streetName;
@@ -108,7 +126,11 @@ namespace PhoneBookChain
     public class PhoneInfo
     {
         // стандартный конструктор без параметров
-        public PhoneInfo() { }
+        public PhoneInfo() 
+        {
+            PhoneNum = "(000)0000000";
+            IsMobile = "Моб.";
+        }
         public PhoneInfo(string phoneNum, string isMobile)
         {
             PhoneNum = phoneNum;

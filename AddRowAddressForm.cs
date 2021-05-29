@@ -39,7 +39,7 @@ namespace PhoneBookChain
             flatNumTextBox.Text = AddressList[index].FlatNum;
         }
 
-        private void saveAddAdrbutton_Click(object sender, EventArgs e)
+        private void SaveAddAdrbutton_Click(object sender, EventArgs e)
         {
             //if ((streetName == "") || (lastNameTextBox.Text == ""))
             //{
@@ -49,6 +49,9 @@ namespace PhoneBookChain
             //{
             //    AddressList.Add(new Address(streetNameTextBox.Text));
             //}
+            streetNameTextBox.Text = streetNameTextBox.Text == "" ? "-" : streetNameTextBox.Text;
+            buildNumTextBox.Text = buildNumTextBox.Text == "" ? "-" : buildNumTextBox.Text;
+            flatNumTextBox.Text = flatNumTextBox.Text == "" ? "-" : flatNumTextBox.Text;
             if (isEditedForm)
             {
                 AddressList[currentIndex] = new Address(streetNameTextBox.Text, buildNumTextBox.Text,
@@ -63,7 +66,7 @@ namespace PhoneBookChain
             this.Close();
         }
 
-        private void cancelAddAdrbutton_Click(object sender, EventArgs e)
+        private void CancelAddAdrbutton_Click(object sender, EventArgs e)
         {
             this.Close();
 

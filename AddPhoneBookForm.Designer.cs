@@ -40,14 +40,14 @@ namespace PhoneBookChain
             this.save_button4 = new System.Windows.Forms.Button();
             this.cancel_button5 = new System.Windows.Forms.Button();
             this.emailTextBox = new System.Windows.Forms.TextBox();
-            this.phoneBookListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.credenTextBox = new System.Windows.Forms.TextBox();
             this.phoneNumTextBox = new System.Windows.Forms.TextBox();
             this.addressTextBox = new System.Windows.Forms.TextBox();
-            this.phoneInfoListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.XCred_button = new System.Windows.Forms.Button();
             this.XAddr_button = new System.Windows.Forms.Button();
             this.XPhone_button = new System.Windows.Forms.Button();
+            this.phoneBookListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.phoneInfoListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             emailLabel = new System.Windows.Forms.Label();
             lastNameLabel = new System.Windows.Forms.Label();
             phoneNumLabel = new System.Windows.Forms.Label();
@@ -150,13 +150,10 @@ namespace PhoneBookChain
             this.emailTextBox.Size = new System.Drawing.Size(318, 22);
             this.emailTextBox.TabIndex = 49;
             // 
-            // phoneBookListBindingSource
-            // 
-            this.phoneBookListBindingSource.DataSource = typeof(PhoneBookChain.PhoneBook);
-            // 
             // credenTextBox
             // 
             this.credenTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.phoneBookListBindingSource, "LastName", true));
+            this.credenTextBox.Enabled = false;
             this.credenTextBox.Location = new System.Drawing.Point(78, 53);
             this.credenTextBox.Name = "credenTextBox";
             this.credenTextBox.Size = new System.Drawing.Size(317, 22);
@@ -165,6 +162,7 @@ namespace PhoneBookChain
             // phoneNumTextBox
             // 
             this.phoneNumTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.phoneBookListBindingSource, "PhoneNum", true));
+            this.phoneNumTextBox.Enabled = false;
             this.phoneNumTextBox.Location = new System.Drawing.Point(78, 155);
             this.phoneNumTextBox.Name = "phoneNumTextBox";
             this.phoneNumTextBox.Size = new System.Drawing.Size(317, 22);
@@ -173,14 +171,11 @@ namespace PhoneBookChain
             // addressTextBox
             // 
             this.addressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.phoneBookListBindingSource, "StreetName", true));
+            this.addressTextBox.Enabled = false;
             this.addressTextBox.Location = new System.Drawing.Point(78, 104);
             this.addressTextBox.Name = "addressTextBox";
             this.addressTextBox.Size = new System.Drawing.Size(317, 22);
             this.addressTextBox.TabIndex = 65;
-            // 
-            // phoneInfoListBindingSource
-            // 
-            this.phoneInfoListBindingSource.DataSource = typeof(PhoneBookChain.PhoneInfo);
             // 
             // XCred_button
             // 
@@ -214,6 +209,14 @@ namespace PhoneBookChain
             this.XPhone_button.Text = "x";
             this.XPhone_button.UseVisualStyleBackColor = true;
             this.XPhone_button.Click += new System.EventHandler(this.XPhone_button_Click);
+            // 
+            // phoneBookListBindingSource
+            // 
+            this.phoneBookListBindingSource.DataSource = typeof(PhoneBookChain.PhoneBook);
+            // 
+            // phoneInfoListBindingSource
+            // 
+            this.phoneInfoListBindingSource.DataSource = typeof(PhoneBookChain.PhoneInfo);
             // 
             // AddPhoneBookForm
             // 

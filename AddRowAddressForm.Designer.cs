@@ -81,7 +81,7 @@ namespace PhoneBookChain
             this.cancelAddAdrbutton.TabIndex = 51;
             this.cancelAddAdrbutton.Text = "Отменить";
             this.cancelAddAdrbutton.UseVisualStyleBackColor = true;
-            this.cancelAddAdrbutton.Click += new System.EventHandler(this.cancelAddAdrbutton_Click);
+            this.cancelAddAdrbutton.Click += new System.EventHandler(this.CancelAddAdrbutton_Click);
             // 
             // saveAddAdrbutton
             // 
@@ -91,7 +91,7 @@ namespace PhoneBookChain
             this.saveAddAdrbutton.TabIndex = 50;
             this.saveAddAdrbutton.Text = "Сохранить";
             this.saveAddAdrbutton.UseVisualStyleBackColor = true;
-            this.saveAddAdrbutton.Click += new System.EventHandler(this.saveAddAdrbutton_Click);
+            this.saveAddAdrbutton.Click += new System.EventHandler(this.SaveAddAdrbutton_Click);
             // 
             // buildNumTextBox
             // 

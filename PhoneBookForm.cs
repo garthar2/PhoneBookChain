@@ -84,15 +84,15 @@ namespace PhoneBookChain
                 MessageBox.Show("Ошибка чтения" + ex);
                 //throw;
             }
-            Console.WriteLine("Объект PhoneBookList десериализован");
-            foreach (PhoneBook p in PhoneBookList)
-            {
-                int now = int.Parse(DateTime.Now.ToString("yyyyMMdd"));
-                int dob = int.Parse(p.Credentials.YearOfBirth.ToString("yyyyMMdd"));
-                int age = (now - dob) / 10000;
-                Console.WriteLine($"Имя: {p.Credentials.FirstName} --- Возраст: {age}");
+            //Console.WriteLine("Объект PhoneBookList десериализован");
+            //foreach (PhoneBook p in PhoneBookList)
+            //{
+            //    int now = int.Parse(DateTime.Now.ToString("yyyyMMdd"));
+            //    int dob = int.Parse(p.Credentials.YearOfBirth.ToString("yyyyMMdd"));
+            //    int age = (now - dob) / 10000;
+            //    Console.WriteLine($"Имя: {p.Credentials.FirstName} --- Возраст: {age}");
 
-            }
+            //}
             CopyListToGrid();
 
         }
@@ -124,15 +124,6 @@ namespace PhoneBookChain
             serializer.Serialize(writer, PhoneBookList);
             writer.Close();
         }
-        //private void button1_Click(object sender, EventArgs e)
-        //{
-        //    AddPhoneBookForm form2 = new AddPhoneBookForm(PhoneBookList);
-        //    DialogResult dr = form2.ShowDialog();
-        //    if (dr == DialogResult.Cancel)
-        //    {
-        //       CopyListToGrid();
-        //    }
-        //}
 
         private void PhoneBookForm_FormClosing(object sender, FormClosingEventArgs e)
         {

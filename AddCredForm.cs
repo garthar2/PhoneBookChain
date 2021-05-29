@@ -32,7 +32,7 @@ namespace PhoneBookChain
         public AddCredForm()
         {
             InitializeComponent();
-            CredentialsList.Add(new Credentials());
+            CredentialsList.Add(new Credentials());//уточнить
             credentialsListBindingSource.DataSource = CredentialsList;
         }
         public AddCredForm(Credentials credentials, int RowIndex)

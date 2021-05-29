@@ -14,10 +14,8 @@ namespace PhoneBookChain
     public partial class AddPhoneBookForm : Form
     {
         public BindingList<PhoneBook> PhoneBookList { get; set; }
-        public int phoneBookIndex = -1;
+        public int phoneBookIndex;
         bool isEditForm = false;
-        //string savedGender;
-        //string savedIsMobile;
         public AddPhoneBookForm()
         {
             InitializeComponent();
@@ -40,32 +38,37 @@ namespace PhoneBookChain
             this.Text = "Редактирование телефонного справочника (обобщающий класс)";
             //заполняем поля формы для редактирования
             emailTextBox.Text = PhoneBookList[index].Email;
-
-
-            //lastNameTextBox.Text = PhoneBookList[index].Credentials.LastName + " " + 
-            //    PhoneBookList[index].Credentials.FirstName + " " + PhoneBookList[index].Credentials.MiddleName;
+            if (PhoneBookList[index].Credentials.LastName ==" ")
+            {
+                PhoneBookList[index].Credentials.LastName = "-";
+            }
+            if (PhoneBookList[index].Credentials.FirstName == " ")
+            {
+                PhoneBookList[index].Credentials.FirstName = "-";
+            }
+            if (PhoneBookList[index].Credentials.MiddleName == " ")
+            {
+                PhoneBookList[index].Credentials.MiddleName = "-";
+            }
+            if (PhoneBookList[index].Credentials.Gender == " ")
+            {
+                PhoneBookList[index].Credentials.Gender = "-";
+            }
 
             credenTextBox.Text = PhoneBookList[index].Credentials.LastName + " " + PhoneBookList[index].Credentials.FirstName
-                + " " + PhoneBookList[index].Credentials.MiddleName + " " + PhoneBookList[index].Credentials.Gender + " " + PhoneBookList[index].Credentials.YearOfBirth.ToString("dd.MM.yyyy");
+                + " " + PhoneBookList[index].Credentials.MiddleName + " " + PhoneBookList[index].Credentials.Gender + " " + 
+                PhoneBookList[index].Credentials.YearOfBirth.ToString("dd.MM.yyyy");
 
             addressTextBox.Text = PhoneBookList[index].Address.StreetName + " " +
                 PhoneBookList[index].Address.BuildNum + " " + PhoneBookList[index].Address.FlatNum;
 
             phoneNumTextBox.Text = PhoneBookList[index].PhoneInfo.PhoneNum + " " + phoneBookList[index].PhoneInfo.IsMobile;
 
-
-
             phoneBookIndex = index;
         }
 
         private void Save_button4_Click(object sender, EventArgs e)
         {
-            //PhoneBook newPhoneBook = new PhoneBook(emailTextBox.Text, new Credentials(PhoneBookList[phoneBookIndex].Credentials.FirstName,
-            //    PhoneBookList[phoneBookIndex].Credentials.LastName, PhoneBookList[phoneBookIndex].Credentials.MiddleName,
-            //    PhoneBookList[phoneBookIndex].Credentials.Gender, PhoneBookList[phoneBookIndex].Credentials.YearOfBirth),
-            //    new Address(PhoneBookList[phoneBookIndex].Address.StreetName, PhoneBookList[phoneBookIndex].Address.BuildNum,
-            //    PhoneBookList[phoneBookIndex].Address.FlatNum), new PhoneInfo(PhoneBookList[phoneBookIndex].PhoneInfo.PhoneNum,
-            //    PhoneBookList[phoneBookIndex].PhoneInfo.IsMobile));
             PhoneBook newPhoneBook = new PhoneBook();
 
             if (isEditForm)
@@ -77,7 +80,8 @@ namespace PhoneBookChain
 
             }
 
-            char[] delimiterChars = { ' ', ',', ':', '\t','-' };
+            char[] delimiterChars = { ' ', ',', ':', '\t' };
+            //char[] delimiterChars = { ' ', ',', ':', '\t','-' };
             string[] splitCreds = credenTextBox.Text.Split(delimiterChars, System.StringSplitOptions.RemoveEmptyEntries);
             string[] newCreds = new string[] { " ", " ", " " , " " ," "};
             int z = splitCreds.Length > 5 ? 5 : splitCreds.Length;
@@ -90,10 +94,11 @@ namespace PhoneBookChain
             }
             try
             {
-                //string pattern = "dd.MM.yyyy";
-                //newPhoneBook.Credentials = new Credentials(newCreds[1], newCreds[0], newCreds[2], newCreds[3], 
-                //    new DateTime(Convert.ToInt32(newCreds[4]), 1, 1));
                 DateTime.TryParseExact(newCreds[4], "dd.MM.yyyy", null, DateTimeStyles.None, out DateTime parsedDate);
+                if (parsedDate < new DateTime(Convert.ToInt32("1900"), 1, 1))
+                {
+                    parsedDate = new DateTime(Convert.ToInt32("1900"), 1, 1);
+                }
                 newPhoneBook.Credentials = new Credentials(newCreds[1], newCreds[0], newCreds[2], newCreds[3], parsedDate);
             }
             catch (FormatException)

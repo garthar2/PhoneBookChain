@@ -55,6 +55,7 @@ namespace PhoneBookChain
             {
                 isMobile = "Дом.";
             }
+            phoneNumTextBox.Text = phoneNumTextBox.Text == "" ? "-" : phoneNumTextBox.Text;
             if (isEditedForm)
             {
                 PhoneInfoList[this.currentIndex] = new PhoneInfo(phoneNumTextBox.Text, isMobile);
