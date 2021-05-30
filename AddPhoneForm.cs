@@ -116,11 +116,14 @@ namespace PhoneBookChain
         {
             if (e.Button == MouseButtons.Right)
             {
-                this.phoneInfoListDataGridView.Rows[e.RowIndex].Selected = true;
-                this.rowIndex = e.RowIndex;
-                this.phoneInfoListDataGridView.CurrentCell = this.phoneInfoListDataGridView.Rows[e.RowIndex].Cells[1];
-                this.contextMenuStrip1.Show(this.phoneInfoListDataGridView, e.Location);
-                contextMenuStrip1.Show(Cursor.Position);
+                if (e.RowIndex>=0)
+                {
+                    this.phoneInfoListDataGridView.Rows[e.RowIndex].Selected = true;
+                    this.rowIndex = e.RowIndex;
+                    this.phoneInfoListDataGridView.CurrentCell = this.phoneInfoListDataGridView.Rows[e.RowIndex].Cells[1];
+                    this.contextMenuStrip1.Show(this.phoneInfoListDataGridView, e.Location);
+                    contextMenuStrip1.Show(Cursor.Position);
+                }
             }
         }
 

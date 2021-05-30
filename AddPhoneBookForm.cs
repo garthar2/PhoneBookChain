@@ -27,7 +27,7 @@ namespace PhoneBookChain
             isEditForm = false;
             PhoneBookList = phoneBookList;
             InitializeComponent();
-
+            FillTextBoxes(new PhoneBook());
         }
         public AddPhoneBookForm(BindingList<PhoneBook> phoneBookList, int index)
         {
@@ -36,35 +36,44 @@ namespace PhoneBookChain
             PhoneBookList = phoneBookList;
             InitializeComponent();
             this.Text = "Редактирование телефонного справочника (обобщающий класс)";
-            //заполняем поля формы для редактирования
-            emailTextBox.Text = PhoneBookList[index].Email;
-            if (PhoneBookList[index].Credentials.LastName ==" ")
-            {
-                PhoneBookList[index].Credentials.LastName = "-";
-            }
-            if (PhoneBookList[index].Credentials.FirstName == " ")
-            {
-                PhoneBookList[index].Credentials.FirstName = "-";
-            }
-            if (PhoneBookList[index].Credentials.MiddleName == " ")
-            {
-                PhoneBookList[index].Credentials.MiddleName = "-";
-            }
-            if (PhoneBookList[index].Credentials.Gender == " ")
-            {
-                PhoneBookList[index].Credentials.Gender = "-";
-            }
-
-            credenTextBox.Text = PhoneBookList[index].Credentials.LastName + " " + PhoneBookList[index].Credentials.FirstName
-                + " " + PhoneBookList[index].Credentials.MiddleName + " " + PhoneBookList[index].Credentials.Gender + " " + 
-                PhoneBookList[index].Credentials.YearOfBirth.ToString("dd.MM.yyyy");
-
-            addressTextBox.Text = PhoneBookList[index].Address.StreetName + " " +
-                PhoneBookList[index].Address.BuildNum + " " + PhoneBookList[index].Address.FlatNum;
-
-            phoneNumTextBox.Text = PhoneBookList[index].PhoneInfo.PhoneNum + " " + phoneBookList[index].PhoneInfo.IsMobile;
-
+            //заполняем техтбоксы формы для редактирования
+            FillTextBoxes(PhoneBookList[index]);
             phoneBookIndex = index;
+        }
+        /// <summary>
+        /// populate text boxes
+        /// </summary>
+        /// <param name="p"></param>
+        private void FillTextBoxes(PhoneBook p)
+        {
+            emailTextBox.Text = p.Email;
+            //заменяем пробел как разделитель
+            if (p.Credentials.LastName == " ")
+            {
+                p.Credentials.LastName = "-";
+            }
+            if (p.Credentials.FirstName == " ")
+            {
+                p.Credentials.FirstName = "-";
+            }
+            if (p.Credentials.MiddleName == " ")
+            {
+                p.Credentials.MiddleName = "-";
+            }
+            if (p.Credentials.Gender == " ")
+            {
+                p.Credentials.Gender = "-";
+            }
+
+            credenTextBox.Text = p.Credentials.LastName + " " + p.Credentials.FirstName
+                + " " + p.Credentials.MiddleName + " " + p.Credentials.Gender + " " +
+                p.Credentials.YearOfBirth.ToString("dd.MM.yyyy");
+
+            addressTextBox.Text = p.Address.StreetName + " " +
+                p.Address.BuildNum + " " + p.Address.FlatNum;
+
+            phoneNumTextBox.Text = p.PhoneInfo.PhoneNum + " " + p.PhoneInfo.IsMobile;
+
         }
 
         private void Save_button4_Click(object sender, EventArgs e)

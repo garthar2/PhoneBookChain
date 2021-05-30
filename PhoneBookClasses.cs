@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.ComponentModel;
+//using System.ComponentModel;
 
 namespace PhoneBookChain
 {
@@ -14,7 +14,9 @@ namespace PhoneBookChain
     {
         // стандартный конструктор без параметров
         public PhoneBookGrid()
-        { }
+        {
+        
+        }
         public PhoneBookGrid(string email,  string firstName,string lastName, string middleName, string gender,
             string yearOfBirth, string address, string phoneNum, string isMobile)
         {
@@ -33,9 +35,7 @@ namespace PhoneBookChain
         public string LastName { get; set; }
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
-        [DefaultValueAttribute("Мужск.")]
         public string Gender { get; set; }
-        [DefaultValueAttribute("2002")]
         //public DateTime YearOfBirth { get; set; }
         public string YearOfBirth { get; set; }
         public string Address { get; set; }
@@ -78,7 +78,6 @@ namespace PhoneBookChain
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string MiddleName { get; set; }
-        [DefaultValue("M")]
         public string Gender { get; set; }
 
         public DateTime YearOfBirth { get; set; }
