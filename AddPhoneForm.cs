@@ -49,18 +49,18 @@ namespace PhoneBookChain
             phoneInfoListDataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Calibri", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
 
         }
-        public AddPhoneForm(PhoneInfo phoneInfo, int RowIndex)
+        public AddPhoneForm(PhoneInfo phoneInfo, int RowIndex) : this()
         {
-            PhoneInfo = phoneInfo;
-            rowIndex = RowIndex;
-            InitializeComponent();
-            PhoneInfoList.Add(new PhoneInfo());
-            PhoneInfoList[0] = PhoneInfo;
-            phoneInfoListDataGridView.DataSource = PhoneInfoList;
-            phoneInfoListDataGridView.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            phoneInfoListDataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
-            phoneInfoListDataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Calibri", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
-            this.Text = "Редактирование списка телефонов";
+            PhoneInfo = phoneInfo;//
+            rowIndex = RowIndex;//
+            //InitializeComponent();
+            //PhoneInfoList.Add(new PhoneInfo());
+            PhoneInfoList[0] = PhoneInfo;//
+            //phoneInfoListDataGridView.DataSource = PhoneInfoList;
+            //phoneInfoListDataGridView.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //phoneInfoListDataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
+            //phoneInfoListDataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Calibri", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            this.Text = "Редактирование списка телефонов";//
         }
 
         private void Add_toolStripButton1_Click(object sender, EventArgs e)

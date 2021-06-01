@@ -42,17 +42,17 @@ namespace PhoneBookChain
             this.Text = "Добавление в список адресов";
         }
         //public AddAddressForm(Address address, int RowIndex)
-        public AddAddressForm(Address address)
+        public AddAddressForm(Address address) : this()
         {
             Address = address;
             //int rowIndex = RowIndex;
-            InitializeComponent();
-            AddressList.Add(new Address());
+            //InitializeComponent();
+            //AddressList.Add(new Address());
             AddressList[0] = Address;
-            addressListDataGridView.DataSource = AddressList;
-            addressListDataGridView.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            addressListDataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
-            addressListDataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Calibri", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            //addressListDataGridView.DataSource = AddressList;
+            //addressListDataGridView.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //addressListDataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
+            //addressListDataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Calibri", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             this.Text = "Редактирование списка адресов";
         }
         private void Add_toolStripButton1_Click(object sender, EventArgs e)

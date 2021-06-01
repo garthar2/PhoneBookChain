@@ -43,7 +43,7 @@ namespace PhoneBookChain
         /// <summary>
         /// populate text boxes
         /// </summary>
-        /// <param name="p"></param>
+        /// <param name="p">экземпляр строки из PhoneBookList </param>
         private void FillTextBoxes(PhoneBook p)
         {
             emailTextBox.Text = p.Email;

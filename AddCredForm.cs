@@ -34,18 +34,16 @@ namespace PhoneBookChain
             InitializeComponent();
             CredentialsList.Add(new Credentials());//уточнить
             credentialsListBindingSource.DataSource = CredentialsList;
-        }
-        public AddCredForm(Credentials credentials, int RowIndex)
-        {
-            Credentials = credentials;
-            int rowIndex = RowIndex;
-            InitializeComponent();
-            CredentialsList.Add(new Credentials());
-            CredentialsList[0] = Credentials;
-            credentialsListBindingSource.DataSource = CredentialsList;
             credentialsListDataGridView.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             credentialsListDataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
             credentialsListDataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Calibri", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+        }
+        public AddCredForm(Credentials credentials, int RowIndex):this()
+        {
+            Credentials = credentials;
+            int rowIndex = RowIndex;
+            CredentialsList[0] = Credentials;
+
         }
 
          private void Add_toolStripButton1_Click(object sender, EventArgs e)
